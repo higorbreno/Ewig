@@ -40,4 +40,17 @@ public class Usuario{
 	public void setPermissaoAcesso(boolean permissaoAcesso) {
 		this.permissaoAcesso = permissaoAcesso;
 	}
+	
+	public void cadastrar() {
+		//ainda não implementado
+	}
+	public void excluir() {
+		//ainda não implementado
+	}
+	public void editar() {
+		//ainda não implementado
+	}
+	public void autenticar() {
+		//ainda não implementado
+	}
 }
