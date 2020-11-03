@@ -70,25 +70,25 @@ public class Obra{
 	}
 	
 	
-	void cadastrar() {
+	public void cadastrar() {
 		//ainda não implementado
 	}
-	void alterar() {
+	public void alterar() {
 		//ainda não implementado
 	}
-	void excluir() {
+	public void excluir() {
 		//ainda não implementado
 	}
-	void avaliar() {
+	public void avaliar() {
 		//ainda não implementado
 	}
-	void buscar() {
+	public void buscar() {
 		//ainda não implementado
 	}
-	void visualizarDados() {
+	public void visualizarDados() {
 		//ainda não implementado
 	}
-	void visualizarObra() {
+	public void visualizarObra() {
 		//ainda não implementado
 	}
 	

@@ -10,13 +10,23 @@ public class Usuario{
 		return login;
 	}
 	public void setLogin(String login) {
-		this.login = login;
+		if(login.isEmpty()){
+			System.out.println("Valor invalido");
+		}	
+		else {
+			this.login = login;
+		}
 	}
 	public String getSenha() {
 		return senha;
 	}
 	public void setSenha(String senha) {
-		this.senha = senha;
+		if(senha.isEmpty()){
+			System.out.println("Valor invalido");
+		}	
+		else {
+			this.senha = senha;
+		}
 	}
 	public int getTipoAcesso() {
 		return tipoAcesso;
@@ -24,7 +34,7 @@ public class Usuario{
 	public void setTipoAcesso(int tipoAcesso) {
 		this.tipoAcesso = tipoAcesso;
 	}
-	public boolean isPermissaoAcesso() {
+	public boolean getPermissaoAcesso() {
 		return permissaoAcesso;
 	}
 	public void setPermissaoAcesso(boolean permissaoAcesso) {

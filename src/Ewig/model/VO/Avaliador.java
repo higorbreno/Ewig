@@ -11,30 +11,67 @@ public class Avaliador{
 		return nome;
 	}
 	public void setNome(String nome) {
-		this.nome = nome;
+		if(nome.isEmpty()){
+			System.out.println("Valor invalido");
+		}	
+		else {
+			this.nome = nome;
+		}
 	}
 	public String getCpf() {
 		return cpf;
 	}
 	public void setCpf(String cpf) {
-		this.cpf = cpf;
+		if(cpf.isEmpty()){
+			System.out.println("Valor invalido");
+		}	
+		else {
+			this.cpf = cpf;
+		}
 	}
 	public String getEndereco() {
 		return endereco;
 	}
 	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+		if(endereco.isEmpty()){
+			System.out.println("Valor invalido");
+		}	
+		else {
+			this.endereco = endereco;
+		}
 	}
 	public String getTelefone() {
 		return telefone;
 	}
 	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+		if(telefone.isEmpty()){
+			System.out.println("Valor invalido");
+		}	
+		else {
+			this.telefone = telefone;
+		}
 	}
 	public Obra[] getObras() {
 		return obras;
 	}
 	public void setObras(Obra[] obras) {
 		this.obras = obras;
+	}
+	
+	public Avaliador buscar() {
+		//ainda não implementado
+	}
+	
+	public void cadastrar() {
+		//ainda não implementado
+	}
+	public void excluir() {
+		//ainda não implementado
+	}
+	public void editar() {
+		//ainda não implementado
+	}
+	public void visualizarDados() {
+		//ainda não implementado
 	}
 }
