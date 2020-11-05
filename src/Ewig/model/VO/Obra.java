@@ -14,58 +14,70 @@ public class Obra{
 		return titulo;
 	}
 	public void setTitulo(String titulo) {
-		if(titulo.isEmpty()){
-			System.out.println("Valor invalido");
+		if(titulo != null) {
+			if(!titulo.isEmpty()){
+				this.titulo = titulo;
+			}
 		}	
 		else {
-			this.titulo = titulo;
-		}			
-	}
+			System.out.println("Valor invalido");
+		}
+	}	
 	public String getGenero() {
 		return genero;
 	}
 	public void setGenero(String genero) {
-		if(genero.isEmpty()){
-			System.out.println("Valor invalido");
-		}	
+		if(genero != null) {
+			if(!genero.isEmpty()){
+				this.genero = genero;
+			}
+		}
 		else {
-			this.genero = genero;
+			System.out.println("Valor invalido");
 		}	
 	}
 	public Calendar getAno() {
 		return ano;
 	}
 	public void setAno(Calendar ano) {
-		this.ano = ano;
+		if(ano != null){
+			this.ano = ano;
+		}
 		//falta adcionar regras de encapsulamento
 	}
 	public String getStatus() {
 		return status;
 	}
 	public void setStatus(String status) {
-		if(status.isEmpty()){
-			System.out.println("Valor invalido");
+		if (status != null) {
+			if(!status.isEmpty()){
+				this.status = status;
+			}
 		}	
 		else {
-			this.status = status;
+			System.out.println("Valor invalido");
 		}	
 	}
 	public Autor getAutor() {
 		return autor;
 	}
 	public void setAutor(Autor autor) {
-		this.autor = autor;
+		if (autor != null) {
+			this.autor = autor;
+		}	
 		//falta adcionar regras de encapsulamento
 	}
 	public String getAvaliador() {
 		return avaliador;
 	}
 	public void setAvaliador(String avaliador) {
-		if(avaliador.isEmpty()){
-			System.out.println("Valor invalido");
+		if (avaliador != null) {
+			if(!avaliador.isEmpty()){
+				this.avaliador = avaliador;
+			}
 		}	
 		else {
-			this.avaliador = avaliador;
+			System.out.println("Valor invalido");
 		}	
 	}
 	
