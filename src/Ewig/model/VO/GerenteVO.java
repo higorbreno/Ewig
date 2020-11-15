@@ -1,63 +1,16 @@
 package Ewig.model.VO;
 
-public class GerenteVO {
-	private String nome;
-	private String cpf;
-	private String endereco;
-	private String telefone;
-	
-	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		if(nome != null) {
-			if(!nome.isEmpty()){
-				this.nome = nome;
-				return;
-			}
+public class GerenteVO extends UsuarioVO {
+
+	public GerenteVO(String login, String senha, int tipoAcesso, String nome, String cpf, String endereco, String telefone) {
+		super(login, senha, tipoAcesso, nome, cpf, endereco, telefone);
+		
+		if (existe algum gerente) { //se já existir algum gerente
+			setPermissaoAcesso(false);
 		} else {
-			System.out.println("Nome vazio");
+			setPermissaoAcesso(true); //caso do primeiro acesso do primeiro gerente
 		}
+		
 	}
-	public String getCpf() {
-		return cpf;
-	}
-	public void setCpf(String cpf) {
-		if(cpf != null) {
-			if(!cpf.isEmpty() || cpf.length() < 11){
-				this.cpf = cpf;
-				return;
-			}
-		} else {
-			System.out.println("Cpf insuficiente");
-		}
-	}
-	public String getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(String endereco) {
-		if(endereco != null) {
-			if(!endereco.isEmpty()){
-				this.endereco = endereco;
-				return;
-			}
-		} else {
-			System.out.println("Endereço vazio");
-		}
-	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		if(telefone != null) {
-			if(!telefone.isEmpty()){
-				this.telefone = telefone;
-				return;
-			}
-		} else {
-			System.out.println("Telefone vazio");
-		}
-	}
-	
+		
 }
