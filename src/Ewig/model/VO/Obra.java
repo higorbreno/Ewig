@@ -2,6 +2,7 @@ package Ewig.model.VO;
 import java.util.Calendar;
 
 public class Obra{
+	//atributos
 	private String titulo;
 	private String genero;
 	private Calendar ano;
@@ -9,7 +10,7 @@ public class Obra{
 	private Autor autor;
 	private String avaliador;
 	
-	
+	//metodos get e set
 	public String getTitulo() {
 		return titulo;
 	}
@@ -81,7 +82,7 @@ public class Obra{
 		}	
 	}
 	
-	
+	//metodos
 	public void cadastrar() {
 		//ainda não implementado
 	}
