@@ -1,6 +1,6 @@
 package Ewig.model.VO;
 
-public class Autor{
+public class AutorVO{
 	private String nome;
 	private String cpf;
 	private String endereco;
@@ -85,19 +85,4 @@ public class Autor{
 		return autor;
 	}
 	
-	public void cadastrar() {
-		//ainda não implementado
-	}
-	
-	public void excluir() {
-		//ainda não implementado
-	}
-	
-	public void editar() {
-		//ainda não implementado
-	}
-	
-	public void visualizarDados() {
-		//ainda não implementado
-	}
 }
