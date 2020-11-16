@@ -107,7 +107,10 @@ public class UsuarioVO{
 			System.out.println("Telefone vazio");
 		}
 	}
-
+	
+	public UsuarioVO() {
+		
+	}
 	
 	public UsuarioVO (String login, String senha, int tipoAcesso, String nome, String cpf, String endereco, String telefone) {
 		setLogin(login);

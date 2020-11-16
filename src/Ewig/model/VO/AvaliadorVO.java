@@ -1,77 +1,22 @@
 package Ewig.model.VO;
 
-public class AvaliadorVO{
-	private String nome;
-	private String cpf;
-	private String endereco;
-	private String telefone;
-	private Obra[] obras;
+public class AvaliadorVO extends UsuarioVO{
+	private ObraVO[] obras;
 	
-	public String getNome() {
-		return nome;
+	public AvaliadorVO() {
+		
 	}
 	
-	public void setNome(String nome) {
-		if(nome != null) {
-			if(!nome.isEmpty()){
-				this.nome = nome;
-				return;
-			}
-		} else {
-			System.out.println("Nome vazio");
-		}
+	public AvaliadorVO (String login, String senha, int tipoAcesso, String nome, String cpf, String endereco, String telefone, ObraVO[] obras) {
+		super(login, senha, tipoAcesso, nome, cpf, endereco, telefone);
+		setObras(obras);
 	}
 	
-	public String getCpf() {
-		return cpf;
-	}
-	
-	public void setCpf(String cpf) {
-		if(cpf != null) {
-			if(!cpf.isEmpty() || cpf.length() < 11){
-				this.cpf = cpf;
-				return;
-			}
-		} else {
-			System.out.println("Cpf insuficiente");
-		}
-	}
-	
-	public String getEndereco() {
-		return endereco;
-	}
-	
-	public void setEndereco(String endereco) {
-		if(endereco != null) {
-			if(!endereco.isEmpty()){
-				this.endereco = endereco;
-				return;
-			}
-		} else {
-			System.out.println("Endereço vazio");
-		}
-	}
-	
-	public String getTelefone() {
-		return telefone;
-	}
-	
-	public void setTelefone(String telefone) {
-		if(telefone != null) {
-			if(!telefone.isEmpty()){
-				this.telefone = telefone;
-				return;
-			}
-		} else {
-			System.out.println("Telefone vazio");
-		}
-	}
-	
-	public Obra[] getObras() {
+	public ObraVO[] getObras() {
 		return obras;
 	}
 	
-	public void setObras(Obra[] obras) {
+	public void setObras(ObraVO[] obras) {
 		if(obras != null){
 			this.obras = obras;
 		} else {

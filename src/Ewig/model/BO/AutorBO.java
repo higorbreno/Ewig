@@ -1,26 +1,28 @@
 package Ewig.model.BO;
+import Ewig.model.VO.AutorVO;
 
 public class AutorBO{
 	
-	public AutorBO () {
-		//ainda não implementado
-		AutorBO autor = new AutorVO();
+	public AutorVO buscar() {
+		//buscar o autor numa lista de usuarios
+		AutorVO autor = new AutorVO();
 		return autor;
 	}
 	
 	public void cadastrar() {
-		//ainda não implementado
+		//usar os gets e sets de AutorVO para mandar os dados para o BD
 	}
 	
 	public void excluir() {
-		//ainda não implementado
+		//excluir o autor do sistema, apagando no BD e no sistema local
 	}
 	
 	public void editar() {
-		//ainda não implementado
+		//verificar se autor existe
+		//usar os gets e sets de AutorVO para alterar os dados no BD
 	}
 	
 	public void visualizarDados() {
-		//ainda não implementado
+		//apresentar os dados do autor na tela
 	}
 }

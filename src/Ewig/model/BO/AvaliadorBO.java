@@ -1,26 +1,28 @@
 package Ewig.model.BO;
+import Ewig.model.VO.AvaliadorVO;
 
 public class AvaliadorBO{
 	
-	public Avaliador buscar() {
-		//ainda não implementado
-		Avaliador avaliador = new Avaliador();
+	public AvaliadorVO buscar() {
+		//buscar o avaliador numa lista de usuarios
+		AvaliadorVO avaliador = new AvaliadorVO(); //Criação de avaliador vazio para retornar algo
 		return avaliador;
 	}
 	
 	public void cadastrar() {
-		//ainda não implementado
+		//usar os gets e sets de AvaliadorVO para mandar os dados para o BD
 	}
 	
 	public void excluir() {
-		//ainda não implementado
+		//excluir o avaliador do sistema, apagando no BD e no sistema local
 	}
 	
 	public void editar() {
-		//ainda não implementado
+		//verificar se avaliador existe
+		//usar os gets e sets de AvaliadorVO para alterar os dados no BD
 	}
 	
 	public void visualizarDados() {
-		//ainda não implementado
+		//apresentar os dados do avaliador na tela
 	}
 }

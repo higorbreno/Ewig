@@ -1,28 +1,32 @@
 package Ewig.model.BO;
+import Ewig.model.VO.ObraVO;
 import java.util.Calendar;
 
 public class ObraBO{
 		
 	public void cadastrar() {
-		//ainda não implementado
+		//usar os gets e sets de ObraVO para mandar os dados para o BD
 	}
-	public void alterar() {
-		//ainda não implementado
+	public void editar() {
+		//verificar se obra existe
+		//usar os gets e sets de ObraVO para alterar os dados no BD
 	}
 	public void excluir() {
-		//ainda não implementado
+		//excluir a obra do sistema, apagando no BD e no sistema local
 	}
 	public void avaliar() {
-		//ainda não implementado
+		//mudar o status da obra
 	}
-	public void buscar() {
-		//ainda não implementado
+	public ObraVO buscar() {
+		//buscar a obra numa lista
+		ObraVO obra = new ObraVO(); //Criação de obra vazia para retornar algo
+		return obra;
 	}
 	public void visualizarDados() {
-		//ainda não implementado
+		//Apresentar os dados da obra na tela
 	}
 	public void visualizarObra() {
-		//ainda não implementado
+		//Apresentar a obra em si para ser lida de alguma forma, provavelmente pdf
 	}
 	
 }

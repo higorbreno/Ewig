@@ -7,8 +7,21 @@ public class ObraVO{
 	private String genero;
 	private Calendar ano;
 	private String status;
-	private Autor autor;
-	private String avaliador;
+	private AutorVO autor;
+	private AvaliadorVO avaliador;
+	
+	public ObraVO() {
+		
+	}
+	
+	public ObraVO(String titulo, String genero, Calendar ano, String status, AutorVO autor, AvaliadorVO avaliador) {
+		setTitulo(titulo);
+		setGenero(genero);
+		setAno(ano);
+		setStatus(status);
+		setAutor(autor);
+		setAvaliador(avaliador);
+	}
 	
 	//metodos get e set
 	public String getTitulo() {
@@ -59,23 +72,21 @@ public class ObraVO{
 			System.out.println("Valor invalido");
 		}	
 	}
-	public Autor getAutor() {
+	public AutorVO getAutor() {
 		return autor;
 	}
-	public void setAutor(Autor autor) {
+	public void setAutor(AutorVO autor) {
 		if (autor != null) {
 			this.autor = autor;
 		}	
 		//falta adcionar regras de encapsulamento
 	}
-	public String getAvaliador() {
+	public AvaliadorVO getAvaliador() {
 		return avaliador;
 	}
-	public void setAvaliador(String avaliador) {
+	public void setAvaliador(AvaliadorVO avaliador) {
 		if (avaliador != null) {
-			if(!avaliador.isEmpty()){
-				this.avaliador = avaliador;
-			}
+			this.avaliador = avaliador;
 		}	
 		else {
 			System.out.println("Valor invalido");
