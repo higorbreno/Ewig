@@ -25,4 +25,8 @@ public class AvaliadorBO{
 	public void visualizarDados() {
 		//apresentar os dados do avaliador na tela
 	}
+	
+	public void avaliar() {
+		//avalia uma obra
+	}
 }

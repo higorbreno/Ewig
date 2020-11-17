@@ -75,6 +75,59 @@ public class UsuarioVO{
 	}
 	public void setCpf(String cpf) {
 		if(cpf != null && !cpf.isEmpty()) {
+			String cpfAux = new String("");
+			for(int i = 0; i < cpf.length(); ++i) {
+				if(Character.isDigit(cpf.charAt(i)))
+					cpfAux += cpf.charAt(i);
+			}
+			if (!cpfAux.equals("00000000000") && !cpfAux.equals("11111111111") &&
+				!cpfAux.equals("22222222222") && !cpfAux.equals("33333333333") &&
+				!cpfAux.equals("44444444444") && !cpfAux.equals("55555555555") &&
+				!cpfAux.equals("66666666666") && !cpfAux.equals("77777777777") &&
+				!cpfAux.equals("88888888888") && !cpfAux.equals("99999999999") && 
+				!(cpfAux.length() != 11)) {
+					int ver1, ver2;
+					ver1 = Integer.parseInt("" + cpfAux.charAt(9));
+					ver2 = Integer.parseInt("" + cpfAux.charAt(10));
+					
+					int numVer = 0;
+					int resto = 0;
+					int peso = 10;
+					
+					for(int i = 0; i < 9; ++i) {
+						int num = Integer.parseInt("" + cpfAux.charAt(i));
+						
+						numVer += num * peso;
+						--peso;
+					}
+					resto = (numVer*10) % 11;
+					if(resto == 10)
+						resto = 0;
+					
+					if(resto != ver1) {
+						System.out.println("Cpf inválido");
+						return;
+					}
+					
+					numVer = 0;
+					resto = 0;
+					peso = 11;
+					
+					for(int i = 0; i < 10; ++i) {
+						int num = Integer.parseInt("" + cpfAux.charAt(i));
+						
+						numVer += num * peso;
+						--peso;
+					}
+					resto = (numVer*10) % 11;
+					if(resto == 10)
+						resto = 0;
+					
+					if(resto != ver2) {
+						System.out.println("Cpf inválido");
+						return;
+					}
+			}
 			this.cpf = cpf;
 			return;
 		} else {
