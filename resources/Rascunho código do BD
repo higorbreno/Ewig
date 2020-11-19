@@ -1,0 +1,43 @@
+create table Gerente (
+	IdG int,
+	NomeG varchar(50),
+	CpfG varchar(9),
+	EnderecoG varchar(100),
+	TelefoneG varchar(11),
+	LoginG varchar(20),
+	SenhaG varchar(20),
+	PermissaoDeAcessoG bool
+)
+
+create table Autor (
+	IdAu int,
+	NomeAu varchar(50),
+	CpfAu varchar(9),
+	EnderecoAu varchar(100),
+	TelefoneAu varchar(11),
+	LoginAu varchar(20),
+	SenhaAu varchar(20),
+	PermissaoDeAcessoAu bool
+)
+
+create table Avaliador (
+	IdAl serial not null primary key,
+	NomeAl varchar(50) not null,
+	CpfAl varchar(9) not null,
+	EnderecoAl varchar(100) not null,
+	TelefoneAl varchar(11) not null,
+	LoginAl varchar(20) not null,
+	SenhaAl varchar(20) not null,
+	PermissaoDeAcessoAl bool not null
+)
+
+create table Obra (
+	IdOb serial not null primary key,
+	Titulo varchar(50) not null,
+	Ano int not null,
+	Genero varchar(100) not null,
+	Status int not null,
+	IdAl int references Avaliador(IdAl),
+	IdAu int references Autor(IdAu),
+	IdG int references Gerente(IdG)
+)
