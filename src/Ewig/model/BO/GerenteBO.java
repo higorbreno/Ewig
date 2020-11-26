@@ -1,7 +1,7 @@
 package Ewig.model.BO;
 import Ewig.model.VO.GerenteVO;
 
-public class GerenteBO {	
+public class GerenteBO implements GerenteInterBO{	
 	
 	public void cadastrar(GerenteVO gerente) {
 		//usar metodos do usuarioBO 
