@@ -1,16 +1,17 @@
 package Ewig.model.DAO;
 
+import Ewig.model.VO.AutorVO;
+import Ewig.model.VO.AvaliadorVO;
+import Ewig.model.VO.GerenteVO;
 import Ewig.model.VO.ObraVO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
-public class ObraDAO extends BaseDAO<ObraVO> {
+public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 
 	@Override
 	public void cadastrar(ObraVO obra) throws SQLException {
@@ -91,41 +92,24 @@ public class ObraDAO extends BaseDAO<ObraVO> {
 	}
 
 	@Override
-	public List<ObraVO> listar() throws SQLException {
+	public ResultSet listar() throws SQLException {
 		conn = getConnection();
 		String sqlSelect = "select * from obra";
 		PreparedStatement ptst;
-		ResultSet rs;
-		List<ObraVO> obras = new ArrayList<ObraVO>();
+		ResultSet rs = null;
 		
 		try {
 			ptst = conn.prepareStatement(sqlSelect);
 			rs = ptst.executeQuery();
-			while(rs.next()) {
-				ObraVO obra = new ObraVO();
-				obra.setId(rs.getLong("id"));
-				obra.setTitulo(rs.getString("titulo"));
-				obra.setGenero(rs.getString("genero"));
-				obra.setStatus(rs.getString("status"));
-				Calendar cal = Calendar.getInstance();
-				cal.setTime(rs.getDate("dataavaliacao"));
-				obra.setDataAvaliacao(cal);
-				AvaliadorDAO avDao = new AvaliadorDAO();
-				AutorDAO auDao = new AutorDAO();
-				GerenteDAO gDao = new GerenteDAO();
-				obra.setAvaliador(avDao.buscarPorId(rs.getLong("idavaliador")));
-				obra.setAutor(auDao.buscarPorId(rs.getLong("idautor")));
-				obra.setGerente(gDao.buscarPorId(rs.getLong("idgerente")));
-				obras.add(obra);
-			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return obras;
+		
+		return rs;
 	}
 
 	@Override
-	public ObraVO buscarPorNome(String st) throws SQLException {
+	public ObraVO buscarPorTitulo(ObraVO vo) throws SQLException {
 		conn = getConnection();
 		String sqlSearch = "select * from obra where nome like ?";
 		PreparedStatement ptst;
@@ -133,22 +117,33 @@ public class ObraDAO extends BaseDAO<ObraVO> {
 		ObraVO obra = new ObraVO();
 		try {
 			ptst = conn.prepareStatement(sqlSearch);
-			ptst.setString(1, st + "%");
+			ptst.setString(1, vo.getTitulo());
 			rs = ptst.executeQuery();
 			if(rs.next()) {
 				obra.setId(rs.getLong("id"));
 				obra.setTitulo(rs.getString("titulo"));
 				obra.setGenero(rs.getString("genero"));
 				obra.setStatus(rs.getString("status"));
+				
 				Calendar cal = Calendar.getInstance();
 				cal.setTime(rs.getDate("dataavaliacao"));
 				obra.setDataAvaliacao(cal);
+				
 				AvaliadorDAO avDao = new AvaliadorDAO();
 				AutorDAO auDao = new AutorDAO();
 				GerenteDAO gDao = new GerenteDAO();
-				obra.setAvaliador(avDao.buscarPorId(rs.getLong("idavaliador")));
-				obra.setAutor(auDao.buscarPorId(rs.getLong("idautor")));
-				obra.setGerente(gDao.buscarPorId(rs.getLong("idgerente")));
+				
+				AvaliadorVO av = new AvaliadorVO();
+				AutorVO au = new AutorVO();
+				GerenteVO ge = new GerenteVO();
+				
+				av.setId(rs.getLong("idavaliador"));
+				au.setId(rs.getLong("idautor"));
+				ge.setId(rs.getLong("idgerente"));
+				
+				obra.setAvaliador(avDao.buscarPorId(av));
+				obra.setAutor(auDao.buscarPorId(au));
+				obra.setGerente(gDao.buscarPorId(ge));
 			} else {
 				System.out.println("Busca falhou, retornando nulo.");
 				return null;
@@ -160,7 +155,7 @@ public class ObraDAO extends BaseDAO<ObraVO> {
 	}
 
 	@Override
-	public ObraVO buscarPorId(Long id) throws SQLException {
+	public ObraVO buscarPorId(ObraVO vo) throws SQLException {
 		conn = getConnection();
 		String sqlSearch = "select * from obra where id = ?";
 		PreparedStatement ptst;
@@ -168,22 +163,33 @@ public class ObraDAO extends BaseDAO<ObraVO> {
 		ObraVO obra = new ObraVO();
 		try {
 			ptst = conn.prepareStatement(sqlSearch);
-			ptst.setLong(1, id);
+			ptst.setLong(1, vo.getId());
 			rs = ptst.executeQuery();
 			if(rs.next()) {
 				obra.setId(rs.getLong("id"));
 				obra.setTitulo(rs.getString("titulo"));
 				obra.setGenero(rs.getString("genero"));
 				obra.setStatus(rs.getString("status"));
+				
 				Calendar cal = Calendar.getInstance();
 				cal.setTime(rs.getDate("dataavaliacao"));
 				obra.setDataAvaliacao(cal);
+				
 				AvaliadorDAO avDao = new AvaliadorDAO();
 				AutorDAO auDao = new AutorDAO();
 				GerenteDAO gDao = new GerenteDAO();
-				obra.setAvaliador(avDao.buscarPorId(rs.getLong("idavaliador")));
-				obra.setAutor(auDao.buscarPorId(rs.getLong("idautor")));
-				obra.setGerente(gDao.buscarPorId(rs.getLong("idgerente")));
+				
+				AvaliadorVO av = new AvaliadorVO();
+				AutorVO au = new AutorVO();
+				GerenteVO ge = new GerenteVO();
+				
+				av.setId(rs.getLong("idavaliador"));
+				au.setId(rs.getLong("idautor"));
+				ge.setId(rs.getLong("idgerente"));
+				
+				obra.setAvaliador(avDao.buscarPorId(av));
+				obra.setAutor(auDao.buscarPorId(au));
+				obra.setGerente(gDao.buscarPorId(ge));
 			} else {
 				System.out.println("Busca falhou, retornando nulo.");
 				return null;
@@ -194,37 +200,21 @@ public class ObraDAO extends BaseDAO<ObraVO> {
 		return obra;
 	}
 	
-	public List<ObraVO> listarPorDataAvaliacao(Calendar inicio, Calendar fim){
+	public ResultSet listarPorDataAvaliacao(Calendar inicio, Calendar fim){
 		conn = getConnection();
 		String sqlSearchByDate = "select * from obra where dataavaliacao >= ? and dataavaliacao <= fim";
 		PreparedStatement ptst;
-		ResultSet rs;
-		List<ObraVO> obras = new ArrayList<ObraVO>();
+		ResultSet rs = null;
 		
 		try {
 			ptst = conn.prepareStatement(sqlSearchByDate);
+			ptst.setDate(1, null, inicio);
+			ptst.setDate(2, null, fim);
 			rs = ptst.executeQuery();
-			while(rs.next()) {
-				ObraVO obra = new ObraVO();
-				obra.setId(rs.getLong("id"));
-				obra.setTitulo(rs.getString("titulo"));
-				obra.setGenero(rs.getString("genero"));
-				obra.setStatus(rs.getString("status"));
-				Calendar cal = Calendar.getInstance();
-				cal.setTime(rs.getDate("dataavaliacao"));
-				obra.setDataAvaliacao(cal);
-				AvaliadorDAO avDao = new AvaliadorDAO();
-				AutorDAO auDao = new AutorDAO();
-				GerenteDAO gDao = new GerenteDAO();
-				obra.setAvaliador(avDao.buscarPorId(rs.getLong("idavaliador")));
-				obra.setAutor(auDao.buscarPorId(rs.getLong("idautor")));
-				obra.setGerente(gDao.buscarPorId(rs.getLong("idgerente")));
-				obras.add(obra);
-			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return obras;
+		return rs;
 	}
 
 }
