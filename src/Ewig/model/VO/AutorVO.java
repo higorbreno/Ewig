@@ -7,9 +7,9 @@ public class AutorVO extends UsuarioVO{
 		
 	}
 	
-	public AutorVO (String login, String senha, int tipoAcesso, String nome, String cpf, String endereco, String telefone, ObraVO[] obras) {
+	public AutorVO (String login, String senha, int tipoAcesso, String nome, String cpf, String endereco, String telefone) {
 		super(login, senha, tipoAcesso, nome, cpf, endereco, telefone);
-		setObras(obras);
+		//setObras(obras);
 	}
 	
 	public ObraVO[] getObras() {
