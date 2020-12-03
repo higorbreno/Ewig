@@ -137,13 +137,13 @@ public class AutorDAO extends BaseDAO<AutorVO>{
 	@Override
 	public AutorVO buscarPorNome(String st) throws SQLException {
 		conn = getConnection();
-		String sqlSearch = "select * from autor where nome = ?%";
+		String sqlSearch = "select * from autor where nome like ?";
 		PreparedStatement ptst;
 		ResultSet rs;
 		AutorVO au = new AutorVO();
 		try {
 			ptst = conn.prepareStatement(sqlSearch);
-			ptst.setString(1, st);
+			ptst.setString(1, st + "%");
 			rs = ptst.executeQuery();
 			if(rs.next()) {
 				au.setId(rs.getLong("id"));
