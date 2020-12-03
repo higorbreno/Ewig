@@ -3,27 +3,39 @@ import java.util.Calendar;
 
 public class ObraVO{
 	//atributos
+	private Long id;
 	private String titulo;
 	private String genero;
-	private Calendar ano;
+	private int ano;
 	private String status;
+	private Calendar dataAvaliacao;
 	private AutorVO autor;
 	private AvaliadorVO avaliador;
+	private GerenteVO gerente;
 	
 	public ObraVO() {
 		
 	}
 	
-	public ObraVO(String titulo, String genero, Calendar ano, String status, AutorVO autor, AvaliadorVO avaliador) {
+	public ObraVO(String titulo, String genero, int ano, String status, AutorVO autor, AvaliadorVO avaliador, GerenteVO gerente) {
 		setTitulo(titulo);
 		setGenero(genero);
 		setAno(ano);
 		setStatus(status);
 		setAutor(autor);
 		setAvaliador(avaliador);
+		setGerente(gerente);
 	}
 	
 	//metodos get e set
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 	public String getTitulo() {
 		return titulo;
 	}
@@ -50,14 +62,11 @@ public class ObraVO{
 			System.out.println("Valor invalido");
 		}	
 	}
-	public Calendar getAno() {
+	public int getAno() {
 		return ano;
 	}
-	public void setAno(Calendar ano) {
-		if(ano != null){
+	public void setAno(int ano) {
 			this.ano = ano;
-		}
-		//falta adcionar regras de encapsulamento
 	}
 	public String getStatus() {
 		return status;
@@ -72,6 +81,16 @@ public class ObraVO{
 			System.out.println("Valor invalido");
 		}	
 	}
+	
+	public Calendar getDataAvaliacao() {
+		return dataAvaliacao;
+	}
+	public void setDataAvaliacao(Calendar dataAvaliacao) {
+		if (autor != null) {
+			this.dataAvaliacao = dataAvaliacao;
+		}	
+	}
+	
 	public AutorVO getAutor() {
 		return autor;
 	}
@@ -84,6 +103,7 @@ public class ObraVO{
 	public AvaliadorVO getAvaliador() {
 		return avaliador;
 	}
+	
 	public void setAvaliador(AvaliadorVO avaliador) {
 		if (avaliador != null) {
 			this.avaliador = avaliador;
@@ -92,5 +112,16 @@ public class ObraVO{
 			System.out.println("Valor invalido");
 		}	
 	}
-
+	
+	public GerenteVO getGerente() {
+		return gerente;
+	}
+	public void setGerente(GerenteVO gerente) {
+		if (avaliador != null) {
+			this.gerente = gerente;
+		}	
+		else {
+			System.out.println("Valor invalido");
+		}	
+	}
 }
