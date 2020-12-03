@@ -163,4 +163,34 @@ public class AutorDAO extends BaseDAO<AutorVO>{
 		}
 		return au;
 	}
+
+	@Override
+	public AutorVO buscarPorId(Long id) throws SQLException {
+		conn = getConnection();
+		String sqlSearch = "select * from autor where id = ?";
+		PreparedStatement ptst;
+		ResultSet rs;
+		AutorVO au = new AutorVO();
+		try {
+			ptst = conn.prepareStatement(sqlSearch);
+			ptst.setLong(1, id);
+			rs = ptst.executeQuery();
+			if(rs.next()) {
+				au.setId(rs.getLong("id"));
+				au.setNome(rs.getString("nome"));
+				au.setLogin(rs.getString("login"));
+				au.setSenha(rs.getString("senha"));
+				au.setCpf(rs.getString("cpf"));
+				au.setTelefone(rs.getString("telefone"));
+				au.setEndereco(rs.getString("endereco"));
+				au.setPermissaoAcesso(rs.getBoolean("permissaodeacesso"));
+			} else {
+				System.out.println("Busca falhou, retornando nulo.");
+				return null;
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return au;
+	}
 }

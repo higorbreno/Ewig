@@ -35,5 +35,11 @@ public class AvaliadorDAO extends BaseDAO<AvaliadorVO> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public AvaliadorVO buscarPorId(Long id) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

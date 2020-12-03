@@ -39,4 +39,5 @@ public abstract class BaseDAO<VO> {
 	public abstract void atualizar(VO vo) throws SQLException;
 	public abstract List<VO> listar() throws SQLException;
 	public abstract VO buscarPorNome(String st) throws SQLException;
+	public abstract VO buscarPorId(Long id) throws SQLException;
 }

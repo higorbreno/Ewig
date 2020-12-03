@@ -36,4 +36,10 @@ public class ObraDAO extends BaseDAO<ObraVO> {
 		return null;
 	}
 
+	@Override
+	public ObraVO buscarPorId(Long id) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -37,6 +37,12 @@ public class GerenteDAO extends BaseDAO<GerenteVO> {
 		return null;
 	}
 
+	@Override
+	public GerenteVO buscarPorId(Long id) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 }

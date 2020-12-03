@@ -99,4 +99,10 @@ public class UsuarioDAO extends BaseDAO<UsuarioVO> {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public UsuarioVO buscarPorId(Long id) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

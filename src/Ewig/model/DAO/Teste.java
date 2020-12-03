@@ -21,7 +21,8 @@ public class Teste {
 				//aDao.atualizar(a);
 			//}
 			AutorVO au = new AutorVO();
-			au = aDao.buscarPorNome("Hig");
+			Long id = new Long("6");
+			au = aDao.buscarPorId(id);
 			System.out.println(au.getNome());
 			
 		} catch (SQLException e) {
