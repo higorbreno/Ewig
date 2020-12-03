@@ -1,6 +1,7 @@
 package Ewig.model.VO;
 
 public abstract class UsuarioVO{
+	private Long id;
 	private String login;
 	private String senha;
 	private int tipoAcesso;
@@ -10,6 +11,12 @@ public abstract class UsuarioVO{
 	private String endereco;
 	private String telefone;
 	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	
 	public String getLogin() {
 		return login;
