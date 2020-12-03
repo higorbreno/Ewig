@@ -2,8 +2,10 @@ package Ewig.model.DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
+
+import Ewig.model.VO.UsuarioVO;
 
 public abstract class BaseDAO<VO> {
 	Connection conn = null;
@@ -32,11 +34,4 @@ public abstract class BaseDAO<VO> {
 			}
 		}
 	}
-	
-	public abstract void cadastrar(VO vo) throws SQLException;
-	public abstract void excluir(VO vo) throws SQLException;
-	public abstract void atualizar(VO vo) throws SQLException;
-	public abstract List<VO> listar() throws SQLException;
-	public abstract VO buscarPorNome(String st) throws SQLException;
-	public abstract VO buscarPorId(Long id) throws SQLException;
 }

@@ -3,46 +3,32 @@ package Ewig.model.DAO;
 import Ewig.model.VO.GerenteVO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
-public class GerenteDAO extends BaseDAO<GerenteVO> {
+public class GerenteDAO extends UsuarioDAO<GerenteVO> {
 
-	@Override
-	public void cadastrar(GerenteVO vo) throws SQLException {
-		// TODO Auto-generated method stub
-		
+	public void cadastrar(GerenteVO gerente) throws SQLException {
+		super.cadastrar(gerente, "gerente");
 	}
 
-	@Override
-	public void excluir(GerenteVO vo) throws SQLException {
-		// TODO Auto-generated method stub
-		
+	public void excluir(GerenteVO gerente) throws SQLException {
+		super.excluir(gerente, "gerente");
 	}
 
-	@Override
-	public void atualizar(GerenteVO vo) throws SQLException {
-		// TODO Auto-generated method stub
-		
+	public void atualizar(GerenteVO gerente) throws SQLException {
+		super.atualizar(gerente, "gerente");
 	}
 
-	@Override
-	public List<GerenteVO> listar() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public ResultSet listar() throws SQLException {
+		return super.listar("gerente");
 	}
 
-	@Override
-	public GerenteVO buscarPorNome(String st) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public GerenteVO buscarPorNome(GerenteVO gerente) throws SQLException {
+		GerenteVO g = new GerenteVO(super.buscarPorNome(gerente, "gerente"));
+		return g;
 	}
 
-	@Override
-	public GerenteVO buscarPorId(Long id) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public GerenteVO buscarPorId(GerenteVO gerente) throws SQLException {
+		GerenteVO g = new GerenteVO(super.buscarPorId(gerente, "gerente"));
+		return g;
 	}
-
-
-
 }

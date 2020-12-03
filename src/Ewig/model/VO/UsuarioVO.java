@@ -1,6 +1,6 @@
 package Ewig.model.VO;
 
-public abstract class UsuarioVO{
+public class UsuarioVO{
 	private Long id;
 	private String login;
 	private String senha;
@@ -168,7 +168,7 @@ public abstract class UsuarioVO{
 		}
 	}
 	
-	public UsuarioVO() { //esse metodo será excluido
+	public UsuarioVO() {
 		
 	}
 	
