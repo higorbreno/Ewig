@@ -2,7 +2,6 @@ package Ewig.model.DAO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Calendar;
 
 import Ewig.model.VO.UsuarioVO;
 
