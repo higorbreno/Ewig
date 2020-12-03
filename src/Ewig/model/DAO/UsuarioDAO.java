@@ -10,7 +10,7 @@ import java.util.List;
 import Ewig.model.VO.GerenteVO;
 import Ewig.model.VO.UsuarioVO;
 
-public class UsuarioDAO extends BaseDAO {
+public class UsuarioDAO extends BaseDAO<UsuarioVO> {
 	
 	public void cadastrar(UsuarioVO vo) {
 		conn = getConnection();
@@ -90,8 +90,13 @@ public class UsuarioDAO extends BaseDAO {
 		}
 	}
 	
-	public void buscar(UsuarioVO vo) {
+	public UsuarioVO buscarPorNome(String st) {
+		return null;
+	}
+
+	@Override
+	public void atualizar(UsuarioVO vo) throws SQLException {
+		// TODO Auto-generated method stub
 		
 	}
-	
 }
