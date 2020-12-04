@@ -48,7 +48,7 @@ public class UsuarioVO{
 		return tipoAcesso;
 	}
 	public void setTipoAcesso(int tipoAcesso) {
-		if(tipoAcesso > 3) {
+		if(tipoAcesso < 3) {
 			this.tipoAcesso = tipoAcesso;
 		} else {
 			System.out.println("Tipo de Acesso inválido");

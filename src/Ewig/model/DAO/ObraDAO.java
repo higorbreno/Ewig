@@ -23,7 +23,7 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 			ptst.setString(1, obra.getTitulo());
 			ptst.setInt(2, obra.getAno());
 			ptst.setString(3,  obra.getGenero());
-			ptst.setString(4, "Em avaliação");
+			ptst.setInt(4, 0);
 			ptst.setLong(5, obra.getAvaliador().getId());
 			ptst.setLong(6, obra.getAutor().getId());
 			ptst.setLong(7, obra.getGerente().getId());
@@ -65,7 +65,7 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 	public void atualizar(ObraVO obra) throws SQLException {
 		conn = getConnection();
 		
-		String sqlUpdate = "update autor set "
+		String sqlUpdate = "update obra set "
 				+ "titulo = ?, "
 				+ "ano = ?, "
 				+ "genero = ?, "
@@ -80,7 +80,7 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 			ptst.setString(1, obra.getTitulo());
 			ptst.setInt(2, obra.getAno());
 			ptst.setString(3, obra.getGenero());
-			ptst.setString(4, obra.getStatus());
+			ptst.setInt(4, 0);
 			ptst.setLong(5, obra.getAvaliador().getId());
 			ptst.setLong(6, obra.getAutor().getId());
 			ptst.setLong(7, obra.getGerente().getId());
