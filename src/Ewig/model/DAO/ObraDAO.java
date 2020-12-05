@@ -1,10 +1,8 @@
 package Ewig.model.DAO;
 
-import Ewig.model.VO.AutorVO;
-import Ewig.model.VO.AvaliadorVO;
-import Ewig.model.VO.GerenteVO;
 import Ewig.model.VO.ObraVO;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -108,7 +106,6 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 		String sqlSearch = "select * from obra where nome like ?";
 		PreparedStatement ptst;
 		ResultSet rs = null;
-		ObraVO obra = new ObraVO();
 		try {
 			ptst = getConnection().prepareStatement(sqlSearch);
 			ptst.setString(1, vo.getTitulo());
@@ -125,7 +122,6 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 		String sqlSearch = "select * from obra where id = ?";
 		PreparedStatement ptst;
 		ResultSet rs = null;
-		ObraVO obra = new ObraVO();
 		try {
 			ptst = getConnection().prepareStatement(sqlSearch);
 			ptst.setLong(1, vo.getId());
@@ -137,14 +133,14 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 	}
 	
 	public ResultSet listarPorDataAvaliacao(Calendar inicio, Calendar fim){
-		String sqlSearchByDate = "select * from obra where dataavaliacao >= ? and dataavaliacao <= fim";
+		String sqlSearchByDate = "select * from obra where dataavaliacao between ? and ?";
 		PreparedStatement ptst;
 		ResultSet rs = null;
 		
 		try {
 			ptst = getConnection().prepareStatement(sqlSearchByDate);
-			ptst.setDate(1, null, inicio);
-			ptst.setDate(2, null, fim);
+			ptst.setDate(1, new Date(inicio.getTimeInMillis()));
+			ptst.setDate(2, new Date(fim.getTimeInMillis()));
 			rs = ptst.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
