@@ -10,6 +10,7 @@ public interface UsuarioInterDAO {
 	public abstract void excluir(UsuarioVO vo, String nomeTabela) throws SQLException;
 	public abstract void atualizar(UsuarioVO vo, String nomeTabela) throws SQLException;
 	public abstract ResultSet listar(String nomeTabela) throws SQLException;
-	public abstract UsuarioVO buscarPorNome(UsuarioVO vo, String nomeTabela) throws SQLException;
-	public abstract UsuarioVO buscarPorId(UsuarioVO vo, String nomeTabela) throws SQLException;
+	public abstract ResultSet buscarPorNome(UsuarioVO vo, String nomeTabela) throws SQLException;
+	public abstract ResultSet buscarPorId(UsuarioVO vo, String nomeTabela) throws SQLException;
+	public abstract ResultSet buscarPorLogin(UsuarioVO vo, String nomeTabela) throws SQLException;
 }

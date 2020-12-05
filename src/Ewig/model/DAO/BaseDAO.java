@@ -5,10 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public abstract class BaseDAO<VO> {
-	Connection conn = null;
-	String url = "jdbc:postgresql://localhost:5432/Ewig";
-	String login = "postgres";
-	String senha = "higorbreno157";
+	private static Connection conn = null;
+	private static final String url = "jdbc:postgresql://localhost:5432/Ewig";
+	private static final String login = "postgres";
+	private static final String senha = "higorbreno157";
 	
 	public Connection getConnection() {
 		if(conn == null) {

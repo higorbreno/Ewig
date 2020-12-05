@@ -10,14 +10,13 @@ import Ewig.model.VO.UsuarioVO;
 public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements UsuarioInterDAO{
 	@Override
 	public void cadastrar(UsuarioVO usuario, String nomeTabela) throws SQLException{
-		conn = getConnection();
-		
-		String sqlVerifyLogin = "select login from " + nomeTabela + " union select login from avaliador union select login from gerente";
+		String sqlVerifyLogin = "select login from autor union select login from avaliador union select login from gerente";
 		PreparedStatement ptst;
 		ResultSet rs;
 		String login = usuario.getLogin();
+		
 		try {
-			ptst = conn.prepareStatement(sqlVerifyLogin);
+			ptst = getConnection().prepareStatement(sqlVerifyLogin);
 			rs = ptst.executeQuery();
 			while(rs.next()) {
 				if(login.equals(rs.getString("login"))){
@@ -29,11 +28,10 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 			e1.printStackTrace();
 		}
 		
-		
 		String sqlInsert = "insert into " + nomeTabela + " (nome, cpf, endereco, telefone, login, senha, permissaodeacesso) values (?, ?, ?, ?, ?, ?, ?)";
 		PreparedStatement ptst2;
 		try {
-			ptst2 = conn.prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
+			ptst2 = getConnection().prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
 			ptst2.setString(1, usuario.getNome());
 			ptst2.setString(2, usuario.getCpf());
 			ptst2.setString(3, usuario.getEndereco());
@@ -65,12 +63,10 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 
 	@Override
 	public void excluir(UsuarioVO usuario, String nomeTabela) throws SQLException {
-		conn = getConnection();
-		
 		String sqlDelete = "delete from " + nomeTabela + " where id = ?";
 		PreparedStatement ptst;
 		try {
-		ptst = conn.prepareStatement(sqlDelete);
+		ptst = getConnection().prepareStatement(sqlDelete);
 		ptst.setLong(1, usuario.getId());
 		ptst.executeUpdate();
 		} catch (SQLException e) {
@@ -81,8 +77,6 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 
 	@Override
 	public void atualizar(UsuarioVO usuario, String nomeTabela) throws SQLException {
-		conn = getConnection();
-		
 		String sqlUpdate = "update " + nomeTabela + " set "
 				+ "nome = ?, "
 				+ "telefone = ?, "
@@ -90,7 +84,7 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 				+ " where id = ?;";
 		PreparedStatement ptst;
 		try {
-			ptst = conn.prepareStatement(sqlUpdate);
+			ptst = getConnection().prepareStatement(sqlUpdate);
 			ptst.setString(1, usuario.getNome());
 			ptst.setString(2, usuario.getTelefone());
 			ptst.setString(3, usuario.getEndereco());
@@ -104,13 +98,12 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 
 	@Override
 	public ResultSet listar(String nomeTabela) throws SQLException {
-		conn = getConnection();
 		String sqlSelect = "select * from " + nomeTabela;
 		PreparedStatement ptst;
 		ResultSet rs = null;
 		
 		try {
-			ptst = conn.prepareStatement(sqlSelect);
+			ptst = getConnection().prepareStatement(sqlSelect);
 			rs = ptst.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -119,62 +112,47 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 	}
 
 	@Override
-	public UsuarioVO buscarPorNome(UsuarioVO vo, String nomeTabela) throws SQLException {
-		conn = getConnection();
+	public ResultSet buscarPorNome(UsuarioVO vo, String nomeTabela) throws SQLException {
 		String sqlSearch = "select * from " + nomeTabela + " where nome like ?";
 		PreparedStatement ptst;
-		ResultSet rs;
-		UsuarioVO usuario = new UsuarioVO();
+		ResultSet rs = null;
 		try {
-			ptst = conn.prepareStatement(sqlSearch);
-			ptst.setString(1, vo.getNome());
+			ptst = getConnection().prepareStatement(sqlSearch);
+			ptst.setString(1, vo.getNome() + "%");
 			rs = ptst.executeQuery();
-			if(rs.next()) {
-				usuario.setId(rs.getLong("id"));
-				usuario.setNome(rs.getString("nome"));
-				usuario.setLogin(rs.getString("login"));
-				usuario.setSenha(rs.getString("senha"));
-				usuario.setCpf(rs.getString("cpf"));
-				usuario.setTelefone(rs.getString("telefone"));
-				usuario.setEndereco(rs.getString("endereco"));
-				usuario.setPermissaoAcesso(rs.getBoolean("permissaodeacesso"));
-			} else {
-				System.out.println("Busca falhou, retornando nulo.");
-				return null;
-			}
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
-		return usuario;
+		return rs;
 	}
 
 	@Override
-	public UsuarioVO buscarPorId(UsuarioVO vo, String nomeTabela) throws SQLException {
-		conn = getConnection();
+	public ResultSet buscarPorId(UsuarioVO vo, String nomeTabela) throws SQLException {
 		String sqlSearch = "select * from " + nomeTabela + " where id = ?";
 		PreparedStatement ptst;
-		ResultSet rs;
-		UsuarioVO usuario = new UsuarioVO();
+		ResultSet rs = null;
 		try {
-			ptst = conn.prepareStatement(sqlSearch);
+			ptst = getConnection().prepareStatement(sqlSearch);
 			ptst.setLong(1, vo.getId());
 			rs = ptst.executeQuery();
-			if(rs.next()) {
-				usuario.setId(rs.getLong("id"));
-				usuario.setNome(rs.getString("nome"));
-				usuario.setLogin(rs.getString("login"));
-				usuario.setSenha(rs.getString("senha"));
-				usuario.setCpf(rs.getString("cpf"));
-				usuario.setTelefone(rs.getString("telefone"));
-				usuario.setEndereco(rs.getString("endereco"));
-				usuario.setPermissaoAcesso(rs.getBoolean("permissaodeacesso"));
-			} else {
-				System.out.println("Busca falhou, retornando nulo.");
-				return null;
-			}
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
-		return usuario;
+		return rs;
+	}
+
+	@Override
+	public ResultSet buscarPorLogin(UsuarioVO vo, String nomeTabela) throws SQLException {
+		String sqlSearch = "select * from " + nomeTabela + " where login like ?";
+		PreparedStatement ptst;
+		ResultSet rs = null;
+		try {
+			ptst = getConnection().prepareStatement(sqlSearch);
+			ptst.setString(1, vo.getLogin());
+			rs = ptst.executeQuery();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return rs;
 	}
 }
