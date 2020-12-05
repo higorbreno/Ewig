@@ -15,11 +15,10 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 
 	@Override
 	public void cadastrar(ObraVO obra) throws SQLException {
-		conn = getConnection();
 		String sqlInsert = "insert into Obra (titulo, ano, genero, status, idavaliador, idautor, idgerente) values (?, ?, ?, ?, ?, ?, ?)";
 		PreparedStatement ptst;
 		try {
-			ptst = conn.prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
+			ptst = getConnection().prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
 			ptst.setString(1, obra.getTitulo());
 			ptst.setInt(2, obra.getAno());
 			ptst.setString(3,  obra.getGenero());
@@ -48,11 +47,10 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 
 	@Override
 	public void excluir(ObraVO obra) throws SQLException {
-		conn = getConnection();
 		String sqlDelete = "delete from obra where id = ?";
 		PreparedStatement ptst;
 		try {
-			ptst = conn.prepareStatement(sqlDelete);
+			ptst = getConnection().prepareStatement(sqlDelete);
 			ptst.setLong(1, obra.getId());
 			ptst.executeUpdate();
 		} catch (SQLException e) {
@@ -62,9 +60,7 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 	}
 
 	@Override
-	public void atualizar(ObraVO obra) throws SQLException {
-		conn = getConnection();
-		
+	public void atualizar(ObraVO obra) throws SQLException {		
 		String sqlUpdate = "update obra set "
 				+ "titulo = ?, "
 				+ "ano = ?, "
@@ -76,7 +72,7 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 				+ " where id = ?;";
 		PreparedStatement ptst;
 		try {
-			ptst = conn.prepareStatement(sqlUpdate);
+			ptst = getConnection().prepareStatement(sqlUpdate);
 			ptst.setString(1, obra.getTitulo());
 			ptst.setInt(2, obra.getAno());
 			ptst.setString(3, obra.getGenero());
@@ -93,13 +89,12 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 
 	@Override
 	public ResultSet listar() throws SQLException {
-		conn = getConnection();
 		String sqlSelect = "select * from obra";
 		PreparedStatement ptst;
 		ResultSet rs = null;
 		
 		try {
-			ptst = conn.prepareStatement(sqlSelect);
+			ptst = getConnection().prepareStatement(sqlSelect);
 			rs = ptst.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -109,105 +104,45 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 	}
 
 	@Override
-	public ObraVO buscarPorTitulo(ObraVO vo) throws SQLException {
-		conn = getConnection();
+	public ResultSet buscarPorTitulo(ObraVO vo) throws SQLException {
 		String sqlSearch = "select * from obra where nome like ?";
 		PreparedStatement ptst;
-		ResultSet rs;
+		ResultSet rs = null;
 		ObraVO obra = new ObraVO();
 		try {
-			ptst = conn.prepareStatement(sqlSearch);
+			ptst = getConnection().prepareStatement(sqlSearch);
 			ptst.setString(1, vo.getTitulo());
 			rs = ptst.executeQuery();
-			if(rs.next()) {
-				obra.setId(rs.getLong("id"));
-				obra.setTitulo(rs.getString("titulo"));
-				obra.setGenero(rs.getString("genero"));
-				obra.setStatus(rs.getString("status"));
-				
-				Calendar cal = Calendar.getInstance();
-				cal.setTime(rs.getDate("dataavaliacao"));
-				obra.setDataAvaliacao(cal);
-				
-				AvaliadorDAO avDao = new AvaliadorDAO();
-				AutorDAO auDao = new AutorDAO();
-				GerenteDAO gDao = new GerenteDAO();
-				
-				AvaliadorVO av = new AvaliadorVO();
-				AutorVO au = new AutorVO();
-				GerenteVO ge = new GerenteVO();
-				
-				av.setId(rs.getLong("idavaliador"));
-				au.setId(rs.getLong("idautor"));
-				ge.setId(rs.getLong("idgerente"));
-				
-				obra.setAvaliador(avDao.buscarPorId(av));
-				obra.setAutor(auDao.buscarPorId(au));
-				obra.setGerente(gDao.buscarPorId(ge));
-			} else {
-				System.out.println("Busca falhou, retornando nulo.");
-				return null;
-			}
+			
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
-		return obra;
+		return rs;
 	}
 
 	@Override
-	public ObraVO buscarPorId(ObraVO vo) throws SQLException {
-		conn = getConnection();
+	public ResultSet buscarPorId(ObraVO vo) throws SQLException {
 		String sqlSearch = "select * from obra where id = ?";
 		PreparedStatement ptst;
-		ResultSet rs;
+		ResultSet rs = null;
 		ObraVO obra = new ObraVO();
 		try {
-			ptst = conn.prepareStatement(sqlSearch);
+			ptst = getConnection().prepareStatement(sqlSearch);
 			ptst.setLong(1, vo.getId());
 			rs = ptst.executeQuery();
-			if(rs.next()) {
-				obra.setId(rs.getLong("id"));
-				obra.setTitulo(rs.getString("titulo"));
-				obra.setGenero(rs.getString("genero"));
-				obra.setStatus(rs.getString("status"));
-				
-				Calendar cal = Calendar.getInstance();
-				cal.setTime(rs.getDate("dataavaliacao"));
-				obra.setDataAvaliacao(cal);
-				
-				AvaliadorDAO avDao = new AvaliadorDAO();
-				AutorDAO auDao = new AutorDAO();
-				GerenteDAO gDao = new GerenteDAO();
-				
-				AvaliadorVO av = new AvaliadorVO();
-				AutorVO au = new AutorVO();
-				GerenteVO ge = new GerenteVO();
-				
-				av.setId(rs.getLong("idavaliador"));
-				au.setId(rs.getLong("idautor"));
-				ge.setId(rs.getLong("idgerente"));
-				
-				obra.setAvaliador(avDao.buscarPorId(av));
-				obra.setAutor(auDao.buscarPorId(au));
-				obra.setGerente(gDao.buscarPorId(ge));
-			} else {
-				System.out.println("Busca falhou, retornando nulo.");
-				return null;
-			}
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
-		return obra;
+		return rs;
 	}
 	
 	public ResultSet listarPorDataAvaliacao(Calendar inicio, Calendar fim){
-		conn = getConnection();
 		String sqlSearchByDate = "select * from obra where dataavaliacao >= ? and dataavaliacao <= fim";
 		PreparedStatement ptst;
 		ResultSet rs = null;
 		
 		try {
-			ptst = conn.prepareStatement(sqlSearchByDate);
+			ptst = getConnection().prepareStatement(sqlSearchByDate);
 			ptst.setDate(1, null, inicio);
 			ptst.setDate(2, null, fim);
 			rs = ptst.executeQuery();

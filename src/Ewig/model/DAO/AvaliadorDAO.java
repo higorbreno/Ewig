@@ -1,10 +1,8 @@
 package Ewig.model.DAO;
 
-import Ewig.model.VO.AutorVO;
-import Ewig.model.VO.AvaliadorVO;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import Ewig.model.VO.AvaliadorVO;
 
 public class AvaliadorDAO extends UsuarioDAO<AvaliadorVO> {
 
@@ -24,14 +22,18 @@ public class AvaliadorDAO extends UsuarioDAO<AvaliadorVO> {
 		return super.listar("avaliador");
 	}
 
-	public AvaliadorVO buscarPorNome(AvaliadorVO avaliador) throws SQLException {
-		AvaliadorVO a = new AvaliadorVO(super.buscarPorNome(avaliador, "avaliador"));
-		return a;
+	public ResultSet buscarPorNome(AvaliadorVO avaliador) throws SQLException {
+		ResultSet rs = super.buscarPorNome(avaliador, "avaliador");
+		return rs;
 	}
 
-	public AvaliadorVO buscarPorId(AvaliadorVO avaliador) throws SQLException {
-		AvaliadorVO a = new AvaliadorVO(super.buscarPorId(avaliador, "avaliador"));
-		return a;
+	public ResultSet buscarPorId(AvaliadorVO avaliador) throws SQLException {
+		ResultSet rs = super.buscarPorId(avaliador, "avaliador");
+		return rs;
 	}
 	
+	public ResultSet buscarPorLogin(AvaliadorVO avaliador) throws SQLException {
+		ResultSet rs = super.buscarPorLogin(avaliador, "avaliador");
+		return rs;
+	}
 }

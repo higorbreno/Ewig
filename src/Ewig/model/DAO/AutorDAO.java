@@ -2,7 +2,6 @@ package Ewig.model.DAO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import Ewig.model.VO.AutorVO;
 
 public class AutorDAO extends UsuarioDAO<AutorVO>{
@@ -23,13 +22,18 @@ public class AutorDAO extends UsuarioDAO<AutorVO>{
 		return super.listar("autor");
 	}
 
-	public AutorVO buscarPorNome(AutorVO autor) throws SQLException {
-		AutorVO a = new AutorVO(super.buscarPorNome(autor, "autor"));
-		return a;
+	public ResultSet buscarPorNome(AutorVO autor) throws SQLException {
+		ResultSet rs = super.buscarPorNome(autor, "autor");
+		return rs;
 	}
 
-	public AutorVO buscarPorId(AutorVO autor) throws SQLException {
-		AutorVO a = new AutorVO(super.buscarPorId(autor, "autor"));
-		return a;
+	public ResultSet buscarPorId(AutorVO autor) throws SQLException {
+		ResultSet rs = super.buscarPorId(autor, "autor");
+		return rs;
+	}
+	
+	public ResultSet buscarPorLogin(AutorVO autor) throws SQLException {
+		ResultSet rs = super.buscarPorLogin(autor, "autor");
+		return rs;
 	}
 }

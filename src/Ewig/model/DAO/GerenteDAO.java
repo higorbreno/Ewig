@@ -1,8 +1,8 @@
 package Ewig.model.DAO;
 
-import Ewig.model.VO.GerenteVO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import Ewig.model.VO.GerenteVO;
 
 public class GerenteDAO extends UsuarioDAO<GerenteVO> {
 
@@ -22,13 +22,18 @@ public class GerenteDAO extends UsuarioDAO<GerenteVO> {
 		return super.listar("gerente");
 	}
 
-	public GerenteVO buscarPorNome(GerenteVO gerente) throws SQLException {
-		GerenteVO g = new GerenteVO(super.buscarPorNome(gerente, "gerente"));
-		return g;
+	public ResultSet buscarPorNome(GerenteVO gerente) throws SQLException {
+		ResultSet rs = super.buscarPorNome(gerente, "gerente");
+		return rs;
 	}
 
-	public GerenteVO buscarPorId(GerenteVO gerente) throws SQLException {
-		GerenteVO g = new GerenteVO(super.buscarPorId(gerente, "gerente"));
-		return g;
+	public ResultSet buscarPorId(GerenteVO gerente) throws SQLException {
+		ResultSet rs = super.buscarPorId(gerente, "gerente");
+		return rs;
+	}
+	
+	public ResultSet buscarPorLogin(GerenteVO gerente) throws SQLException {
+		ResultSet rs = super.buscarPorLogin(gerente, "gerente");
+		return rs;
 	}
 }
