@@ -30,7 +30,7 @@
          </image>
       </ImageView>
       <Label layoutX="434.0" layoutY="57.0" text="Tela Inicial" textFill="WHITE" />
-      <ImageView fx:id="botaoBuscar" fitHeight="150.0" fitWidth="200.0" layoutX="117.0" layoutY="114.0" onMouseClicked="#irBuscar" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoBuscar" fitHeight="150.0" fitWidth="200.0" layoutX="90.0" layoutY="127.0" onMouseClicked="#irBuscar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Buscar.png" />
          </image>
@@ -38,7 +38,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="botaoCadastrar" fitHeight="150.0" fitWidth="200.0" layoutX="116.0" layoutY="163.0" onMouseClicked="#irCadastrar" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoCadastrar" fitHeight="150.0" fitWidth="200.0" layoutX="90.0" layoutY="180.0" onMouseClicked="#irCadastrar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/CadastrarObra.png" />
          </image>
@@ -46,7 +46,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="botaoGerar" fitHeight="150.0" fitWidth="200.0" layoutX="117.0" layoutY="214.0" onMouseClicked="#irRelatorio" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoGerar" fitHeight="150.0" fitWidth="200.0" layoutX="90.0" layoutY="241.0" onMouseClicked="#irRelatorio" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/GerarRelatório.png" />
          </image>
@@ -54,7 +54,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="botaoDefinir" fitHeight="150.0" fitWidth="200.0" layoutX="117.0" layoutY="261.0" onMouseClicked="#irDefinirAvaliador" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoDefinir" fitHeight="150.0" fitWidth="200.0" layoutX="323.0" layoutY="182.0" onMouseClicked="#irDefinirAvaliador" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/DefinirAvaliador.png" />
          </image>
@@ -62,7 +62,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="botaoSair" fitHeight="150.0" fitWidth="200.0" layoutX="64.0" layoutY="304.0" onMouseClicked="#irSair" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoSair" fitHeight="150.0" fitWidth="200.0" layoutX="64.0" layoutY="330.0" onMouseClicked="#irSair" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Sair.png" />
          </image>
@@ -75,5 +75,11 @@
             <Font size="22.0" />
          </font>
       </Label>
+      <ImageView fitHeight="43.0" fitWidth="223.0" layoutX="323.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/AutorizarBotão.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="labelMensagem" layoutX="187.0" layoutY="300.0" text="Você não tem autorização para essa função" textFill="RED" visible="false" />
    </children>
 </Pane>
