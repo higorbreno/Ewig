@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ewig.controller.LoginController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@BackgroundLogin.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="228.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Logo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="LoginTexto" layoutX="226.0" layoutY="248.0" opacity="0.5" promptText="Login">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </TextField>
+      <Button fx:id="LoginButton" layoutX="226.0" layoutY="306.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Login" textAlignment="CENTER">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <PasswordField fx:id="SenhaTexto" layoutX="226.0" layoutY="275.0" opacity="0.5" promptText="Senha">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </PasswordField>
+      <Label fx:id="ErroLogin" layoutX="229.0" layoutY="231.0" text="Usuário ou senha inválidos" textAlignment="CENTER" textFill="#ee0606" visible="false" />
+      <Label layoutX="294.0" layoutY="331.0" text="ou" />
+      <Button fx:id="LoginButton1" layoutX="226.0" layoutY="348.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Cadastre-se" textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+   </children>
+</Pane>
