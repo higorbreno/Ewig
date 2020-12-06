@@ -75,10 +75,5 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Button layoutX="117.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#irBuscar" opacity="0.0" prefHeight="36.0" prefWidth="107.0" text="Button">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
    </children>
 </Pane>
