@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/Background.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="275.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Cabeçalho.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="310.0" fitWidth="537.0" layoutX="32.0" layoutY="76.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/ContentBox.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="168.0" layoutX="391.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Marcador.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="434.0" layoutY="57.0" text="Marcador" textFill="WHITE" />
+      <ImageView fitHeight="218.0" fitWidth="506.0" layoutX="46.0" layoutY="88.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/Resultados%20da%20pesquisa.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="botaoDefinirAvaliador" fitHeight="150.0" fitWidth="200.0" layoutX="202.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/DefinirAvaliador.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="botaoVoltar" fitHeight="48.0" fitWidth="81.0" layoutX="512.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Voltar.png" />
+         </image>
+      </ImageView>
+      <ChoiceBox fx:id="escolherObra" layoutX="172.0" layoutY="115.0" prefHeight="25.0" prefWidth="254.0" />
+      <Label layoutX="172.0" layoutY="98.0" text="Escolha a obra que voce deseja adicionar um avaliador:" textFill="#f8f8f8" />
+      <Label layoutX="172.0" layoutY="206.0" text="Escolha o avaliador:" textFill="#f8f8f8" />
+      <ChoiceBox fx:id="escolherAvaliador" layoutX="172.0" layoutY="223.0" prefHeight="25.0" prefWidth="254.0" />
+      <Label layoutX="176.0" layoutY="152.0" text="Autor:" textFill="#f8f8f8" />
+      <Label fx:id="labelAutorObra" layoutX="224.0" layoutY="152.0" text="Label" textFill="WHITE" visible="false" />
+      <Label layoutX="180.0" layoutY="170.0" text="Ano:" textFill="#f8f8f8" />
+      <Label fx:id="labelAnoObra" layoutX="224.0" layoutY="170.0" text="Label" textFill="WHITE" visible="false" />
+      <Label layoutX="175.0" layoutY="255.0" text="Obras já avaliadas:" textFill="#f8f8f8" />
+      <Label layoutX="175.0" layoutY="272.0" text="Obras para avaliar:" textFill="#f8f8f8" />
+      <Label fx:id="labelAvaliadas" layoutX="288.0" layoutY="255.0" text="Label" textFill="WHITE" visible="false" />
+      <Label fx:id="labelAvaliar" layoutX="288.0" layoutY="272.0" text="Label" textFill="WHITE" visible="false" />
+      <Label fx:id="definirMessagem" layoutX="260.0" layoutY="315.0" text="Mensagem Erro" visible="false" />
+   </children>
+</Pane>

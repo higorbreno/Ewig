@@ -20,7 +20,7 @@
             <Image url="@../Imagens/Logo.png" />
          </image>
       </ImageView>
-      <TextField fx:id="LoginTexto" layoutX="226.0" layoutY="248.0" opacity="0.5" promptText="Login">
+      <TextField fx:id="campoLogin" layoutX="226.0" layoutY="248.0" opacity="0.5" promptText="Login">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -31,7 +31,7 @@
             <InnerShadow />
          </effect>
       </TextField>
-      <Button fx:id="LoginButton" layoutX="226.0" layoutY="306.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Login" textAlignment="CENTER">
+      <Button fx:id="botaoLogin" layoutX="226.0" layoutY="306.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Login" textAlignment="CENTER">
          <effect>
             <DropShadow />
          </effect>
@@ -39,14 +39,14 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <PasswordField fx:id="SenhaTexto" layoutX="226.0" layoutY="275.0" opacity="0.5" promptText="Senha">
+      <PasswordField fx:id="campoSenha" layoutX="226.0" layoutY="275.0" opacity="0.5" promptText="Senha">
          <effect>
             <InnerShadow />
          </effect>
       </PasswordField>
       <Label fx:id="ErroLogin" layoutX="229.0" layoutY="231.0" text="Usuário ou senha inválidos" textAlignment="CENTER" textFill="#ee0606" visible="false" />
       <Label layoutX="294.0" layoutY="331.0" text="ou" />
-      <Button fx:id="LoginButton1" layoutX="226.0" layoutY="348.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Cadastre-se" textAlignment="CENTER">
+      <Button fx:id="botaoCadastrar" layoutX="226.0" layoutY="348.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Cadastre-se" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

@@ -30,7 +30,7 @@
          </image>
       </ImageView>
       <Label layoutX="434.0" layoutY="57.0" text="Tela Inicial" textFill="WHITE" />
-      <ImageView fx:id="buttonBuscar" fitHeight="150.0" fitWidth="200.0" layoutX="117.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoBuscar" fitHeight="150.0" fitWidth="200.0" layoutX="117.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Buscar.png" />
          </image>
@@ -38,15 +38,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="buttonCadastrar" fitHeight="150.0" fitWidth="200.0" layoutX="116.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoCadastrar" fitHeight="150.0" fitWidth="200.0" layoutX="116.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Imagens/Cadastrar.png" />
+            <Image url="@../Imagens/CadastrarObra.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="buttonGerar" fitHeight="150.0" fitWidth="200.0" layoutX="117.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoGerar" fitHeight="150.0" fitWidth="200.0" layoutX="117.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/GerarRelatório.png" />
          </image>
@@ -54,7 +54,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="buttonDefinir" fitHeight="150.0" fitWidth="200.0" layoutX="117.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoDefinir" fitHeight="150.0" fitWidth="200.0" layoutX="117.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/DefinirAvaliador.png" />
          </image>
@@ -62,7 +62,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="buttonSair" fitHeight="150.0" fitWidth="200.0" layoutX="64.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoSair" fitHeight="150.0" fitWidth="200.0" layoutX="64.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Sair.png" />
          </image>

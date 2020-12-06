@@ -30,19 +30,19 @@
          </image>
       </ImageView>
       <Label layoutX="434.0" layoutY="57.0" text="Relatório" textFill="WHITE" />
-      <Label layoutX="45.0" layoutY="97.0" text="De:" textFill="WHITE" />
-      <Label layoutX="48.0" layoutY="150.0" text="A:" textFill="WHITE" />
-      <CheckBox fx:id="RelatorioAceito" layoutX="69.0" layoutY="183.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Aceito" textFill="WHITE">
+      <Label layoutX="202.0" layoutY="118.0" text="De:" textFill="WHITE" />
+      <Label layoutX="206.0" layoutY="150.0" text="A:" textFill="WHITE" />
+      <CheckBox fx:id="checkAceito" layoutX="226.0" layoutY="201.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Aceito" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </CheckBox>
-      <CheckBox fx:id="RelatorioRejeitado" layoutX="69.0" layoutY="208.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Rejeitado" textFill="WHITE">
+      <CheckBox fx:id="checkRejeitado" layoutX="302.0" layoutY="201.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Rejeitado" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </CheckBox>
-      <ImageView fx:id="BotaoRelatorio" fitHeight="150.0" fitWidth="200.0" layoutX="67.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoRelatorio" fitHeight="150.0" fitWidth="200.0" layoutX="210.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Relatório.png" />
          </image>
@@ -50,7 +50,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <TextField fx:id="NomeArquivo" layoutX="70.0" layoutY="256.0">
+      <TextField fx:id="campoNomeArquivo" layoutX="228.0" layoutY="272.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
@@ -58,8 +58,8 @@
             <InnerShadow />
          </effect>
       </TextField>
-      <Label layoutX="70.0" layoutY="239.0" text="Nome do Arquivo:" textFill="WHITE" />
-      <DatePicker fx:id="DataInicial" layoutX="70.0" layoutY="93.0">
+      <Label layoutX="228.0" layoutY="248.0" text="Nome do arquivo gerado:" textFill="WHITE" />
+      <DatePicker fx:id="campoDataInicial" layoutX="228.0" layoutY="114.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -67,7 +67,7 @@
             <DropShadow />
          </effect>
       </DatePicker>
-      <DatePicker fx:id="DataFinal" layoutX="70.0" layoutY="146.0">
+      <DatePicker fx:id="campoDataFinal" layoutX="228.0" layoutY="146.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -75,6 +75,13 @@
             <DropShadow />
          </effect>
       </DatePicker>
-      <Label fx:id="ErroRelatorio" layoutX="70.0" layoutY="288.0" text="Label" textFill="RED" visible="false" />
+      <Label fx:id="LabelErro" layoutX="288.0" layoutY="310.0" text="Label" textAlignment="CENTER" textFill="RED" visible="false" />
+      <ImageView fx:id="botaoVoltar" fitHeight="48.0" fitWidth="81.0" layoutX="512.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Voltar.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="228.0" layoutY="87.0" text="Filtrar por data:" textFill="#fffdfd" />
+      <Label layoutX="228.0" layoutY="183.0" text="Filtrar por tipo:" textFill="#fffdfd" />
    </children>
 </Pane>
