@@ -5,6 +5,7 @@ import Ewig.model.VO.AvaliadorVO;
 import Ewig.model.VO.GerenteVO;
 import Ewig.view.Telas;
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 public class RegistrarController {
@@ -12,7 +13,7 @@ public class RegistrarController {
 	@FXML private TextField campoCpf;
 	@FXML private TextField campoEndereco;
 	@FXML private TextField campoTelefone;
-	@FXML private TextField escolherTipoAcesso;
+	@FXML private ChoiceBox escolherTipoAcesso;
 	@FXML private TextField campoLogin;
 	@FXML private TextField campoSenha;
 	@FXML private TextField campoRepitaSenha;
@@ -22,7 +23,7 @@ public class RegistrarController {
 			if(campoSenha.getText().equals(campoRepitaSenha.getText())) {
 				//excepition senha errada
 			} 
-			else {
+			/*else {
 				if(escolherTipoAcesso.getText().equals("Gerente")) {
 					GerenteVO g = new GerenteVO();
 					g.setNome(campoNome.getText());
@@ -53,8 +54,7 @@ public class RegistrarController {
 							av.setSenha(campoSenha.getText());
 							//passa o objeto para a classe BO
 						}
-		
-			}
+			}*/
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

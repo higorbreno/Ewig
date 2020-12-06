@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ewig.controller.AvaliarController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/Background.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="275.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Cabeçalho.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="310.0" fitWidth="537.0" layoutX="32.0" layoutY="76.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/ContentBox.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="168.0" layoutX="391.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Marcador.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="131.0" fitWidth="348.0" layoutX="126.0" layoutY="117.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/ContentBox.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="434.0" layoutY="57.0" text="Avaliar Obra" textFill="WHITE" />
+      <ImageView fx:id="botaoVoltar" fitHeight="48.0" fitWidth="81.0" layoutX="512.0" layoutY="14.0" onMouseClicked="#irMenu" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Voltar.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <RadioButton fx:id="checkAceitar" layoutX="235.0" layoutY="200.0" mnemonicParsing="false" text="Aceitar" textFill="#fcfafa" />
+      <RadioButton fx:id="checkRejeitar" layoutX="317.0" layoutY="200.0" mnemonicParsing="false" text="Rejeitar" textFill="WHITE" />
+      <ChoiceBox fx:id="escolherObra" layoutX="210.0" layoutY="156.0" prefHeight="21.0" prefWidth="191.0" />
+      <Label layoutX="211.0" layoutY="133.0" text="Escolha a obra que foi será avaliada:" textFill="#fcfcfc" />
+      <ImageView fx:id="botaoAvaliar" fitHeight="150.0" fitWidth="200.0" layoutX="224.0" layoutY="286.0" onMouseClicked="#avaliarObra" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/AvaliarObra.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label fx:id="labelMensagem" layoutX="264.0" layoutY="259.0" text="Mensagem" textFill="WHITE" visible="false" />
+   </children>
+</Pane>

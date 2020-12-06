@@ -81,5 +81,13 @@
          </image>
       </ImageView>
       <Label fx:id="labelMensagem" layoutX="187.0" layoutY="300.0" text="Você não tem autorização para essa função" textFill="RED" visible="false" />
+      <ImageView fx:id="botaoAvaliar" fitHeight="150.0" fitWidth="200.0" layoutX="323.0" layoutY="128.0" onMouseClicked="#irAvaliar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/AvaliarObra.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </Pane>

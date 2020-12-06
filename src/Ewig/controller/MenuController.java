@@ -36,6 +36,14 @@ public class MenuController {
 		}
 	}
 	
+	public void irAvaliar() {
+		try {
+			Telas.telaAvaliar();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void irSair() {
 		try {
 			Telas.telaLogin();
