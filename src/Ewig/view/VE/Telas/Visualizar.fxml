@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ewig.controller.VisualizarController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <image>
@@ -33,5 +33,18 @@
             <Image url="@../Imagens/Voltar.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="176.0" fitWidth="240.0" layoutX="180.0" layoutY="143.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/Resultados%20da%20pesquisa.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="Label1" layoutX="193.0" layoutY="159.0" text="Label 1" textFill="WHITE" />
+      <Label fx:id="Label2" layoutX="193.0" layoutY="176.0" text="Label 2" textFill="WHITE" />
+      <Label fx:id="Label3" layoutX="193.0" layoutY="192.0" text="Label 3" textFill="WHITE" />
+      <Label fx:id="Label4" layoutX="193.0" layoutY="209.0" text="Label 4" textFill="WHITE" />
+      <Label fx:id="Label5" layoutX="193.0" layoutY="225.0" text="Label 5" textFill="WHITE" />
+      <Label fx:id="Label6" layoutX="193.0" layoutY="242.0" text="Label 6" textFill="WHITE" />
+      <Label fx:id="Label7" layoutX="193.0" layoutY="259.0" text="Label 7" textFill="WHITE" />
+      <Label layoutX="282.0" layoutY="126.0" text="Dados:" textFill="WHITE" />
    </children>
 </Pane>
