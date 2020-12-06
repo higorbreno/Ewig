@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ewig.controller.AutorizarAcessoController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/Background.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="275.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Cabeçalho.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="310.0" fitWidth="537.0" layoutX="32.0" layoutY="76.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/ContentBox.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="168.0" layoutX="391.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Marcador.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="434.0" layoutY="57.0" text="Marcador" textFill="WHITE" />
+      <ImageView fx:id="botaoVoltar" fitHeight="48.0" fitWidth="81.0" layoutX="512.0" layoutY="14.0" onMouseClicked="#irVoltarMenu" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Voltar.png" />
+         </image>
+      </ImageView>
+      <ChoiceBox fx:id="usuario" layoutX="199.0" layoutY="108.0" prefHeight="25.0" prefWidth="203.0" />
+      <Label layoutX="199.0" layoutY="148.0" text="Nome:" textFill="WHITE" />
+      <Label layoutX="199.0" layoutY="165.0" text="CPF:" textFill="WHITE" />
+      <Label layoutX="199.0" layoutY="182.0" text="Endereço:" textFill="WHITE" />
+      <Label layoutX="199.0" layoutY="199.0" text="Telefone:" textFill="WHITE" />
+      <ImageView fx:id="botaoAutorizar" fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="268.0" onMouseClicked="#autorizarAcesso" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/AutorizarBotão.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="Nome" layoutX="237.0" layoutY="148.0" textFill="WHITE" />
+      <Label fx:id="cpf" layoutX="223.0" layoutY="165.0" textFill="WHITE" />
+      <Label fx:id="endereco" layoutX="251.0" layoutY="182.0" textFill="WHITE" />
+      <Label fx:id="telefone" layoutX="251.0" layoutY="199.0" textFill="WHITE" />
+   </children>
+</Pane>

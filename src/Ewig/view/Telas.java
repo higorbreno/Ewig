@@ -74,4 +74,9 @@ public class Telas extends Application{
 		Scene cena = new Scene(root);
 		primaryStage.setScene(cena);;
 	}
+	public static void telaAutorizarAcesso() throws Exception{
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/AutorizarAcesso.fxml"));
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);;
+	}
 }
