@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/Background.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="275.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Cabeçalho.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="310.0" fitWidth="537.0" layoutX="32.0" layoutY="76.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/ContentBox.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="168.0" layoutX="391.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Marcador.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="434.0" layoutY="57.0" text="Marcador" textFill="WHITE" />
+   </children>
+</Pane>

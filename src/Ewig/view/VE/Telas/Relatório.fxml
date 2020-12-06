@@ -30,61 +30,51 @@
          </image>
       </ImageView>
       <Label layoutX="434.0" layoutY="57.0" text="Relatório" textFill="WHITE" />
-      <ChoiceBox layoutX="120.0" layoutY="87.0" prefHeight="25.0" prefWidth="100.0">
-         <effect>
-            <DropShadow />
-         </effect>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ChoiceBox>
-      <TextField layoutX="69.0" layoutY="87.0" prefHeight="25.0" prefWidth="48.0">
-         <effect>
-            <InnerShadow />
-         </effect>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <TextField layoutX="223.0" layoutY="87.0" prefHeight="25.0" prefWidth="66.0">
-         <effect>
-            <InnerShadow />
-         </effect>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <TextField layoutX="223.0" layoutY="146.0" prefHeight="25.0" prefWidth="66.0">
-         <effect>
-            <InnerShadow />
-         </effect>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <TextField layoutX="69.0" layoutY="146.0" prefHeight="25.0" prefWidth="48.0">
-         <effect>
-            <InnerShadow />
-         </effect>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <ChoiceBox layoutX="120.0" layoutY="146.0" prefHeight="25.0" prefWidth="100.0">
-         <effect>
-            <DropShadow />
-         </effect>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ChoiceBox>
-      <Label layoutX="45.0" layoutY="91.0" text="De:" textFill="WHITE" />
+      <Label layoutX="45.0" layoutY="97.0" text="De:" textFill="WHITE" />
       <Label layoutX="48.0" layoutY="150.0" text="A:" textFill="WHITE" />
-      <Label layoutX="69.0" layoutY="70.0" text="Dia:" textFill="WHITE" />
-      <Label layoutX="120.0" layoutY="70.0" text="Mês:" textFill="WHITE" />
-      <Label layoutX="223.0" layoutY="70.0" text="Ano:" textFill="WHITE" />
-      <Label layoutX="223.0" layoutY="129.0" text="Ano:" textFill="WHITE" />
-      <Label layoutX="120.0" layoutY="129.0" text="Mês:" textFill="WHITE" />
-      <Label layoutX="69.0" layoutY="129.0" text="Dia:" textFill="WHITE" />
+      <CheckBox fx:id="RelatorioAceito" layoutX="69.0" layoutY="183.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Aceito" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </CheckBox>
+      <CheckBox fx:id="RelatorioRejeitado" layoutX="69.0" layoutY="208.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Rejeitado" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </CheckBox>
+      <ImageView fx:id="BotaoRelatorio" fitHeight="150.0" fitWidth="200.0" layoutX="67.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Relatório.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <TextField fx:id="NomeArquivo" layoutX="70.0" layoutY="256.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </TextField>
+      <Label layoutX="70.0" layoutY="239.0" text="Nome do Arquivo:" textFill="WHITE" />
+      <DatePicker fx:id="DataInicial" layoutX="70.0" layoutY="93.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+      </DatePicker>
+      <DatePicker fx:id="DataFinal" layoutX="70.0" layoutY="146.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+      </DatePicker>
+      <Label fx:id="ErroRelatorio" layoutX="70.0" layoutY="288.0" text="Label" textFill="RED" visible="false" />
    </children>
 </Pane>
