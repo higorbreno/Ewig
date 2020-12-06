@@ -15,7 +15,7 @@ public class Login extends Application{
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("VE/Telas/Buscar.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("VE/Telas/Relatório.fxml"));
 		Scene cena = new Scene(root);
 		
 		primaryStage.setTitle("Projeto Ewig");
