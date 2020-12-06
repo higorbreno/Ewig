@@ -14,22 +14,22 @@
             <Image url="@../Imagens/Background.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="55.0" fitWidth="275.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Cabeçalho.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="331.0" fitWidth="537.0" layoutX="32.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="310.0" fitWidth="537.0" layoutX="32.0" layoutY="76.0" pickOnBounds="true">
          <image>
             <Image url="@../Imagens/ContentBox.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="21.0" fitWidth="168.0" layoutX="389.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="21.0" fitWidth="168.0" layoutX="391.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Marcador.png" />
          </image>
       </ImageView>
-      <Label layoutX="434.0" layoutY="36.0" text="Relatório" textFill="WHITE" />
+      <Label layoutX="434.0" layoutY="57.0" text="Relatório" textFill="WHITE" />
       <ChoiceBox layoutX="120.0" layoutY="87.0" prefHeight="25.0" prefWidth="100.0">
          <effect>
             <DropShadow />

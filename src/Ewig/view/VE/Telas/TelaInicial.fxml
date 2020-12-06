@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/Background.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="275.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Cabeçalho.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="310.0" fitWidth="537.0" layoutX="32.0" layoutY="76.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/ContentBox.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="168.0" layoutX="391.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Marcador.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="434.0" layoutY="57.0" text="Tela Inicial" textFill="WHITE" />
+      <ImageView fx:id="buttonBuscar" fitHeight="150.0" fitWidth="200.0" layoutX="117.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Buscar.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="buttonCadastrar" fitHeight="150.0" fitWidth="200.0" layoutX="116.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Cadastrar.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="buttonGerar" fitHeight="150.0" fitWidth="200.0" layoutX="117.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/GerarRelatório.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="buttonDefinir" fitHeight="150.0" fitWidth="200.0" layoutX="117.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/DefinirAvaliador.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="buttonSair" fitHeight="150.0" fitWidth="200.0" layoutX="64.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Sair.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="64.0" layoutY="82.0" text="Início" textFill="#f5f4f4">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
