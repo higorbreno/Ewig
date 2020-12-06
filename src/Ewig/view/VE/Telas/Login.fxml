@@ -31,7 +31,7 @@
             <InnerShadow />
          </effect>
       </TextField>
-      <Button fx:id="botaoLogin" layoutX="226.0" layoutY="306.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Login" textAlignment="CENTER">
+      <Button fx:id="botaoLogin" layoutX="226.0" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#autenticar" prefHeight="25.0" prefWidth="149.0" text="Login" textAlignment="CENTER">
          <effect>
             <DropShadow />
          </effect>
@@ -44,7 +44,7 @@
             <InnerShadow />
          </effect>
       </PasswordField>
-      <Label fx:id="ErroLogin" layoutX="229.0" layoutY="231.0" text="Usuário ou senha inválidos" textAlignment="CENTER" textFill="#ee0606" visible="false" />
+      <Label fx:id="erroLogin" layoutX="229.0" layoutY="231.0" text="Usuário ou senha inválidos" textAlignment="CENTER" textFill="#ee0606" visible="false" />
       <Label layoutX="294.0" layoutY="331.0" text="ou" />
       <Button fx:id="botaoCadastrar" layoutX="226.0" layoutY="348.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Cadastre-se" textAlignment="CENTER">
          <cursor>
