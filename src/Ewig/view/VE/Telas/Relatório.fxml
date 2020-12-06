@@ -76,7 +76,7 @@
          </effect>
       </DatePicker>
       <Label fx:id="LabelErro" layoutX="288.0" layoutY="310.0" text="Label" textAlignment="CENTER" textFill="RED" visible="false" />
-      <ImageView fx:id="botaoVoltar" fitHeight="48.0" fitWidth="81.0" layoutX="512.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoVoltar" fitHeight="48.0" fitWidth="81.0" layoutX="512.0" layoutY="14.0" onMouseClicked="#irVoltarMenu" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Voltar.png" />
          </image>
