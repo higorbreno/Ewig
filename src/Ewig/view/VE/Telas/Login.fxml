@@ -12,12 +12,12 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <image>
-            <Image url="@BackgroundLogin.png" />
+            <Image url="@../Imagens/BackgroundLogin.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="228.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Logo.png" />
+            <Image url="@../Imagens/Logo.png" />
          </image>
       </ImageView>
       <TextField fx:id="LoginTexto" layoutX="226.0" layoutY="248.0" opacity="0.5" promptText="Login">

@@ -10,28 +10,28 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <image>
-            <Image url="@Background.png" />
+            <Image url="@../Imagens/Background.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Cabeçalho.png" />
+            <Image url="@../Imagens/Cabeçalho.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="331.0" fitWidth="537.0" layoutX="32.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@ContentBox.png" />
+            <Image url="@../Imagens/ContentBox.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="21.0" fitWidth="168.0" layoutX="389.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Marcador.png" />
+            <Image url="@../Imagens/Marcador.png" />
          </image>
       </ImageView>
       <Label layoutX="442.0" layoutY="36.0" text="Buscar" textFill="WHITE" />
       <ImageView fitHeight="308.0" fitWidth="301.0" layoutX="263.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Resultados%20da%20pesquisa.png" />
+            <Image url="@../Imagens/Resultados%20da%20pesquisa.png" />
          </image>
       </ImageView>
       <ListView fx:id="ListView" layoutX="268.0" layoutY="72.0" opacity="0.0" prefHeight="292.0" prefWidth="287.0" />
@@ -72,7 +72,7 @@
       </TextField>
       <ImageView fx:id="BuscarBotao" fitHeight="150.0" fitWidth="200.0" layoutX="102.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Buscar.png" />
+            <Image url="@../Imagens/Buscar.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
