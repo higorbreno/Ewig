@@ -6,7 +6,7 @@ public class MenuController {
 
 	public void irBuscar() {
 		try {
-			Telas.telaBuscar();//por enquanto, somente passa para a tela do menu principal
+			Telas.telaBuscar();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -14,7 +14,7 @@ public class MenuController {
 	
 	public void irCadastrar() {
 		try {
-			Telas.telaCadastrar();//por enquanto, somente passa para a tela do menu principal
+			Telas.telaCadastrar();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -22,7 +22,7 @@ public class MenuController {
 	
 	public void irRelatorio() {
 		try {
-			Telas.telaRelatorio();//por enquanto, somente passa para a tela do menu principal
+			Telas.telaRelatorio();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -30,7 +30,7 @@ public class MenuController {
 	
 	public void irDefinirAvaliador() {
 		try {
-			Telas.telaDefinirAvaliador();//por enquanto, somente passa para a tela do menu principal
+			Telas.telaDefinirAvaliador();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -38,7 +38,7 @@ public class MenuController {
 	
 	public void irSair() {
 		try {
-			Telas.telaLogin();//por enquanto, somente passa para a tela do menu principal
+			Telas.telaLogin();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
