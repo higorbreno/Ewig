@@ -3,9 +3,14 @@ package Ewig.controller;
 import Ewig.view.Telas;
 
 public class AlterarController {
-	public void irMenu() {
+	
+	public void alterar() {
+		
+	}
+	
+	public void irBuscar() {
 		try {
-			Telas.telaMenu();
+			Telas.telaBuscar();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

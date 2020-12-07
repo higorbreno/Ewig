@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ewig.controller.AlterarController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/Background.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="275.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Cabeçalho.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="310.0" fitWidth="537.0" layoutX="32.0" layoutY="76.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/ContentBox.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="168.0" layoutX="391.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Marcador.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="444.0" layoutY="57.0" text="Alterar" textFill="WHITE" />
+      <ImageView fx:id="botaoVoltar" fitHeight="48.0" fitWidth="81.0" layoutX="512.0" layoutY="14.0" onMouseClicked="#irVoltarBuscar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Voltar.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="campo1" layoutX="215.0" layoutY="131.0" opacity="0.5" prefHeight="40.0" prefWidth="170.0" promptText="Título">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </TextField>
+      <TextField fx:id="campo2" layoutX="215.0" layoutY="174.0" opacity="0.5" prefHeight="40.0" prefWidth="170.0" promptText="Gênero">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </TextField>
+      <TextField fx:id="campo3" layoutX="215.0" layoutY="217.0" opacity="0.5" prefHeight="40.0" prefWidth="170.0" promptText="Ano">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </TextField>
+      <ImageView fx:id="botaoAlterar" fitHeight="40.0" fitWidth="96.0" layoutX="259.0" layoutY="306.0" onMouseClicked="#alterar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/Botão%20Alterar.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
