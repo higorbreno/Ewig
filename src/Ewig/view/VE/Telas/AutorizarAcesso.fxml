@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -32,6 +33,9 @@
          <image>
             <Image url="@../Imagens/Voltar.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <ChoiceBox fx:id="usuario" layoutX="199.0" layoutY="108.0" prefHeight="25.0" prefWidth="203.0" />
       <Label layoutX="199.0" layoutY="148.0" text="Nome:" textFill="WHITE" />
@@ -42,6 +46,9 @@
          <image>
             <Image url="@../Imagens/AutorizarBotão.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <Label fx:id="Nome" layoutX="237.0" layoutY="148.0" textFill="WHITE" />
       <Label fx:id="cpf" layoutX="223.0" layoutY="165.0" textFill="WHITE" />

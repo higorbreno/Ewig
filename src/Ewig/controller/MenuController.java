@@ -44,6 +44,14 @@ public class MenuController {
 		}
 	}
 	
+	public void irAutorizarAcesso() {
+		try {
+			Telas.telaAutorizarAcesso();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void irSair() {
 		try {
 			Telas.telaLogin();

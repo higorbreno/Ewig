@@ -1,6 +1,5 @@
 package Ewig.controller;
 
-import Ewig.model.VO.UsuarioVO;
 import Ewig.view.Telas;
 
 public class AutorizarAcessoController {
@@ -13,7 +12,7 @@ public class AutorizarAcessoController {
 		}
 	}
 	
-	public void autorizarAcesso(UsuarioVO usuario) {
+	public void autorizarAcesso() {
 		
 	}
 }
