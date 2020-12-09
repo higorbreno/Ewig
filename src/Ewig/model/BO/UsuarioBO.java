@@ -39,7 +39,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 		List<UsuarioVO> listaVO = new ArrayList<UsuarioVO>();
 		UsuarioDAO<UsuarioVO> dao = new UsuarioDAO<UsuarioVO>();
 		ResultSet rs = null;
-		
+		try {
 		rs = dao.buscarPorLogin(vo, "Gerente");
 		while (rs.next()) {
 			UsuarioVO elemento = new UsuarioVO();
@@ -105,8 +105,13 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 							return u;
 						}
 					}
-		}	
+		}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+	//return ;
 	// caso não entre em nenhum if, return exceção de que não existe o login procurado
+		return null;
 	}	 
 
 }

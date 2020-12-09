@@ -23,13 +23,13 @@ public class LoginController {
 			UsuarioVO usuario = bo.buscar(vo,0);
 			//salvar usuario em algum lugar, para usar futuramente e dizer ao sistema o tipo de usuario						
 			
-			if (!campoSenha.getText().equals(usuario.getSenha())) {
-				//dispara exceção de senha errada
+			if (campoSenha.getText().equals(usuario.getSenha())) {
+				Telas.telaMenu();
+			}
+			else {		
 				labelMensagem.setText("Senha incorreta.");
 				labelMensagem.setVisible(true);
 			}
-			
-			Telas.telaMenu();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
