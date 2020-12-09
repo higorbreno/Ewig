@@ -2,17 +2,11 @@ package Ewig.model.BO;
 
 import Ewig.model.VO.UsuarioVO;
 
-public interface UsuarioInterBO {
-	public void cadastrar(UsuarioVO us);
-
-	public void excluir(UsuarioVO us);
-	
-	public void editar(UsuarioVO us);
-	
-	public void visulaizarDados(UsuarioVO us);
-	
+public interface UsuarioInterBO<VO extends UsuarioVO> {
+	public void cadastrar(VO vo);
+	public void excluir(VO vo);
+	public void editar(VO vo);
+	public void visulaizarDados(VO vo);
 	public UsuarioVO[] listar();
-	
-	public UsuarioVO buscar(UsuarioVO us);
-	
+	public UsuarioVO buscar(VO vo);
 }

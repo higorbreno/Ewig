@@ -1,15 +1,40 @@
 package Ewig.controller;
 
+import Ewig.model.BO.UsuarioBO;
+import Ewig.model.VO.GerenteVO;
+import Ewig.model.VO.UsuarioVO;
 import Ewig.view.Telas;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class LoginController {
+	@FXML private TextField campoLogin;
+	@FXML private TextField campoSenha;
+	@FXML private Label labelMensagem;
+	
 	public void autenticar() {
-		//Verifica se existe o login e se a senha corresponde
-		
 		try {
-			Telas.telaMenu();//por enquanto, somente passa para a tela do menu principal
+			UsuarioVO vo = new UsuarioVO();
+			vo.setLogin(campoLogin.getText());
+			
+			UsuarioBO<UsuarioVO> bo = new UsuarioBO<UsuarioVO>();
+			
+			UsuarioVO usuario = bo.buscar(vo,0);
+			//salvar usuario em algum lugar, para usar futuramente e dizer ao sistema o tipo de usuario						
+			
+			if (!campoSenha.getText().equals(usuario.getSenha())) {
+				//dispara exceção de senha errada
+				labelMensagem.setText("Senha incorreta.");
+				labelMensagem.setVisible(true);
+			}
+			
+			Telas.telaMenu();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
+			labelMensagem.setText("O login não existe.");
+			labelMensagem.setVisible(true);
 		}
 	}
 	

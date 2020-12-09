@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 import Ewig.model.VO.UsuarioVO;
 
-public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements UsuarioInterDAO{
+public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements UsuarioInterDAO<VO>{
 	@Override
 	public void cadastrar(UsuarioVO usuario, String nomeTabela) throws SQLException{
 		String sqlVerifyLogin = "select login from autor union select login from avaliador union select login from gerente";
