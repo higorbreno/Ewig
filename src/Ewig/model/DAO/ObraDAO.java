@@ -101,21 +101,66 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 		return rs;
 	}
 
-	@Override
-	public ResultSet buscarPorTitulo(ObraVO vo) throws SQLException {
-		String sqlSearch = "select * from obra where nome like ?";
-		PreparedStatement ptst;
-		ResultSet rs = null;
-		try {
-			ptst = getConnection().prepareStatement(sqlSearch);
-			ptst.setString(1, vo.getTitulo());
-			rs = ptst.executeQuery();
-			
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
-		return rs;
-	}
+//	@Override
+//	public ResultSet buscarPorTitulo(ObraVO vo) throws SQLException {
+//		String sqlSearch = "select * from obra where nome like ?";
+//		PreparedStatement ptst;
+//		ResultSet rs = null;
+//		try {
+//			ptst = getConnection().prepareStatement(sqlSearch);
+//			ptst.setString(1, vo.getTitulo() + "%");
+//			rs = ptst.executeQuery();
+//			
+//		} catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return rs;
+//	}
+//	
+//	public ResultSet buscarPorGenero(ObraVO vo) throws SQLException {
+//		String sqlSearch = "select * from obra where genero like ?";
+//		PreparedStatement ptst;
+//		ResultSet rs = null;
+//		try {
+//			ptst = getConnection().prepareStatement(sqlSearch);
+//			ptst.setString(1, vo.getGenero() + "%");
+//			rs = ptst.executeQuery();
+//			
+//		} catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return rs;
+//	}
+//	
+//	public ResultSet buscarPorAno(ObraVO vo) throws SQLException {
+//		String sqlSearch = "select * from obra where ano like ?";
+//		PreparedStatement ptst;
+//		ResultSet rs = null;
+//		try {
+//			ptst = getConnection().prepareStatement(sqlSearch);
+//			ptst.setInt(1, vo.getAno());
+//			rs = ptst.executeQuery();
+//			
+//		} catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return rs;
+//	}
+//	
+//	public ResultSet buscarPorAutor(ObraVO vo) throws SQLException {
+//		String sqlSearch = "select * from obra where idautor like ?";
+//		PreparedStatement ptst;
+//		ResultSet rs = null;
+//		try {
+//			ptst = getConnection().prepareStatement(sqlSearch);
+//			ptst.setLong(1, vo.getAutor().getId());
+//			rs = ptst.executeQuery();
+//			
+//		} catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return rs;
+//	}
 
 	@Override
 	public ResultSet buscarPorId(ObraVO vo) throws SQLException {

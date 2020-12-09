@@ -31,6 +31,11 @@
             <InnerShadow />
          </effect>
       </TextField>
+      <PasswordField fx:id="campoSenha" layoutX="226.0" layoutY="275.0" opacity="0.5" promptText="Senha">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </PasswordField>
       <Button fx:id="botaoLogin" layoutX="226.0" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#autenticar" prefHeight="25.0" prefWidth="149.0" text="Login" textAlignment="CENTER">
          <effect>
             <DropShadow />
@@ -39,11 +44,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <PasswordField fx:id="campoSenha" layoutX="226.0" layoutY="275.0" opacity="0.5" promptText="Senha">
-         <effect>
-            <InnerShadow />
-         </effect>
-      </PasswordField>
       <Label fx:id="labelMensagem" layoutX="229.0" layoutY="231.0" text="Usuário ou senha inválidos" textAlignment="CENTER" textFill="#ee0606" visible="false" />
       <Label layoutX="294.0" layoutY="331.0" text="ou" />
       <Button fx:id="botaoCadastrar" layoutX="226.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#irRegistrar" prefHeight="25.0" prefWidth="149.0" text="Cadastre-se" textAlignment="CENTER">

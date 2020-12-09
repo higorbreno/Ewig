@@ -37,11 +37,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ChoiceBox fx:id="usuario" layoutX="199.0" layoutY="108.0" prefHeight="25.0" prefWidth="203.0" />
-      <Label layoutX="199.0" layoutY="148.0" text="Nome:" textFill="WHITE" />
-      <Label layoutX="199.0" layoutY="165.0" text="CPF:" textFill="WHITE" />
-      <Label layoutX="199.0" layoutY="182.0" text="Endereço:" textFill="WHITE" />
-      <Label layoutX="199.0" layoutY="199.0" text="Telefone:" textFill="WHITE" />
+      <ChoiceBox fx:id="usuarioEscolha" layoutX="199.0" layoutY="108.0" prefHeight="25.0" prefWidth="203.0" />
+      <Label fx:id="nome" layoutX="199.0" layoutY="148.0" text="Nome:" textFill="WHITE" />
+      <Label fx:id="cpf" layoutX="199.0" layoutY="165.0" text="CPF:" textFill="WHITE" />
+      <Label fx:id="endereco" layoutX="199.0" layoutY="182.0" text="Endereço:" textFill="WHITE" />
+      <Label fx:id="telefone" layoutX="199.0" layoutY="199.0" text="Telefone:" textFill="WHITE" />
       <ImageView fx:id="botaoAutorizar" fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="268.0" onMouseClicked="#autorizarAcesso" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/AutorizarBotão.png" />
@@ -50,9 +50,5 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Label fx:id="Nome" layoutX="237.0" layoutY="148.0" textFill="WHITE" />
-      <Label fx:id="cpf" layoutX="223.0" layoutY="165.0" textFill="WHITE" />
-      <Label fx:id="endereco" layoutX="251.0" layoutY="182.0" textFill="WHITE" />
-      <Label fx:id="telefone" layoutX="251.0" layoutY="199.0" textFill="WHITE" />
    </children>
 </Pane>

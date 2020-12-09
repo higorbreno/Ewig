@@ -155,4 +155,18 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 		}
 		return rs;
 	}
+	
+	@Override
+	public ResultSet listarUsuariosSemPermissao() throws SQLException{
+		String sqlSearch = "select * from autor where permissaoadeacesso = false union select * from avaliador where permissaodeacesso = false union select * from gerente where permissaodeacesso = false";
+		PreparedStatement ptst;
+		ResultSet rs = null;
+		try {
+			ptst = getConnection().prepareStatement(sqlSearch);
+			rs = ptst.executeQuery();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return rs;
+	}
 }

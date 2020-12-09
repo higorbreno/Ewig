@@ -10,6 +10,8 @@ import Ewig.model.VO.UsuarioVO;
 
 public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 	
+	UsuarioDAO<UsuarioVO> dao = new UsuarioDAO<UsuarioVO>();
+	
 	public void cadastrar(VO us) {
 		//verificar se ja esta cadastrado 
 		//mandar para o banco de dados
@@ -37,11 +39,12 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 	
 	public UsuarioVO buscar(VO vo, int tipo) {
 		List<UsuarioVO> listaVO = new ArrayList<UsuarioVO>();
-		UsuarioDAO<UsuarioVO> dao = new UsuarioDAO<UsuarioVO>();
+		
 		ResultSet rs = null;
 		try {
 		rs = dao.buscarPorLogin(vo, "Gerente");
 		while (rs.next()) {
+			System.out.println("Gerente");
 			UsuarioVO elemento = new UsuarioVO();
 			
 			elemento.setId(rs.getLong(1));
@@ -58,6 +61,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 			
 		rs = dao.buscarPorLogin(vo, "Autor");
 		while (rs.next()) {
+			System.out.println("autor");
 			UsuarioVO elemento = new UsuarioVO();
 			
 			elemento.setId(rs.getLong(1));
@@ -74,6 +78,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 			
 		rs = dao.buscarPorLogin(vo, "Avaliador");
 		while (rs.next()) {
+			System.out.println("avaliador");
 			UsuarioVO elemento = new UsuarioVO();
 			
 			elemento.setId(rs.getLong(1));
@@ -114,4 +119,31 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 		return null;
 	}	 
 
+	
+	public List<UsuarioVO> listarUsuariosSemPermissao(){
+		ResultSet rs;
+		List<UsuarioVO> list = new ArrayList<UsuarioVO>();
+		try {
+			rs = dao.listarUsuariosSemPermissao();
+			while (rs.next()) {
+				UsuarioVO elemento = new UsuarioVO();
+				
+				elemento.setId(rs.getLong(1));
+				elemento.setNome(rs.getString(2));
+				elemento.setCpf(rs.getString(3));
+				elemento.setEndereco(rs.getString(4));
+				elemento.setTelefone(rs.getString(5));
+				elemento.setLogin(rs.getString(6));
+				elemento.setSenha(rs.getString(7));
+				elemento.setPermissaoAcesso(rs.getBoolean(8));
+				
+				list.add(elemento);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
 }

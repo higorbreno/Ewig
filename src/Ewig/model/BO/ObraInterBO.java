@@ -1,5 +1,7 @@
 package Ewig.model.BO;
 
+import java.util.List;
+
 import Ewig.model.VO.ObraVO;
 
 public interface ObraInterBO {
@@ -11,9 +13,5 @@ public interface ObraInterBO {
 	
 	public void avaliar(ObraVO obra);
 	
-	public ObraVO buscar(ObraVO obra);
-	
-	public void visualizarDados(ObraVO obra);
-	
-	public void visualizarObra(ObraVO obra);
+	public List<ObraVO> buscar(ObraVO obra);
 }

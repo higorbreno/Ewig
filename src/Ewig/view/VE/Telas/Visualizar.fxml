@@ -38,13 +38,14 @@
             <Image url="@../Imagens/Resultados%20da%20pesquisa.png" />
          </image>
       </ImageView>
-      <Label fx:id="Label1" layoutX="193.0" layoutY="159.0" text="Label 1" textFill="WHITE" />
-      <Label fx:id="Label2" layoutX="193.0" layoutY="176.0" text="Label 2" textFill="WHITE" />
-      <Label fx:id="Label3" layoutX="193.0" layoutY="192.0" text="Label 3" textFill="WHITE" />
-      <Label fx:id="Label4" layoutX="193.0" layoutY="209.0" text="Label 4" textFill="WHITE" />
-      <Label fx:id="Label5" layoutX="193.0" layoutY="225.0" text="Label 5" textFill="WHITE" />
-      <Label fx:id="Label6" layoutX="193.0" layoutY="242.0" text="Label 6" textFill="WHITE" />
-      <Label fx:id="Label7" layoutX="193.0" layoutY="259.0" text="Label 7" textFill="WHITE" />
+      <Label fx:id="label1" layoutX="193.0" layoutY="159.0" text="Label 1" textFill="WHITE" />
+      <Label fx:id="label2" layoutX="193.0" layoutY="176.0" text="Label 2" textFill="WHITE" />
+      <Label fx:id="label3" layoutX="193.0" layoutY="192.0" text="Label 3" textFill="WHITE" />
+      <Label fx:id="label4" layoutX="193.0" layoutY="209.0" text="Label 4" textFill="WHITE" />
+      <Label fx:id="label5" layoutX="193.0" layoutY="225.0" text="Label 5" textFill="WHITE" />
+      <Label fx:id="label6" layoutX="193.0" layoutY="242.0" text="Label 6" textFill="WHITE" />
+      <Label fx:id="label7" layoutX="193.0" layoutY="259.0" text="Label 7" textFill="WHITE" />
       <Label layoutX="282.0" layoutY="126.0" text="Dados:" textFill="WHITE" />
+      <Label fx:id="label8" layoutX="193.0" layoutY="276.0" text="Label 8" textFill="WHITE" />
    </children>
 </Pane>
