@@ -12,9 +12,12 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 	
 	UsuarioDAO<UsuarioVO> dao = new UsuarioDAO<UsuarioVO>();
 	
-	public void cadastrar(VO us) {
-		//verificar se ja esta cadastrado 
-		//mandar para o banco de dados
+	public void cadastrar(VO us, String tipoUs) {
+		/*try {
+			//dao.cadastrar(us);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}*/
 	}
 
 	public void excluir(VO us) {
@@ -37,12 +40,12 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 		return usuario;
 	}
 	
-	public UsuarioVO buscar(VO vo, int tipo) {
-		List<UsuarioVO> listaVO = new ArrayList<UsuarioVO>();
-		
-		ResultSet rs = null;
+	public UsuarioVO buscar(VO us, int tipo) {
 		try {
-		rs = dao.buscarPorLogin(vo, "Gerente");
+		List<UsuarioVO> listaVO = new ArrayList<UsuarioVO>();
+			
+		ResultSet rs = null;
+		rs = dao.buscarPorLogin(us, "Gerente");
 		while (rs.next()) {
 			System.out.println("Gerente");
 			UsuarioVO elemento = new UsuarioVO();
@@ -59,7 +62,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 			listaVO.add(elemento);
 		}
 			
-		rs = dao.buscarPorLogin(vo, "Autor");
+		rs = dao.buscarPorLogin(us, "Autor");
 		while (rs.next()) {
 			System.out.println("autor");
 			UsuarioVO elemento = new UsuarioVO();
@@ -76,7 +79,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 			listaVO.add(elemento);
 		}
 			
-		rs = dao.buscarPorLogin(vo, "Avaliador");
+		rs = dao.buscarPorLogin(us, "Avaliador");
 		while (rs.next()) {
 			System.out.println("avaliador");
 			UsuarioVO elemento = new UsuarioVO();
@@ -114,8 +117,6 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
-	//return ;
-	// caso não entre em nenhum if, return exceção de que não existe o login procurado
 		return null;
 	}	 
 

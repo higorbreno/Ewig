@@ -1,7 +1,8 @@
 package Ewig.controller;
 
+import Ewig.exception.CampoInvalidoException;
+import Ewig.exception.UsuarioInexistenteException;
 import Ewig.model.BO.UsuarioBO;
-import Ewig.model.VO.GerenteVO;
 import Ewig.model.VO.UsuarioVO;
 import Ewig.view.Telas;
 import javafx.fxml.FXML;
@@ -13,28 +14,51 @@ public class LoginController {
 	@FXML private TextField campoSenha;
 	@FXML private Label labelMensagem;
 	
+	private void mensagem(String m) {
+		labelMensagem.setText(m);
+		labelMensagem.setVisible(true);
+	}
+	
 	public void autenticar() {
 		try {
+			mensagem("");
+			if (campoLogin.getText().isEmpty()) {
+				mensagem("Digite o login");
+				throw new CampoInvalidoException("Campo invalido");
+			}
+			if (campoSenha.getText().isEmpty()) {
+				mensagem("Digite a senha");
+				throw new CampoInvalidoException("Campo invalido");
+			}
+			
 			UsuarioVO vo = new UsuarioVO();
 			vo.setLogin(campoLogin.getText());
 			
 			UsuarioBO<UsuarioVO> bo = new UsuarioBO<UsuarioVO>();
 			
 			UsuarioVO usuario = bo.buscar(vo,0);
-			//salvar usuario em algum lugar, para usar futuramente e dizer ao sistema o tipo de usuario						
+			
+			if(usuario == null) { /// VERIFICAR DEPOIS
+				mensagem("Login inexistente.");
+				throw new UsuarioInexistenteException("Campo invalido");
+			}
 			
 			if (campoSenha.getText().equals(usuario.getSenha())) {
-				Telas.telaMenu();
+				if (usuario.getPermissaoAcesso()) {
+					Telas.telaMenu();
+				}
+				else {
+					System.out.println("Usuario não tem permissão de acesso");
+					mensagem("Você ainda não tem permissão de acesso.");
+				}
+				
 			}
 			else {		
-				labelMensagem.setText("Senha incorreta.");
-				labelMensagem.setVisible(true);
+				mensagem("Senha incorreta");
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			labelMensagem.setText("O login não existe.");
-			labelMensagem.setVisible(true);
 		}
 	}
 	
