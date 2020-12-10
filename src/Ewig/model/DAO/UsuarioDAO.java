@@ -57,8 +57,6 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 	}
 
 	@Override
@@ -142,7 +140,7 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 	}
 
 	@Override
-	public ResultSet buscarPorLogin(UsuarioVO vo, String nomeTabela) throws SQLException {
+	public ResultSet buscarPorLogin(UsuarioVO vo,String nomeTabela) throws SQLException {
 		String sqlSearch = "select * from " + nomeTabela + " where login like ?";
 		PreparedStatement ptst;
 		ResultSet rs = null;

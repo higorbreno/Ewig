@@ -9,7 +9,7 @@ import Ewig.model.VO.GerenteVO;
 import Ewig.model.VO.ObraVO;
 
 public class Teste {
-	public static void main(String args[]) {
+	/*public static void main(String args[]) {
 		GerenteVO gerente = new GerenteVO("higorbreno", "Abacaxi", 0, "Higor Breno", "86894328099", "Rua Gerlene Saraiva", "84987654321");
 		AutorVO autor = new AutorVO("felpsribs", "Leite", 1, "Felipe Ribeiro", "85130217098", "Rua Guaribara da Pitanga", "84912345678");
 		AvaliadorVO avaliador = new AvaliadorVO("erickkacik", "Queijinho", 2, "Erick Henrique", "87641213057", "Rua Jorgina Kalarrara", "84981726354");
@@ -51,5 +51,5 @@ public class Teste {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}*/
 }

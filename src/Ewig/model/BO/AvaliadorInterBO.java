@@ -1,18 +1,12 @@
 package Ewig.model.BO;
 
+import java.util.List;
+
 import Ewig.model.VO.AvaliadorVO;
 import Ewig.model.VO.ObraVO;
+import Ewig.model.VO.UsuarioVO;
 
 public interface AvaliadorInterBO {
-	public AvaliadorVO buscar(AvaliadorVO avaliador);
 	
-	public void cadastrar(AvaliadorVO avaliador);
-	
-	public void excluir(AvaliadorVO avaliador);
-	
-	public void editar(AvaliadorVO avaliador);
-	
-	public void visualizarDados(AvaliadorVO avaliador);
-	
-	public void avaliar(ObraVO obra);
+	public UsuarioVO buscar(VO us, int tipoPesq);
 }

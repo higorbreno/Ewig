@@ -4,8 +4,8 @@ public class UsuarioVO{
 	private Long id;
 	private String login;
 	private String senha;
-	private int tipoAcesso;
-	private boolean permissaoAcesso;
+	private int tipoUsuario; // 0 = Gerente; 1 = Avaliador; 2 = Autor;
+	private boolean permissaoAcesso = false; 
 	private String nome;
 	private String cpf;
 	private String endereco;
@@ -44,12 +44,12 @@ public class UsuarioVO{
 	}
 	
 	
-	public int getTipoAcesso() {
-		return tipoAcesso;
+	public int getTipoUsuario() {
+		return tipoUsuario;
 	}
-	public void setTipoAcesso(int tipoAcesso) {
+	public void setTipoUsuario(int tipoAcesso) {
 		if(tipoAcesso < 3) {
-			this.tipoAcesso = tipoAcesso;
+			this.tipoUsuario = tipoAcesso;
 		} else {
 			System.out.println("Tipo de Acesso inválido");
 		}
@@ -175,7 +175,7 @@ public class UsuarioVO{
 	public UsuarioVO (String login, String senha, int tipoAcesso, String nome, String cpf, String endereco, String telefone) {
 		setLogin(login);
 		setSenha(senha);
-		setTipoAcesso(tipoAcesso);
+		setTipoUsuario(tipoAcesso);
 		setNome(nome);
 		setCpf(cpf);
 		setEndereco(endereco);
