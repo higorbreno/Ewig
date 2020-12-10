@@ -180,7 +180,6 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 	
 	
 	public List<UsuarioVO> listarUsuariosSemPermissao() {
-		ResultSet rs;
 		List<UsuarioVO> list = new ArrayList<UsuarioVO>();
 		list.addAll(listar(0));
 		list.addAll(listar(1));
