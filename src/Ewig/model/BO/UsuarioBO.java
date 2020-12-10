@@ -38,13 +38,13 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 		try {
 			switch (us.getTipoUsuario()) {
 				case 0:
-					dao.cadastrar(us,"gerente");
+					dao.excluir(us,"gerente");
 				break;
 				case 1:
-					dao.cadastrar(us,"avaliador");
+					dao.excluir(us,"avaliador");
 				break;
 				case 2:
-					dao.cadastrar(us,"autor");
+					dao.excluir(us,"autor");
 				break;
 				default:
 					System.out.println("Valor invalido em TipoUsuario no Mestre");
@@ -130,7 +130,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 		
 			switch (tipoPesq) {
 				case 0: // busca por LOGIN
-					listaVO.addAll(listar(0));
+					listaVO.addAll(listar(3));
 					for (UsuarioVO u : listaVO) {
 						if (u.getLogin().equals(us.getLogin())) {
 							Telas.Mestre = u;
@@ -139,7 +139,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 					}
 					break;
 				case 1: // busca por NOME
-					listaVO.addAll(listar(1));
+					listaVO.addAll(listar(3));
 					for (UsuarioVO u : listaVO) {
 						if (u.getNome().equals(us.getNome())) {
 							Telas.Mestre = u;
@@ -148,7 +148,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 					}
 					break;
 				case 2: // busca por ID na tabela GERENTE
-					listaVO.addAll(listar(2));
+					listaVO.addAll(listar(0));
 					for (UsuarioVO u : listaVO) {
 						if (u.getTipoUsuario() == 0 && u.getId().equals(us.getId())) {
 							Telas.Mestre = u;
@@ -157,7 +157,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 					}	
 					break;
 				case 3: // busca por ID na tabela AVALIADOR
-					listaVO.addAll(listar(2));
+					listaVO.addAll(listar(1));
 					for (UsuarioVO u : listaVO) {
 						if (u.getTipoUsuario() == 1 && u.getId().equals(us.getId())) {
 							Telas.Mestre = u;

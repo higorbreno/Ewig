@@ -1,9 +1,68 @@
 package Ewig.controller;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import Ewig.view.Telas;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.image.ImageView;
 
-public class MenuController {
-
+public class MenuController implements Initializable{
+	@FXML private ImageView botaoBuscar;
+	@FXML private ImageView botaoAvaliar;
+	@FXML private ImageView botaoCadastrar;
+	@FXML private ImageView botaoDefinir;
+	@FXML private ImageView botaoGerar;
+	@FXML private ImageView botaoAutorizar;
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		switch (Telas.Mestre.getTipoUsuario()) {
+		
+			case 0: // gerente
+				mostrarB(botaoBuscar);
+				mostrarB(botaoAvaliar);
+				mostrarB(botaoCadastrar);
+				mostrarB(botaoDefinir);
+				mostrarB(botaoGerar);
+				mostrarB(botaoAutorizar);
+				break;
+				
+			case 1: // avaliador
+				mostrarB(botaoBuscar);
+				mostrarB(botaoAvaliar);
+				esconderB(botaoCadastrar);
+				esconderB(botaoDefinir);
+				esconderB(botaoGerar);
+				esconderB(botaoAutorizar);
+				break;
+				
+			case 2: // autor
+				mostrarB(botaoBuscar);
+				esconderB(botaoAvaliar);
+				mostrarB(botaoCadastrar);
+				esconderB(botaoDefinir);
+				esconderB(botaoGerar);
+				esconderB(botaoAutorizar);
+				break;
+				
+			default:
+				System.out.println("Codigo invalido no getTipoUsuario() em Mestre");
+		}
+	}
+	
+	private void mostrarB(ImageView botao) {
+		botao.setDisable(false);
+		botao.setOpacity(1);
+	}
+	
+	private void esconderB(ImageView botao) {
+		botao.setCursor(null);
+		botao.setDisable(true);
+		botao.setOpacity(0.3);
+	}
+	
 	public void irBuscar() {
 		try {
 			Telas.telaBuscar();

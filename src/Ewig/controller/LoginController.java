@@ -24,11 +24,11 @@ public class LoginController {
 			mensagem("");
 			if (campoLogin.getText().isEmpty()) {
 				mensagem("Digite o login");
-				throw new CampoInvalidoException("Campo invalido");
+				throw new CampoInvalidoException("Campo login invalido");
 			}
 			if (campoSenha.getText().isEmpty()) {
 				mensagem("Digite a senha");
-				throw new CampoInvalidoException("Campo invalido");
+				throw new CampoInvalidoException("Campo senha invalido");
 			}
 			
 			UsuarioVO vo = new UsuarioVO();
@@ -40,7 +40,7 @@ public class LoginController {
 			
 			if(usuario == null) { /// VERIFICAR DEPOIS
 				mensagem("Login inexistente.");
-				throw new UsuarioInexistenteException("Campo invalido");
+				throw new UsuarioInexistenteException("Login inexistente");
 			}
 			
 			if (campoSenha.getText().equals(usuario.getSenha())) {
