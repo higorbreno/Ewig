@@ -37,7 +37,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ChoiceBox fx:id="usuarioEscolha" layoutX="199.0" layoutY="108.0" prefHeight="25.0" prefWidth="203.0" />
       <Label fx:id="nome" layoutX="199.0" layoutY="148.0" text="Nome:" textFill="WHITE" />
       <Label fx:id="cpf" layoutX="199.0" layoutY="165.0" text="CPF:" textFill="WHITE" />
       <Label fx:id="endereco" layoutX="199.0" layoutY="182.0" text="Endereço:" textFill="WHITE" />
@@ -50,5 +49,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <ComboBox fx:id="usuarioEscolha" layoutX="200.0" layoutY="114.0" prefHeight="25.0" prefWidth="200.0" />
    </children>
 </Pane>

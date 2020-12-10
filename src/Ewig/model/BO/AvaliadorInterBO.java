@@ -8,5 +8,4 @@ import Ewig.model.VO.UsuarioVO;
 
 public interface AvaliadorInterBO {
 	
-	public UsuarioVO buscar(VO us, int tipoPesq);
 }

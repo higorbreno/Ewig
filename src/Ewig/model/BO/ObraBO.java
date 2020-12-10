@@ -1,5 +1,5 @@
 package Ewig.model.BO;
-import java.sql.Date;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import Ewig.model.VO.AutorVO;
 import Ewig.model.VO.AvaliadorVO;
 import Ewig.model.VO.GerenteVO;
 import Ewig.model.VO.ObraVO;
-//import java.util.Calendar;
+
 
 public class ObraBO implements ObraInterBO{
 	ObraDAO obraDao = new ObraDAO();

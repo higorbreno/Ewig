@@ -66,11 +66,11 @@ public class VisualizarController implements Initializable{
 		label2.setText("CPF: " + usuario.getCpf());
 		label3.setText("Endereço: " + usuario.getEndereco());
 		label4.setText("Telefone: " + usuario.getTelefone());
-		if(usuario.getTipoAcesso() == 0) 
+		if(usuario.getTipoUsuario() == 1) 
 			label5.setText("Tipo de usuário: Gerente");
-		else if(usuario.getTipoAcesso() == 1)
+		else if(usuario.getTipoUsuario() == 2)
 			label5.setText("Tipo de usuário: Avaliador");
-		else if(usuario.getTipoAcesso() == 2)
+		else if(usuario.getTipoUsuario() == 3)
 			label5.setText("Tipo de usuário: Autor");
 		
 		label1.setVisible(true);

@@ -63,9 +63,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ChoiceBox fx:id="escolherAutor" layoutX="201.0" layoutY="258.0" opacity="0.5" prefHeight="41.0" prefWidth="200.0">
+      <ComboBox fx:id="escolherAutor" layoutX="201.0" layoutY="258.0" opacity="0.5" prefHeight="41.0" prefWidth="200.0">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></ChoiceBox>
+         </cursor>
+      </ComboBox>
    </children>
 </Pane>

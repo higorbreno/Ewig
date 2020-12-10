@@ -2,6 +2,7 @@ package Ewig.model.BO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import Ewig.model.DAO.UsuarioDAO;
@@ -10,7 +11,7 @@ import Ewig.view.Telas;
 
 public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 	
-	UsuarioDAO<VO> dao = new UsuarioDAO<UsuarioVO>();
+	UsuarioDAO<VO> dao = new UsuarioDAO<VO>();
 	
 	public void cadastrar(VO us) { //0 = GERENTE; 1 = AVALIADOR; 2 = AUTOR
 		try {
@@ -56,18 +57,20 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 	
 	public void editar(VO us) {
 		try {
+			System.out.println(us.getTipoUsuario());
 			switch (us.getTipoUsuario()) {
 				case 0:
-					dao.cadastrar(us,"gerente");
+					dao.atualizar(us,"gerente");
 				break;
 				case 1:
-					dao.cadastrar(us,"avaliador");
+					dao.atualizar(us,"avaliador");
 				break;
 				case 2:
-					dao.cadastrar(us,"autor");
+					dao.atualizar(us,"autor");
+					System.out.println("Chegou aqui");
 				break;
 				default:
-					System.out.println("Valor invalido em TipoUsuario no Mestre");
+					System.out.println("Valor invalido em TipoUsuario");
 			}
 			
 		} catch (SQLException e) {
@@ -179,25 +182,36 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 	public List<UsuarioVO> listarUsuariosSemPermissao() {
 		ResultSet rs;
 		List<UsuarioVO> list = new ArrayList<UsuarioVO>();
-		try {
-			rs = dao.listarUsuariosSemPermissao();
-			while (rs.next()) {
-				UsuarioVO elemento = new UsuarioVO();
-				
-				elemento.setId(rs.getLong(1));
-				elemento.setNome(rs.getString(2));
-				elemento.setCpf(rs.getString(3));
-				elemento.setEndereco(rs.getString(4));
-				elemento.setTelefone(rs.getString(5));
-				elemento.setLogin(rs.getString(6));
-				elemento.setSenha(rs.getString(7));
-				elemento.setPermissaoAcesso(rs.getBoolean(8));
-				
-				list.add(elemento);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+		list.addAll(listar(0));
+		list.addAll(listar(1));
+		list.addAll(listar(2));
+		
+		Iterator<UsuarioVO> iter = list.iterator();
+		while(iter.hasNext()) {
+			UsuarioVO usu = iter.next();
+			if(usu.getPermissaoAcesso() == true)
+				iter.remove();
 		}
+//		try {
+//			rs = dao.listarUsuariosSemPermissao();
+//			System.out.println(rs);
+//			while (rs.next()) {
+//				UsuarioVO elemento = new UsuarioVO();
+//				
+//				elemento.setId(rs.getLong(1));
+//				elemento.setNome(rs.getString(2));
+//				elemento.setCpf(rs.getString(3));
+//				elemento.setEndereco(rs.getString(4));
+//				elemento.setTelefone(rs.getString(5));
+//				elemento.setLogin(rs.getString(6));
+//				elemento.setSenha(rs.getString(7));
+//				elemento.setPermissaoAcesso(rs.getBoolean(8));
+//				
+//				list.add(elemento);
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 		return list;
 	}
 }

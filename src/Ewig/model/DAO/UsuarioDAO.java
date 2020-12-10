@@ -78,15 +78,23 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 		String sqlUpdate = "update " + nomeTabela + " set "
 				+ "nome = ?, "
 				+ "telefone = ?, "
-				+ "endereco = ? "
+				+ "endereco = ?, "
+				+ "permissaodeacesso = ?"
 				+ " where id = ?;";
 		PreparedStatement ptst;
 		try {
 			ptst = getConnection().prepareStatement(sqlUpdate);
+			System.out.println(usuario.getNome());
+			System.out.println(usuario.getTelefone());
+			System.out.println(usuario.getEndereco());
+			System.out.println(usuario.getPermissaoAcesso());
+			System.out.println(usuario.getId());
+			
 			ptst.setString(1, usuario.getNome());
 			ptst.setString(2, usuario.getTelefone());
 			ptst.setString(3, usuario.getEndereco());
-			ptst.setLong(4, usuario.getId());
+			ptst.setBoolean(4, usuario.getPermissaoAcesso());
+			ptst.setLong(5, usuario.getId());
 			ptst.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -154,17 +162,17 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 		return rs;
 	}
 	
-	@Override
-	public ResultSet listarUsuariosSemPermissao() throws SQLException{
-		String sqlSearch = "select * from autor where permissaoadeacesso = false union select * from avaliador where permissaodeacesso = false union select * from gerente where permissaodeacesso = false";
-		PreparedStatement ptst;
-		ResultSet rs = null;
-		try {
-			ptst = getConnection().prepareStatement(sqlSearch);
-			rs = ptst.executeQuery();
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
-		return rs;
-	}
+//	@Override
+//	public ResultSet listarUsuariosSemPermissao() throws SQLException{
+//		String sqlSearch = "select * from autor where permissaodeacesso = false union select * from avaliador where permissaodeacesso = false union select * from gerente where permissaodeacesso = false";
+//		PreparedStatement ptst;
+//		ResultSet rs = null;
+//		try {
+//			ptst = getConnection().prepareStatement(sqlSearch);
+//			rs = ptst.executeQuery();
+//		} catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return rs;
+//	}
 }
