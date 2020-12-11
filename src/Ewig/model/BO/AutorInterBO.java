@@ -1,14 +1,9 @@
 package Ewig.model.BO;
-import Ewig.model.VO.AutorVO;
+import java.util.List;
 
-public interface AutorInterBO {
-	public AutorVO buscar(AutorVO autor);
-	
-	public void cadastrar(AutorVO autor);
-	
-	public void excluir(AutorVO autor);
-	
-	public void editar(AutorVO autor);
-	
-	public void visualizarDados(AutorVO autor);
+import Ewig.model.VO.AutorVO;
+import Ewig.model.VO.UsuarioVO;
+
+public interface AutorInterBO{
+	public List<UsuarioVO> listar();
 }

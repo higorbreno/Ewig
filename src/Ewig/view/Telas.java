@@ -27,6 +27,7 @@ public class Telas extends Application{
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		
 		setPrimaryStage(primaryStage);
 		primaryStage.setTitle("Projeto Ewig");
 		primaryStage.show();

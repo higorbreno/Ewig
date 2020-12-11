@@ -54,7 +54,7 @@
          </cursor>
       </ImageView>
       <Label layoutX="239.0" layoutY="90.0" text="Insira os dados da obra:" textFill="WHITE" />
-      <Label fx:id="labelMensagem" layoutX="202.0" layoutY="304.0" text="Mensagem" textFill="RED" visible="false" />
+      <Label fx:id="labelMensagem" layoutX="202.0" layoutY="304.0" text="Mensagem" textFill="#f80101" visible="false" />
       <ImageView fx:id="botaoVoltar" fitHeight="48.0" fitWidth="81.0" layoutX="512.0" layoutY="14.0" onMouseClicked="#irMenu" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Voltar.png" />
