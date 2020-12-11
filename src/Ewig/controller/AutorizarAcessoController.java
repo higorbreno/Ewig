@@ -16,7 +16,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
@@ -29,7 +28,9 @@ public class AutorizarAcessoController implements Initializable{
 	@FXML private Label cpf;
 	@FXML private Label endereco;
 	@FXML private Label telefone;
+	@FXML private Label tipoAcesso;
 	@FXML private Label aviso;
+	
 	
 	private List<UsuarioVO> list;
 	private ObservableList<String> stringList;
@@ -55,6 +56,13 @@ public class AutorizarAcessoController implements Initializable{
 					cpf.setText("CPF: " + list.get(new_value.intValue()).getCpf());
 					endereco.setText("Endereço: " + list.get(new_value.intValue()).getEndereco());
 					telefone.setText("Telefone: " + list.get(new_value.intValue()).getTelefone());
+					if(list.get(new_value.intValue()).getTipoUsuario() == 0) {
+						tipoAcesso.setText("Tipo de Acesso: Gerente");
+					} else if (list.get(new_value.intValue()).getTipoUsuario() == 1) {
+						tipoAcesso.setText("Tipo de Acesso: Avaliador");
+					  } else if (list.get(new_value.intValue()).getTipoUsuario() == 2) {
+						  tipoAcesso.setText("Tipo de Acesso: Autor");
+					    }
 				}
 			});
 		}

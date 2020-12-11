@@ -50,7 +50,7 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <ImageView fx:id="botaoRegistrar" fitHeight="150.0" fitWidth="200.0" layoutX="202.0" layoutY="337.0" onMouseClicked="#registrar" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoRegistrar" fitHeight="150.0" fitWidth="200.0" layoutX="223.0" layoutY="340.0" onMouseClicked="#registrar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Registra-se.png" />
          </image>
@@ -59,7 +59,7 @@
          </cursor>
       </ImageView>
       <Label layoutX="78.0" layoutY="95.0" text="Dados Pessoais:" textFill="WHITE" />
-      <Label fx:id="labelMensagem" layoutX="252.0" layoutY="304.0" text="Mensagem" textAlignment="CENTER" textFill="WHITE" visible="false" />
+      <Label fx:id="labelMensagem" layoutX="249.0" layoutY="303.0" text="Mensagem" textAlignment="JUSTIFY" textFill="WHITE" visible="false" />
       <ImageView fx:id="botaoVoltar" fitHeight="48.0" fitWidth="81.0" layoutX="512.0" layoutY="14.0" onMouseClicked="#irSair" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Voltar.png" />

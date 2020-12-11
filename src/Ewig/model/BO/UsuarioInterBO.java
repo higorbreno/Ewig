@@ -6,7 +6,7 @@ import java.util.List;
 import Ewig.model.VO.UsuarioVO;
 
 public interface UsuarioInterBO<VO extends UsuarioVO> {
-	public void cadastrar(VO us);
+	public void cadastrar(VO us) throws Exception;
 	public void excluir(VO us);
 	public void editar(VO us);
 	public List<UsuarioVO> listar(int tipoPesq);

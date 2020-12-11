@@ -4,14 +4,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-
 import Ewig.exception.CampoInvalidoException;
-import Ewig.model.BO.AutorBO;
-import Ewig.model.BO.ObraBO;
+import Ewig.exception.RepitaSenhaException;
 import Ewig.model.BO.UsuarioBO;
-import Ewig.model.VO.AutorVO;
-import Ewig.model.VO.AvaliadorVO;
-import Ewig.model.VO.GerenteVO;
 import Ewig.model.VO.UsuarioVO;
 import Ewig.view.Telas;
 import javafx.collections.FXCollections;
@@ -40,6 +35,7 @@ public class RegistrarController implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		mensagem("");
 		atualizarLista();
 	}
 	
@@ -55,11 +51,11 @@ public class RegistrarController implements Initializable {
 	private void mensagem(String m) {
 		labelMensagem.setText(m);
 		labelMensagem.setVisible(true);
-		labelMensagem.setTextFill(Color.WHITE);
+		labelMensagem.setTextFill(Color.RED);
 	}
 	
-	private void verificarCampo(TextField m) {
-		if (m.getText() == null || m.getText().isEmpty()) {
+	private void verificarCampo(TextField a) {
+		if (a.getText().isEmpty()) {
 			mensagem("Complete todos os campos.");
 			throw new CampoInvalidoException("Campo invalido");
 		}
@@ -75,18 +71,29 @@ public class RegistrarController implements Initializable {
 			verificarCampo(campoSenha);
 			verificarCampo(campoRepitaSenha);
 			
+			if (!campoSenha.getText().equals(campoRepitaSenha.getText())) {
+				mensagem("As senhas não são as mesmas");
+				throw new RepitaSenhaException("'Repita senha' diferente de 'Senha'");
+			}
 			
+			mensagem("");
 			
-//			UsuarioVO u = new UsuarioVO();
-//			
-//			u.setNome(campoNome.getText());
-//			u.setCpf(campoCpf.getText());
-//			u.setEndereco(campoEndereco.getText());
-//			u.setTelefone(campoTelefone.getText());
-//			u.setLogin(campoLogin.getText());
-//			u.setSenha(campoSenha.getText());
-						
+			UsuarioVO u = new UsuarioVO();
 			
+			u.setNome(campoNome.getText());
+			u.setCpf(campoCpf.getText());
+			u.setEndereco(campoEndereco.getText());
+			u.setTelefone(campoTelefone.getText());
+			u.setTipoUsuario(escolherTipoAcesso.getSelectionModel().getSelectedIndex());
+			u.setLogin(campoLogin.getText());
+			u.setSenha(campoSenha.getText());
+			
+			UsuarioBO<UsuarioVO> uBO = new UsuarioBO<UsuarioVO>();
+			uBO.cadastrar(u);
+			
+			VisualizarController.tipoVisualizacao = 2;
+			VisualizarController.usuario = u;
+			Telas.telaVisualizar();
 			
 		} catch (Exception e) {
 			e.printStackTrace();

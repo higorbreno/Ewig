@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import Ewig.exception.LoginExistenteException;
 import Ewig.model.DAO.UsuarioDAO;
 import Ewig.model.VO.UsuarioVO;
 import Ewig.view.Telas;
@@ -13,11 +14,12 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 	
 	UsuarioDAO<VO> dao = new UsuarioDAO<VO>();
 	
-	public void cadastrar(VO us) { //0 = GERENTE; 1 = AVALIADOR; 2 = AUTOR
+	public void cadastrar(VO us) throws Exception { //0 = GERENTE; 1 = AVALIADOR; 2 = AUTOR
 		try {
-			switch (us.getTipoUsuario()) {
+			if (buscar(us,0) == null) {
+				switch (us.getTipoUsuario()) {
 				case 0:
-					dao.cadastrar(us,"gerente");
+					dao.cadastrar(us,"gerente");				
 				break;
 				case 1:
 					dao.cadastrar(us,"avaliador");
@@ -26,9 +28,12 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 					dao.cadastrar(us,"autor");
 				break;
 				default:
-					System.out.println("Valor invalido em TipoUsuario no Mestre");
+					System.out.println("Valor invalido em TipoUsuario no Mestre, problema no UsuarioBO.cadastrar");
+				}
 			}
-			
+			else {
+				throw new LoginExistenteException("O login já existe");
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -47,7 +52,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 					dao.excluir(us,"autor");
 				break;
 				default:
-					System.out.println("Valor invalido em TipoUsuario no Mestre");
+					System.out.println("Valor invalido em TipoUsuario no Mestre, problema no UsuarioBO.excluir");
 			}
 			
 		} catch (SQLException e) {
@@ -67,10 +72,9 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 				break;
 				case 2:
 					dao.atualizar(us,"autor");
-					System.out.println("Chegou aqui");
 				break;
 				default:
-					System.out.println("Valor invalido em TipoUsuario");
+					System.out.println("Valor invalido em TipoUsuario no Mestre, problema no UsuarioBO.editar");
 			}
 			
 		} catch (SQLException e) {

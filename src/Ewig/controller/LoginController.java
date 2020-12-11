@@ -21,7 +21,6 @@ public class LoginController {
 	
 	public void autenticar() {
 		try {
-			mensagem("");
 			if (campoLogin.getText().isEmpty()) {
 				mensagem("Digite o login");
 				throw new CampoInvalidoException("Campo login invalido");

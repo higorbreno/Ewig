@@ -10,23 +10,23 @@ import Ewig.model.VO.UsuarioVO;
 public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements UsuarioInterDAO<VO>{
 	@Override
 	public void cadastrar(UsuarioVO usuario, String nomeTabela) throws SQLException{
-		String sqlVerifyLogin = "select login from autor union select login from avaliador union select login from gerente";
-		PreparedStatement ptst;
-		ResultSet rs;
-		String login = usuario.getLogin();
-		
-		try {
-			ptst = getConnection().prepareStatement(sqlVerifyLogin);
-			rs = ptst.executeQuery();
-			while(rs.next()) {
-				if(login.equals(rs.getString("login"))){
-					System.out.println("Login já cadastrado, não foi possível realizar o novo cadastro.");
-					return;
-				}
-			}
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
+//		String sqlVerifyLogin = "select login from autor union select login from avaliador union select login from gerente";
+//		PreparedStatement ptst;
+//		ResultSet rs;
+//		String login = usuario.getLogin();
+//		
+//		try {
+//			ptst = getConnection().prepareStatement(sqlVerifyLogin);
+//			rs = ptst.executeQuery();
+//			while(rs.next()) {
+//				if(login.equals(rs.getString("login"))){
+//					System.out.println("Login já cadastrado, não foi possível realizar o novo cadastro.");
+//					return;
+//				}
+//			}
+//		} catch (SQLException e1) {
+//			e1.printStackTrace();
+//		}
 		
 		String sqlInsert = "insert into " + nomeTabela + " (nome, cpf, endereco, telefone, login, senha, permissaodeacesso) values (?, ?, ?, ?, ?, ?, ?)";
 		PreparedStatement ptst2;

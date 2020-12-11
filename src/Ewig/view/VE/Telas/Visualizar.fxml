@@ -27,7 +27,7 @@
             <Image url="@../Imagens/Marcador.png" />
          </image>
       </ImageView>
-      <Label layoutX="434.0" layoutY="57.0" text="Visualizar" textFill="WHITE" />
+      <Label fx:id="rotulo" layoutX="434.0" layoutY="57.0" text="Visualizar" textFill="WHITE" />
       <ImageView fx:id="botaoVoltar" fitHeight="48.0" fitWidth="81.0" layoutX="512.0" layoutY="14.0" onMouseClicked="#irVoltarBuscar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Voltar.png" />
@@ -47,5 +47,6 @@
       <Label fx:id="label7" layoutX="193.0" layoutY="259.0" text="Label 7" textFill="WHITE" />
       <Label layoutX="282.0" layoutY="126.0" text="Dados:" textFill="WHITE" />
       <Label fx:id="label8" layoutX="193.0" layoutY="276.0" text="Label 8" textFill="WHITE" />
+      <Label fx:id="labelNovoUsu" layoutX="65.0" layoutY="97.0" text="Seu cadastro foi realizado com sucesso, aguarde um dos Gerentes autorizarem o seu acesso" textFill="WHITE" visible="false" />
    </children>
 </Pane>
