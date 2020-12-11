@@ -61,20 +61,23 @@ public class ObraBO implements ObraInterBO{
 				obra.setGenero(rs.getString("genero"));
 				switch(rs.getInt("status")) {
 				case 0:
-					obra.setStatus("Em avaliação");
+					obra.setStatus("Em Avaliação");
 					break;
 				case 1:
-					obra.setStatus("Aprovada");
+					obra.setStatus("Aprovado");
 					break;
 				case 2:
-					obra.setStatus("Rejeitada");
+					obra.setStatus("Rejeitado");
 					break;
 				default:
-					obra.setStatus("Em avaliação");
+					obra.setStatus("Em Avaliação");
 					break;
 				}
 				Calendar cal = Calendar.getInstance();
-				cal.setTime(rs.getDate("dataavaliacao"));
+				if(rs.getDate("dataavaliacao") != null)
+					cal.setTime(rs.getDate("dataavaliacao"));
+				else
+					cal = null;
 				obra.setDataAvaliacao(cal);
 				
 				AvaliadorVO av = new AvaliadorVO();

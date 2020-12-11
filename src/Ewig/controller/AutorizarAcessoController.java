@@ -29,12 +29,17 @@ public class AutorizarAcessoController implements Initializable{
 	@FXML private Label cpf;
 	@FXML private Label endereco;
 	@FXML private Label telefone;
+	@FXML private Label aviso;
 	
 	private List<UsuarioVO> list;
 	private ObservableList<String> stringList;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		atualizarLista();
+	}
+	
+	private void atualizarLista() {
 		if(usuarioEscolha != null) {
 			list = usuBo.listarUsuariosSemPermissao();
 			List<String> stList =  new ArrayList<String>();
@@ -70,6 +75,8 @@ public class AutorizarAcessoController implements Initializable{
 		
 		us.setPermissaoAcesso(true);
 		usuBo.editar(us);
-		irVoltarMenu();
+		aviso.setText("Usuário autorizado");
+		aviso.setVisible(true);
+		atualizarLista();
 	}
 }

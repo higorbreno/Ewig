@@ -172,6 +172,17 @@ public class UsuarioVO{
 		
 	}
 	
+	public UsuarioVO(UsuarioVO usu) {
+		setId(usu.getId());
+		setLogin(usu.getLogin());
+		setSenha(usu.getSenha());
+		setTipoUsuario(usu.getTipoUsuario());
+		setNome(usu.getNome());
+		setCpf(usu.getCpf());
+		setEndereco(usu.getEndereco());
+		setTelefone(usu.getTelefone());
+	}
+	
 	public UsuarioVO (String login, String senha, int tipoAcesso, String nome, String cpf, String endereco, String telefone) {
 		setLogin(login);
 		setSenha(senha);

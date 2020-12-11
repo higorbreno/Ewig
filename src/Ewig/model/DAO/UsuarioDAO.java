@@ -99,7 +99,6 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 	@Override

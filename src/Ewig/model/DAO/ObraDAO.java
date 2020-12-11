@@ -74,7 +74,13 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 			ptst.setString(1, obra.getTitulo());
 			ptst.setInt(2, obra.getAno());
 			ptst.setString(3, obra.getGenero());
-			ptst.setInt(4, 0);
+			System.out.println(obra.getStatus());
+			if(obra.getStatus().contentEquals("Em Avaliação"))
+				ptst.setInt(4, 0);
+			else if(obra.getStatus().contentEquals("Aprovado"))
+				ptst.setInt(4, 1);
+			else
+				ptst.setInt(4, 2);
 			ptst.setLong(5, obra.getAvaliador().getId());
 			ptst.setLong(6, obra.getAutor().getId());
 			ptst.setLong(7, obra.getGerente().getId());
