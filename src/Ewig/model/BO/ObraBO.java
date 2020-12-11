@@ -104,17 +104,17 @@ public class ObraBO implements ObraInterBO{
 				}
 				obra.setAutor(au);
 				
-				GerenteVO ge = new GerenteVO();
-				ge.setId(rs.getLong("idgerente"));
-				GerenteDAO geDao = new GerenteDAO();
-				ResultSet geRs = geDao.buscarPorId(ge);
-				if(auRs.next()) {
-					ge.setNome(geRs.getString("nome"));
-					ge.setCpf(geRs.getString("cpf"));
-					ge.setEndereco(geRs.getString("endereco"));
-					ge.setTelefone(geRs.getString("telefone"));
-				}
-				obra.setGerente(ge);
+//				GerenteVO ge = new GerenteVO();
+//				ge.setId(rs.getLong("idgerente"));
+//				GerenteDAO geDao = new GerenteDAO();
+//				ResultSet geRs = geDao.buscarPorId(ge);
+//				if(auRs.next()) {
+//					ge.setNome(geRs.getString("nome"));
+//					ge.setCpf(geRs.getString("cpf"));
+//					ge.setEndereco(geRs.getString("endereco"));
+//					ge.setTelefone(geRs.getString("telefone"));
+//				}
+//				obra.setGerente(ge);
 				
 				obras.add(obra);
 			}

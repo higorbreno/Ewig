@@ -49,7 +49,6 @@ public class VisualizarController implements Initializable{
 			label7.setText("Avaliador: Obra sem avaliador");
 		else
 			label7.setText("Avaliador: " + obra.getAvaliador().getNome());
-		label8.setText("Gerente: " + obra.getGerente().getNome());
 		
 		label1.setVisible(true);
 		label2.setVisible(true);
@@ -58,7 +57,6 @@ public class VisualizarController implements Initializable{
 		label5.setVisible(true);
 		label6.setVisible(true);
 		label7.setVisible(true);
-		label8.setVisible(true);
 	}
 	
 	private void mostrarDadosUsuario() {

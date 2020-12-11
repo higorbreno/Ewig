@@ -11,7 +11,6 @@ public class ObraVO{
 	private Calendar dataAvaliacao;
 	private AutorVO autor;
 	private AvaliadorVO avaliador;
-	private GerenteVO gerente;
 	
 	public ObraVO() {
 		
@@ -24,7 +23,6 @@ public class ObraVO{
 		setStatus(status);
 		setAutor(autor);
 		setAvaliador(avaliador);
-		setGerente(gerente);
 	}
 	
 	//metodos get e set
@@ -107,18 +105,6 @@ public class ObraVO{
 	public void setAvaliador(AvaliadorVO avaliador) {
 		if (avaliador != null) {
 			this.avaliador = avaliador;
-		}	
-		else {
-			System.out.println("Valor invalido");
-		}	
-	}
-	
-	public GerenteVO getGerente() {
-		return gerente;
-	}
-	public void setGerente(GerenteVO gerente) {
-		if (avaliador != null) {
-			this.gerente = gerente;
 		}	
 		else {
 			System.out.println("Valor invalido");
