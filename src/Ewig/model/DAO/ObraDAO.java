@@ -7,13 +7,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.Calendar;
 
 public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 
 	@Override
 	public void cadastrar(ObraVO obra) throws SQLException {
-		String sqlInsert = "insert into Obra (titulo, ano, genero, status, idavaliador, idautor, idgerente) values (?, ?, ?, ?, ?, ?, ?)";
+		String sqlInsert = "insert into Obra (titulo, ano, genero, status, idavaliador, idautor) values (?, ?, ?, ?, ?, ?)";
 		PreparedStatement ptst;
 		try {
 			ptst = getConnection().prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
@@ -21,9 +22,12 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 			ptst.setInt(2, obra.getAno());
 			ptst.setString(3,  obra.getGenero());
 			ptst.setInt(4, 0);
-			ptst.setLong(5, obra.getAvaliador().getId());
+			if (obra.getAvaliador() == null) {
+				ptst.setNull(5, Types.BIGINT);
+			} else {
+				ptst.setLong(5,obra.getAvaliador().getId());
+			}
 			ptst.setLong(6, obra.getAutor().getId());
-			ptst.setLong(7, obra.getGerente().getId());
 			int affectedRolls = ptst.executeUpdate();
 			
 			if(affectedRolls == 0) {
