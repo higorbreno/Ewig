@@ -50,7 +50,7 @@ public class AvaliarController implements Initializable{
 			Iterator<ObraVO> iter = list.iterator();
 			while(iter.hasNext()) {
 				ObraVO ob = iter.next();
-				if(ob.getStatus() != "Em Avaliação") {
+				if(ob.getStatus() != "Em Avaliação" || ob.getAvaliador().getId() != Telas.Mestre.getId()) {
 					iter.remove();
 				} else {
 					stList.add(ob.getTitulo());
