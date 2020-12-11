@@ -1,18 +1,15 @@
 package Ewig.controller;
 
-import Ewig.model.VO.ObraVO;
 import Ewig.view.Telas;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
 public class DefinirAvaliadorController {
-	@FXML private ChoiceBox escolherObra;
-	@FXML private ChoiceBox escolherAvaliador;
+	@FXML private ComboBox escolherObra;
+	@FXML private ComboBox escolherAvaliador;
 	@FXML private Label labelAutorObra;
 	@FXML private Label labelAnoObra;
-	@FXML private Label labelAvaliadas;
-	@FXML private Label labelAvaliar;
 	@FXML private Label labelMensagem;
 	
 	public void definirAvaliador() {		
@@ -24,9 +21,17 @@ public class DefinirAvaliadorController {
 			labelMensagem.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
-			labelMensagem.setText("Erro en definir Avaliador.");
+			labelMensagem.setText("Erro em definir Avaliador.");
 			labelMensagem.setVisible(true);
 		}
+	}
+	
+	private void atualizarObras() {
+		
+	}
+	
+	private void atualizarAvaliadores() {
+		
 	}
 	
 	public void dadosObra() {
@@ -34,13 +39,6 @@ public class DefinirAvaliadorController {
 		labelAutorObra.setVisible(true);
 		labelAnoObra.setText("Pegar do BD");
 		labelAnoObra.setVisible(true);
-	}
-	
-	public void dadosAvaliador() {
-		labelAvaliadas.setText("Pegar do BD");
-		labelAvaliadas.setVisible(true);
-		labelAvaliar.setText("Pegar do BD");
-		labelAvaliar.setVisible(true);
 	}
 	
 	public void irMenu() {
