@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import Ewig.view.Telas;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 public class MenuController implements Initializable{
@@ -15,6 +16,8 @@ public class MenuController implements Initializable{
 	@FXML private ImageView botaoDefinir;
 	@FXML private ImageView botaoGerar;
 	@FXML private ImageView botaoAutorizar;
+	@FXML private Label indentificacaoUsu;
+	@FXML private Label indentificacaoTipo;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -22,11 +25,13 @@ public class MenuController implements Initializable{
 		
 			case 0: // gerente
 				mostrarB(botaoBuscar);
-				mostrarB(botaoAvaliar);
+				esconderB(botaoAvaliar);
 				mostrarB(botaoCadastrar);
 				mostrarB(botaoDefinir);
 				mostrarB(botaoGerar);
 				mostrarB(botaoAutorizar);
+				indentificacaoUsu.setText(Telas.Mestre.getLogin());
+				indentificacaoTipo.setText("Gerente");
 				break;
 				
 			case 1: // avaliador
@@ -36,6 +41,9 @@ public class MenuController implements Initializable{
 				esconderB(botaoDefinir);
 				esconderB(botaoGerar);
 				esconderB(botaoAutorizar);
+				indentificacaoUsu.setText(Telas.Mestre.getLogin());
+				indentificacaoTipo.setText("Avaliador");
+				//indentificacaoUsu.setText("Usuario " +Telas.Mestre.getLogin()+ "; Tipo de Acesso: Avaliador.");
 				break;
 				
 			case 2: // autor
@@ -45,6 +53,9 @@ public class MenuController implements Initializable{
 				esconderB(botaoDefinir);
 				esconderB(botaoGerar);
 				esconderB(botaoAutorizar);
+				indentificacaoUsu.setText(Telas.Mestre.getLogin());
+				indentificacaoTipo.setText("Autor");
+				//indentificacaoUsu.setText("Usuario " +Telas.Mestre.getLogin()+ "; Tipo de Acesso: Autor.");
 				break;
 				
 			default:
