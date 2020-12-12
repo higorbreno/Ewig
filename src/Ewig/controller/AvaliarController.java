@@ -52,10 +52,10 @@ public class AvaliarController implements Initializable{
 				} else {
 					stList.add(ob.getTitulo());
 				}
-				stringList = FXCollections.observableArrayList(stList);
-				
-				escolherObra.setItems(stringList);
 			}
+			stringList = FXCollections.observableArrayList(stList);
+			
+			escolherObra.setItems(stringList);
 		}
 	}
 	
@@ -82,7 +82,11 @@ public class AvaliarController implements Initializable{
 			labelMensagem.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
-			labelMensagem.setText("Ocorreu um erro na avaliação.");
+			if(e instanceof ArrayIndexOutOfBoundsException) {
+				labelMensagem.setText("Nenhuma obra selecionada");
+			} else {
+				labelMensagem.setText("Ocorreu um erro na avaliação.");
+			}
 			labelMensagem.setVisible(true);
 		}
 	}

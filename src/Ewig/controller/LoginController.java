@@ -1,5 +1,7 @@
 package Ewig.controller;
 
+import java.util.List;
+
 import Ewig.exception.CampoVazioException;
 import Ewig.exception.UsuarioInexistenteException;
 import Ewig.model.BO.UsuarioBO;
@@ -35,7 +37,11 @@ public class LoginController {
 			
 			UsuarioBO<UsuarioVO> bo = new UsuarioBO<UsuarioVO>();
 			
-			UsuarioVO usuario = bo.buscar(vo,0);
+			List<UsuarioVO> usuarioList = bo.buscar(vo,0);
+			UsuarioVO usuario = null;
+			if(usuarioList.size() > 0)
+				usuario = usuarioList.get(0);
+			Telas.Mestre = usuario;
 			
 			if(usuario == null) {
 				mensagem("Login inexistente.");

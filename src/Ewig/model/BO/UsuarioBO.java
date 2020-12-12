@@ -129,53 +129,60 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 	}
 	
 	
-	public UsuarioVO buscar(VO us, int tipoPesq) throws SQLException { 
+	public List<UsuarioVO> buscar(VO us, int tipoPesq){ 
 		List<UsuarioVO> listaVO = new ArrayList<UsuarioVO>();	
 		
 			switch (tipoPesq) {
 				case 0: // busca por LOGIN
 					listaVO.addAll(listar(3));
-					for (UsuarioVO u : listaVO) {
-						if (u.getLogin().equals(us.getLogin())) {
-							return u;
-						}
+					Iterator<UsuarioVO> iter = listaVO.iterator();
+					while(iter.hasNext()) {
+						UsuarioVO u = iter.next();
+						if(!u.getLogin().contentEquals(us.getLogin()))
+							iter.remove();
 					}
 					break;
 				case 1: // busca por NOME
 					listaVO.addAll(listar(3));
-					for (UsuarioVO u : listaVO) {
-						if (u.getNome().equals(us.getNome())) {
-							return u;
-						}
+					Iterator<UsuarioVO> iter2 = listaVO.iterator();
+					while(iter2.hasNext()) {
+						UsuarioVO u = iter2.next();
+						if(!u.getNome().contentEquals(us.getNome()))
+							iter2.remove();
 					}
 					break;
 				case 2: // busca por ID na tabela GERENTE
 					listaVO.addAll(listar(0));
-					for (UsuarioVO u : listaVO) {
-						if (u.getTipoUsuario() == 0 && u.getId().equals(us.getId())) {
-							return u;
-						}
+					Iterator<UsuarioVO> iter3 = listaVO.iterator();
+					while(iter3.hasNext()) {
+						UsuarioVO u = iter3.next();
+						if(u.getId() != us.getId())
+							iter3.remove();
 					}	
 					break;
 				case 3: // busca por ID na tabela AVALIADOR
 					listaVO.addAll(listar(1));
-					for (UsuarioVO u : listaVO) {
-						if (u.getTipoUsuario() == 1 && u.getId().equals(us.getId())) {
-							return u;} 
-						break;
-					}	
+					Iterator<UsuarioVO> iter4 = listaVO.iterator();
+					while(iter4.hasNext()) {
+						UsuarioVO u = iter4.next();
+						if(u.getId() != us.getId())
+							iter4.remove();
+					}
+					break;
 				case 4: // busca por ID na tabela AUTOR
 					listaVO.addAll(listar(2));
-					for (UsuarioVO u : listaVO) {
-						if (u.getTipoUsuario() == 2 && u.getId().equals(us.getId())) {
-							return u;} 
-						break;
+					Iterator<UsuarioVO> iter5 = listaVO.iterator();
+					while(iter5.hasNext()) {
+						UsuarioVO u = iter5.next();
+						if(u.getId() != us.getId())
+							iter5.remove();
 					}
+					break;
 				default: 
 					System.out.println("Parametro invalido na chamada do metodo buscar() de UsuarioBO.java");
 			}
-		return null;
-	}	 
+		return listaVO;
+	}
 	
 	
 	public List<UsuarioVO> listarUsuariosSemPermissao() {

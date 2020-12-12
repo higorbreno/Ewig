@@ -10,6 +10,6 @@ public interface UsuarioInterBO<VO extends UsuarioVO> {
 	public void excluir(VO us);
 	public void editar(VO us);
 	public List<UsuarioVO> listar(int tipoPesq);
-	public UsuarioVO buscar(VO us, int tipoPesq) throws SQLException;
+	public List<UsuarioVO> buscar(VO us, int tipoPesq) throws SQLException;
 	public List<UsuarioVO> listarUsuariosSemPermissao();
 }
