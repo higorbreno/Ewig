@@ -4,8 +4,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import Ewig.exception.CampoInvalidoException;
-import Ewig.exception.RepitaSenhaException;
+
+import Ewig.exception.AtributoInvalidoException;
+import Ewig.exception.CampoVazioException;
+import Ewig.exception.LoginExistenteException;
 import Ewig.model.BO.UsuarioBO;
 import Ewig.model.VO.UsuarioVO;
 import Ewig.view.Telas;
@@ -54,11 +56,12 @@ public class RegistrarController implements Initializable {
 		labelMensagem.setTextFill(Color.RED);
 	}
 	
-	private void verificarCampo(TextField a) {
+	private void verificarCampo(TextField a) throws CampoVazioException{
 		if (a.getText().isEmpty()) {
 			mensagem("Complete todos os campos.");
-			throw new CampoInvalidoException("Campo invalido");
+			throw new CampoVazioException("Complete todos os campos.");
 		}
+		else return;
 	}
 	
 	public void registrar() {
@@ -72,32 +75,39 @@ public class RegistrarController implements Initializable {
 			verificarCampo(campoRepitaSenha);
 			
 			if (!campoSenha.getText().equals(campoRepitaSenha.getText())) {
-				mensagem("As senhas não são as mesmas");
-				throw new RepitaSenhaException("'Repita senha' diferente de 'Senha'");
+				mensagem("As senhas não são iguais");
 			}
-			
-			mensagem("");
-			
-			UsuarioVO u = new UsuarioVO();
-			
-			u.setNome(campoNome.getText());
-			u.setCpf(campoCpf.getText());
-			u.setEndereco(campoEndereco.getText());
-			u.setTelefone(campoTelefone.getText());
-			u.setTipoUsuario(escolherTipoAcesso.getSelectionModel().getSelectedIndex());
-			u.setLogin(campoLogin.getText());
-			u.setSenha(campoSenha.getText());
-			
-			UsuarioBO<UsuarioVO> uBO = new UsuarioBO<UsuarioVO>();
-			uBO.cadastrar(u);
-			
-			VisualizarController.tipoVisualizacao = 2;
-			VisualizarController.usuario = u;
-			Telas.telaVisualizar();
-			
-		} catch (Exception e) {
+			else {			
+				UsuarioVO u = new UsuarioVO();
+				u.setNome(campoNome.getText());
+				u.setCpf(campoCpf.getText());
+				u.setEndereco(campoEndereco.getText());
+				u.setTelefone(campoTelefone.getText());
+				u.setTipoUsuario(escolherTipoAcesso.getSelectionModel().getSelectedIndex());
+				u.setLogin(campoLogin.getText());
+				u.setSenha(campoSenha.getText());
+
+				UsuarioBO<UsuarioVO> uBO = new UsuarioBO<UsuarioVO>();
+				uBO.cadastrar(u);
+				
+				//if(uBO.buscar(u, 0) != null) {
+					VisualizarController.tipoVisualizacao = 2;
+					VisualizarController.usuario = u;
+					Telas.telaVisualizar();	
+				//}
+				//else mensagem("Houve um problema grave");
+			}
+		} catch (LoginExistenteException e) {
+			System.out.println(e.getMessage());
 			e.printStackTrace();
-		}
+			mensagem("Login já existe, tente outro Login");
+		} catch (AtributoInvalidoException e) {
+			e.printStackTrace();
+			mensagem(e.getMessage());
+		} 
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+		}	
 	}
 
 	public void irSair() {

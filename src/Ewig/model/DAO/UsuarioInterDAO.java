@@ -13,5 +13,4 @@ public interface UsuarioInterDAO<VO extends UsuarioVO> {
 	public abstract ResultSet buscarPorNome(VO vo, String nomeTabela) throws SQLException;
 	public abstract ResultSet buscarPorId(VO vo, String nomeTabela) throws SQLException;
 	public abstract ResultSet buscarPorLogin(VO vo, String nomeTabela) throws SQLException;
-//	public abstract ResultSet listarUsuariosSemPermissao() throws SQLException;
 }

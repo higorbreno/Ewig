@@ -5,38 +5,38 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import Ewig.exception.AtributoInvalidoException;
 import Ewig.exception.LoginExistenteException;
 import Ewig.model.DAO.UsuarioDAO;
 import Ewig.model.VO.UsuarioVO;
-import Ewig.view.Telas;
 
 public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 	
 	UsuarioDAO<VO> dao = new UsuarioDAO<VO>();
 	
-	public void cadastrar(VO us) throws Exception { //0 = GERENTE; 1 = AVALIADOR; 2 = AUTOR
-		try {
+	public void cadastrar(VO us) throws LoginExistenteException { //0 = GERENTE; 1 = AVALIADOR; 2 = AUTOR
+		try {	
 			if (buscar(us,0) == null) {
-				switch (us.getTipoUsuario()) {
-				case 0:
-					dao.cadastrar(us,"gerente");				
-				break;
-				case 1:
-					dao.cadastrar(us,"avaliador");
-				break;
-				case 2:
-					dao.cadastrar(us,"autor");
-				break;
-				default:
-					System.out.println("Valor invalido em TipoUsuario no Mestre, problema no UsuarioBO.cadastrar");
-				}
-			}
-			else {
-				throw new LoginExistenteException("O login já existe");
-			}
-		} catch (SQLException e) {
+
+					switch (us.getTipoUsuario()) {
+					case 0:
+						dao.cadastrar(us,"gerente");				
+					break;
+					case 1:
+						dao.cadastrar(us,"avaliador");
+					break;
+					case 2:
+						dao.cadastrar(us,"autor");
+					break;
+					default:
+						System.out.println("Valor invalido em TipoUsuario no Mestre, problema no UsuarioBO.cadastrar");
+					}
+			}		
+			else throw new LoginExistenteException("O login já existe");
+		} catch (SQLException e){
 			e.printStackTrace();
-		}
+			System.out.println("SQLException em UsuarioBO.cadastrar");
+		}	
 	}
 
 	public void excluir(VO us) {
@@ -122,7 +122,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 			
 				listaVO.add(elemento);
 			}
-		} catch (SQLException e) {
+		} catch (SQLException | AtributoInvalidoException e) {
 			e.printStackTrace();	
 		}
 		return listaVO;
@@ -137,7 +137,6 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 					listaVO.addAll(listar(3));
 					for (UsuarioVO u : listaVO) {
 						if (u.getLogin().equals(us.getLogin())) {
-							Telas.Mestre = u;
 							return u;
 						}
 					}
@@ -146,7 +145,6 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 					listaVO.addAll(listar(3));
 					for (UsuarioVO u : listaVO) {
 						if (u.getNome().equals(us.getNome())) {
-							Telas.Mestre = u;
 							return u;
 						}
 					}
@@ -155,7 +153,6 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 					listaVO.addAll(listar(0));
 					for (UsuarioVO u : listaVO) {
 						if (u.getTipoUsuario() == 0 && u.getId().equals(us.getId())) {
-							Telas.Mestre = u;
 							return u;
 						}
 					}	
@@ -164,7 +161,6 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 					listaVO.addAll(listar(1));
 					for (UsuarioVO u : listaVO) {
 						if (u.getTipoUsuario() == 1 && u.getId().equals(us.getId())) {
-							Telas.Mestre = u;
 							return u;} 
 						break;
 					}	
@@ -172,7 +168,6 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 					listaVO.addAll(listar(2));
 					for (UsuarioVO u : listaVO) {
 						if (u.getTipoUsuario() == 2 && u.getId().equals(us.getId())) {
-							Telas.Mestre = u;
 							return u;} 
 						break;
 					}

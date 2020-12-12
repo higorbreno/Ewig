@@ -9,28 +9,9 @@ import Ewig.model.VO.UsuarioVO;
 
 public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements UsuarioInterDAO<VO>{
 	@Override
-	public void cadastrar(UsuarioVO usuario, String nomeTabela) throws SQLException{
-//		String sqlVerifyLogin = "select login from autor union select login from avaliador union select login from gerente";
-//		PreparedStatement ptst;
-//		ResultSet rs;
-//		String login = usuario.getLogin();
-//		
-//		try {
-//			ptst = getConnection().prepareStatement(sqlVerifyLogin);
-//			rs = ptst.executeQuery();
-//			while(rs.next()) {
-//				if(login.equals(rs.getString("login"))){
-//					System.out.println("Login já cadastrado, não foi possível realizar o novo cadastro.");
-//					return;
-//				}
-//			}
-//		} catch (SQLException e1) {
-//			e1.printStackTrace();
-//		}
-		
+	public void cadastrar(UsuarioVO usuario, String nomeTabela) throws SQLException{		
 		String sqlInsert = "insert into " + nomeTabela + " (nome, cpf, endereco, telefone, login, senha, permissaodeacesso) values (?, ?, ?, ?, ?, ?, ?)";
 		PreparedStatement ptst2;
-		try {
 			ptst2 = getConnection().prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
 			ptst2.setString(1, usuario.getNome());
 			ptst2.setString(2, usuario.getCpf());
@@ -52,24 +33,15 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 			} else {
 				System.out.println("Falha ao obter Id de usuário cadastrado.");
 			}
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 	@Override
 	public void excluir(UsuarioVO usuario, String nomeTabela) throws SQLException {
 		String sqlDelete = "delete from " + nomeTabela + " where id = ?";
 		PreparedStatement ptst;
-		try {
 		ptst = getConnection().prepareStatement(sqlDelete);
 		ptst.setLong(1, usuario.getId());
 		ptst.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
 		System.out.println("Deleção executada com sucesso.");
 	}
 
@@ -82,7 +54,7 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 				+ "permissaodeacesso = ?"
 				+ " where id = ?;";
 		PreparedStatement ptst;
-		try {
+
 			ptst = getConnection().prepareStatement(sqlUpdate);
 			System.out.println(usuario.getNome());
 			System.out.println(usuario.getTelefone());
@@ -96,9 +68,6 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 			ptst.setBoolean(4, usuario.getPermissaoAcesso());
 			ptst.setLong(5, usuario.getId());
 			ptst.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
 	}
 
 	@Override
@@ -107,12 +76,8 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 		PreparedStatement ptst;
 		ResultSet rs = null;
 		
-		try {
-			ptst = getConnection().prepareStatement(sqlSelect);
-			rs = ptst.executeQuery();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		ptst = getConnection().prepareStatement(sqlSelect);
+		rs = ptst.executeQuery();
 		return rs;
 	}
 
@@ -121,13 +86,9 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 		String sqlSearch = "select * from " + nomeTabela + " where nome like ?";
 		PreparedStatement ptst;
 		ResultSet rs = null;
-		try {
-			ptst = getConnection().prepareStatement(sqlSearch);
-			ptst.setString(1, vo.getNome() + "%");
-			rs = ptst.executeQuery();
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
+		ptst = getConnection().prepareStatement(sqlSearch);
+		ptst.setString(1, vo.getNome() + "%");
+		rs = ptst.executeQuery();
 		return rs;
 	}
 
@@ -136,13 +97,10 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 		String sqlSearch = "select * from " + nomeTabela + " where id = ?";
 		PreparedStatement ptst;
 		ResultSet rs = null;
-		try {
-			ptst = getConnection().prepareStatement(sqlSearch);
-			ptst.setLong(1, vo.getId());
-			rs = ptst.executeQuery();
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
+
+		ptst = getConnection().prepareStatement(sqlSearch);
+		ptst.setLong(1, vo.getId());
+		rs = ptst.executeQuery();
 		return rs;
 	}
 
@@ -151,27 +109,10 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 		String sqlSearch = "select * from " + nomeTabela + " where login like ?";
 		PreparedStatement ptst;
 		ResultSet rs = null;
-		try {
-			ptst = getConnection().prepareStatement(sqlSearch);
-			ptst.setString(1, vo.getLogin());
-			rs = ptst.executeQuery();
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
+		
+		ptst = getConnection().prepareStatement(sqlSearch);
+		ptst.setString(1, vo.getLogin());
+		rs = ptst.executeQuery();
 		return rs;
 	}
-	
-//	@Override
-//	public ResultSet listarUsuariosSemPermissao() throws SQLException{
-//		String sqlSearch = "select * from autor where permissaodeacesso = false union select * from avaliador where permissaodeacesso = false union select * from gerente where permissaodeacesso = false";
-//		PreparedStatement ptst;
-//		ResultSet rs = null;
-//		try {
-//			ptst = getConnection().prepareStatement(sqlSearch);
-//			rs = ptst.executeQuery();
-//		} catch(SQLException e) {
-//			e.printStackTrace();
-//		}
-//		return rs;
-//	}
-}
+}	

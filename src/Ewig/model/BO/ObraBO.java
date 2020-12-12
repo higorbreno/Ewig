@@ -7,13 +7,12 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.ListIterator;
 
+import Ewig.exception.AtributoInvalidoException;
 import Ewig.model.DAO.AutorDAO;
 import Ewig.model.DAO.AvaliadorDAO;
-import Ewig.model.DAO.GerenteDAO;
 import Ewig.model.DAO.ObraDAO;
 import Ewig.model.VO.AutorVO;
 import Ewig.model.VO.AvaliadorVO;
-import Ewig.model.VO.GerenteVO;
 import Ewig.model.VO.ObraVO;
 
 
@@ -118,7 +117,7 @@ public class ObraBO implements ObraInterBO{
 				
 				obras.add(obra);
 			}
-		} catch (SQLException e) {
+		} catch (SQLException | AtributoInvalidoException e) {
 			e.printStackTrace();
 		}
 		return obras;
