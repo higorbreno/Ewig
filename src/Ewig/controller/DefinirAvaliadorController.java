@@ -1,22 +1,59 @@
 package Ewig.controller;
 
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import Ewig.model.BO.AvaliadorBO;
+import Ewig.model.BO.ObraBO;
+import Ewig.model.VO.AvaliadorVO;
+import Ewig.model.VO.ObraVO;
+import Ewig.model.VO.UsuarioVO;
 import Ewig.view.Telas;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
-public class DefinirAvaliadorController {
-	@FXML private ComboBox escolherObra;
-	@FXML private ComboBox escolherAvaliador;
+public class DefinirAvaliadorController implements Initializable{
+	private ObraBO obBo = new ObraBO();
+	private AvaliadorBO usBo = new AvaliadorBO();
+	
+	@FXML private ComboBox<String> escolherObra;
+	@FXML private ComboBox<String> escolherAvaliador;
 	@FXML private Label labelAutorObra;
 	@FXML private Label labelAnoObra;
 	@FXML private Label labelMensagem;
 	
-	public void definirAvaliador() {		
+	private List<ObraVO> obrasList;
+	private List<UsuarioVO> avaliadorList;
+	private ObservableList<String> obraStringList;
+	private ObservableList<String> avalStringList;
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		atualizarObras();
+		atualizarAvaliadores();
+	}
+	
+	public void definirAvaliador() {
+		int index0 = escolherObra.getSelectionModel().getSelectedIndex();
+		ObraVO obra = obrasList.get(index0);
+		
+		int index1 = escolherAvaliador.getSelectionModel().getSelectedIndex();
+		UsuarioVO usuario = avaliadorList.get(index1);
+		
+		obra.setAvaliador(new AvaliadorVO(usuario));
+		
 		try {
-			//recebe a obra
-			//recebe o avaliador
-			//setAvaliador na obraVO
+			obBo.editar(obra);
+			
 			labelMensagem.setText("Avaliador definido.");
 			labelMensagem.setVisible(true);
 		} catch (Exception e) {
@@ -24,14 +61,48 @@ public class DefinirAvaliadorController {
 			labelMensagem.setText("Erro em definir Avaliador.");
 			labelMensagem.setVisible(true);
 		}
+		atualizarObras();
 	}
 	
 	private void atualizarObras() {
-		
+		if(escolherObra != null) {
+			obrasList = obBo.listar();
+			List<String> stList = new ArrayList<String>();
+			Iterator<ObraVO> iter = obrasList.iterator();
+			while(iter.hasNext()) {
+				ObraVO ob = iter.next();
+				if(ob.getAvaliador() != null) {
+					iter.remove();
+				} else {
+					stList.add(ob.getTitulo());
+				}
+			}
+			obraStringList = FXCollections.observableArrayList(stList);
+			escolherObra.setItems(obraStringList);
+			escolherObra.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+				@Override
+				public void changed(ObservableValue<? extends Number> ov, Number value, Number new_value) {
+					if(new_value.intValue() >= 0) {
+						labelAutorObra.setText("Nome: " + obrasList.get(new_value.intValue()).getAutor().getNome());
+						labelAnoObra.setText("CPF: " + obrasList.get(new_value.intValue()).getAno());
+					}
+				}
+			});
+		}
 	}
 	
 	private void atualizarAvaliadores() {
-		
+		if(escolherAvaliador != null) {
+			avaliadorList = usBo.listar(1);
+			List<String> stList = new ArrayList<String>();
+			Iterator<UsuarioVO> iter = avaliadorList.iterator();
+			while(iter.hasNext()) {
+				UsuarioVO us = iter.next();
+				stList.add(us.getNome());
+			}
+			avalStringList = FXCollections.observableArrayList(stList);
+			escolherAvaliador.setItems(avalStringList);
+		}
 	}
 	
 	public void dadosObra() {
