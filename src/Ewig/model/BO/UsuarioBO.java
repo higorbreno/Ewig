@@ -190,26 +190,6 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 			if(usu.getPermissaoAcesso() == true)
 				iter.remove();
 		}
-//		try {
-//			rs = dao.listarUsuariosSemPermissao();
-//			System.out.println(rs);
-//			while (rs.next()) {
-//				UsuarioVO elemento = new UsuarioVO();
-//				
-//				elemento.setId(rs.getLong(1));
-//				elemento.setNome(rs.getString(2));
-//				elemento.setCpf(rs.getString(3));
-//				elemento.setEndereco(rs.getString(4));
-//				elemento.setTelefone(rs.getString(5));
-//				elemento.setLogin(rs.getString(6));
-//				elemento.setSenha(rs.getString(7));
-//				elemento.setPermissaoAcesso(rs.getBoolean(8));
-//				
-//				list.add(elemento);
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
 		return list;
 	}
 }

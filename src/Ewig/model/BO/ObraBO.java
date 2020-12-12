@@ -79,17 +79,19 @@ public class ObraBO implements ObraInterBO{
 					cal = null;
 				obra.setDataAvaliacao(cal);
 				
-				AvaliadorVO av = new AvaliadorVO();
-				av.setId(rs.getLong("idavaliador"));
-				AvaliadorDAO avDao = new AvaliadorDAO();
-				ResultSet avRs = avDao.buscarPorId(av);
-				if(avRs.next()) {
-					av.setNome(avRs.getString("nome"));
-					av.setCpf(avRs.getString("cpf"));
-					av.setEndereco(avRs.getString("endereco"));
-					av.setTelefone(avRs.getString("telefone"));
+				if(rs.getLong("idavaliador") != 0){
+					AvaliadorVO av = new AvaliadorVO();
+					av.setId(rs.getLong("idavaliador"));
+					AvaliadorDAO avDao = new AvaliadorDAO();
+					ResultSet avRs = avDao.buscarPorId(av);
+					if(avRs.next()) {
+						av.setNome(avRs.getString("nome"));
+						av.setCpf(avRs.getString("cpf"));
+						av.setEndereco(avRs.getString("endereco"));
+						av.setTelefone(avRs.getString("telefone"));
+					}
+					obra.setAvaliador(av);
 				}
-				obra.setAvaliador(av);
 				
 				AutorVO au = new AutorVO();
 				au.setId(rs.getLong("idautor"));
