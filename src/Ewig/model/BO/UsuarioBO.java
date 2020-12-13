@@ -16,7 +16,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 	
 	public void cadastrar(VO us) throws LoginExistenteException { //0 = GERENTE; 1 = AVALIADOR; 2 = AUTOR
 		try {	
-			if (buscar(us,0) == null) {
+			if (buscar(us,0).size() == 0) {
 
 					switch (us.getTipoUsuario()) {
 					case 0:
@@ -138,7 +138,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 					Iterator<UsuarioVO> iter = listaVO.iterator();
 					while(iter.hasNext()) {
 						UsuarioVO u = iter.next();
-						if(!u.getLogin().contentEquals(us.getLogin()))
+						if(us.getLogin() == null || !u.getLogin().contentEquals(us.getLogin()))
 							iter.remove();
 					}
 					break;
@@ -147,7 +147,7 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 					Iterator<UsuarioVO> iter2 = listaVO.iterator();
 					while(iter2.hasNext()) {
 						UsuarioVO u = iter2.next();
-						if(!u.getNome().contentEquals(us.getNome()))
+						if(us.getNome() == null || !u.getNome().contentEquals(us.getNome()))
 							iter2.remove();
 					}
 					break;
@@ -184,6 +184,27 @@ public class UsuarioBO<VO extends UsuarioVO> implements UsuarioInterBO<VO>{
 		return listaVO;
 	}
 	
+	public List<UsuarioVO> buscarPorNomeECpf(UsuarioVO us, int tipoUsu) {
+		List<UsuarioVO> list;
+		
+		list = listar(tipoUsu);
+		if(us.getNome() != null) {
+			Iterator<UsuarioVO> iter = list.iterator();
+			while(iter.hasNext()) {
+				UsuarioVO u = iter.next();
+				if(us.getNome() != null && !u.getNome().contains(us.getNome())) {
+					iter.remove();
+					continue;
+				}
+				if(us.getCpf() != null && !u.getCpf().equals(us.getCpf())) {
+					iter.remove();
+					continue;
+				}
+			}
+		}
+		
+		return list;
+	}
 	
 	public List<UsuarioVO> listarUsuariosSemPermissao() {
 		List<UsuarioVO> list = new ArrayList<UsuarioVO>();

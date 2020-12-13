@@ -131,10 +131,10 @@ public class ObraBO implements ObraInterBO{
 		ListIterator<ObraVO> iter = obras.listIterator();
 		while(iter.hasNext()) {
 			ObraVO obra1 = iter.next();
-			if(obra.getTitulo() != null && !obra1.getTitulo().equals(obra.getTitulo())) {
+			if(obra.getTitulo() != null && !obra1.getTitulo().contains(obra.getTitulo())) {
 				iter.remove();
 				continue;
-			} else if(obra.getGenero() != null && !obra1.getGenero().equals(obra.getGenero())) {
+			} else if(obra.getGenero() != null && !obra1.getGenero().contains(obra.getGenero())) {
 				iter.remove();
 				continue;
 			} else if(obra.getAno() != 0 && !(obra1.getAno() == obra.getAno())) {

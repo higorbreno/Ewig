@@ -42,51 +42,51 @@ public class Telas extends Application{
 	public static void telaMenu() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/Menu.fxml"));
 		Scene cena = new Scene(root);
-		primaryStage.setScene(cena);;
+		primaryStage.setScene(cena);
 	}
 	public static void telaBuscar() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/Buscar.fxml"));
 		Scene cena = new Scene(root);
-		primaryStage.setScene(cena);;
+		primaryStage.setScene(cena);
 	}
 	public static void telaCadastrar() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/Cadastrar.fxml"));
 		Scene cena = new Scene(root);
-		primaryStage.setScene(cena);;
+		primaryStage.setScene(cena);
 	}
 	public static void telaDefinirAvaliador() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/DefinirAvaliador.fxml"));
 		Scene cena = new Scene(root);
-		primaryStage.setScene(cena);;
+		primaryStage.setScene(cena);
 	}
 	public static void telaRelatorio() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/Relatorio.fxml"));
 		Scene cena = new Scene(root);
-		primaryStage.setScene(cena);;
+		primaryStage.setScene(cena);
 	}
 	public static void telaVisualizar() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/Visualizar.fxml"));
 		Scene cena = new Scene(root);
-		primaryStage.setScene(cena);;
+		primaryStage.setScene(cena);
 	}
 	public static void telaAlterar() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/Alterar.fxml"));
 		Scene cena = new Scene(root);
-		primaryStage.setScene(cena);;
+		primaryStage.setScene(cena);
 	}
 	public static void telaRegistrar() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/Registrar.fxml"));
 		Scene cena = new Scene(root);
-		primaryStage.setScene(cena);;
+		primaryStage.setScene(cena);
 	}
 	public static void telaAutorizarAcesso() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/AutorizarAcesso.fxml"));
 		Scene cena = new Scene(root);
-		primaryStage.setScene(cena);;
+		primaryStage.setScene(cena);
 	}
 	public static void telaAvaliar() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/Avaliar.fxml"));
 		Scene cena = new Scene(root);
-		primaryStage.setScene(cena);;
+		primaryStage.setScene(cena);
 	}
 }

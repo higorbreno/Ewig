@@ -24,7 +24,6 @@ public class VisualizarController implements Initializable{
 	@FXML private Label label5;
 	@FXML private Label label6;
 	@FXML private Label label7;
-	@FXML private Label label8;
 	@FXML private Label labelNovoUsu;
 	@FXML private Label rotulo;
 	
@@ -90,7 +89,6 @@ public class VisualizarController implements Initializable{
 		label5.setVisible(true);
 		label6.setVisible(false);
 		label7.setVisible(false);
-		label8.setVisible(false);
 	}
 	
 	public void mostrarNovoUsuario() {
@@ -116,7 +114,6 @@ public class VisualizarController implements Initializable{
 		label5.setVisible(true);
 		label6.setVisible(false);
 		label7.setVisible(true);
-		label8.setVisible(false);
 	}
 	
 	public void irVoltarBuscar() {
