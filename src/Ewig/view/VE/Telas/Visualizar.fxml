@@ -33,7 +33,7 @@
             <Image url="@../Imagens/Voltar.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="176.0" fitWidth="240.0" layoutX="180.0" layoutY="143.0" pickOnBounds="true">
+      <ImageView fitHeight="153.0" fitWidth="240.0" layoutX="180.0" layoutY="143.0" pickOnBounds="true">
          <image>
             <Image url="@../Imagens/Resultados%20da%20pesquisa.png" />
          </image>
@@ -46,7 +46,6 @@
       <Label fx:id="label6" layoutX="193.0" layoutY="242.0" text="Label 6" textFill="WHITE" />
       <Label fx:id="label7" layoutX="193.0" layoutY="259.0" text="Label 7" textFill="WHITE" />
       <Label layoutX="282.0" layoutY="126.0" text="Dados:" textFill="WHITE" />
-      <Label fx:id="label8" layoutX="193.0" layoutY="276.0" text="Label 8" textFill="WHITE" />
       <Label fx:id="labelNovoUsu" layoutX="65.0" layoutY="97.0" text="Seu cadastro foi realizado com sucesso, aguarde um dos Gerentes autorizarem o seu acesso" textFill="WHITE" visible="false" />
    </children>
 </Pane>

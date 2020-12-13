@@ -2,6 +2,7 @@ package Ewig.controller;
 
 import java.util.List;
 
+import Ewig.exception.AtributoInvalidoException;
 import Ewig.exception.CampoVazioException;
 import Ewig.exception.UsuarioInexistenteException;
 import Ewig.model.BO.UsuarioBO;
@@ -24,7 +25,6 @@ public class LoginController {
 	public void autenticar() {
 		try {
 			if (campoLogin.getText().isEmpty()) {
-				mensagem("Digite o login");
 				throw new CampoVazioException("Campo login vazio");
 			}
 			if (campoSenha.getText().isEmpty()) {
@@ -60,6 +60,8 @@ public class LoginController {
 				}
 				else mensagem("Senha incorreta");
 			}
+		} catch (CampoVazioException | AtributoInvalidoException | UsuarioInexistenteException e){
+			mensagem(e.getMessage());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

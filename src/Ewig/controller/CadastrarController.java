@@ -79,9 +79,9 @@ public class CadastrarController implements Initializable {
 			campoTitulo.setText(null);
 			campoGenero.setText(null);
 			campoAno.setText(null);
+			escolherAutor.setPromptText("Autor");
 			
 		} catch (Exception e) {
-			e.printStackTrace();
 			labelMensagem.setText("Não foi possivel realizar o cadastro");
 			labelMensagem.setTextFill(Color.RED);
 			labelMensagem.setVisible(true);

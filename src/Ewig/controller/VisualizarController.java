@@ -51,9 +51,9 @@ public class VisualizarController implements Initializable{
 		label3.setText("Ano: " + obra.getAno());
 		label4.setText("Status: " + obra.getStatus());
 		if(obra.getDataAvaliacao() == null)
-			label5.setText("Tipo de Usuário: Obra em avaliação");
+			label5.setText("Data de avaliação: Obra em avaliação");
 		else
-			label5.setText("Tipo de Usuário: " + obra.getDataAvaliacao());
+			label5.setText("Data de avaliação: " + obra.getDataAvaliacao());
 		label6.setText("Autor: " + obra.getAutor().getNome());
 		if(obra.getAvaliador() == null)
 			label7.setText("Avaliador: Obra sem avaliador");

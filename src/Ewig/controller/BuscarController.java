@@ -18,6 +18,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -50,6 +51,10 @@ public class BuscarController implements Initializable{
 	
 	@FXML private Label erro;
 	
+	@FXML private Button botaoVisualizar;
+	@FXML private Button botaoEditar;
+	@FXML private Button botaoDeletar;
+	
 	private ToggleGroup toggle = new ToggleGroup();
 	
 	private List<UsuarioVO> autores;
@@ -64,6 +69,13 @@ public class BuscarController implements Initializable{
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		if(Telas.Mestre.getTipoUsuario() != 0) {
+			botaoEditar.setDisable(true);
+			botaoEditar.setOpacity(0.3);
+			botaoDeletar.setDisable(true);
+			botaoDeletar.setOpacity(0.3);
+		}
+		
 		estaTabelaUsuario = false;
 		
 		selecaoObras.setSelected(true);
@@ -241,9 +253,11 @@ public class BuscarController implements Initializable{
 		if(estaTabelaUsuario) {
 			UsuarioVO us = lista1.getSelectionModel().getSelectedItem();
 			usuBo.excluir(us);
+			atualizarListViewComUsuarios();
 		} else {
 			ObraVO ob = lista2.getSelectionModel().getSelectedItem();
 			obBo.excluir(ob);
+			atualizarListViewComObras();
 		}
 	}
 	
@@ -268,6 +282,14 @@ public class BuscarController implements Initializable{
 	
 	//inutilizavel enquanto não houver objetos na lista de busca
 	public void irAlterar() {
+		if(estaTabelaUsuario) {
+			AlterarController.usuario = lista1.getSelectionModel().getSelectedItem();
+			AlterarController.alterarUsuario = true;
+		} else {
+			AlterarController.obra = lista2.getSelectionModel().getSelectedItem();
+			AlterarController.alterarUsuario = false;
+		}
+		
 		try {
 			Telas.telaAlterar();
 		} catch (Exception e) {

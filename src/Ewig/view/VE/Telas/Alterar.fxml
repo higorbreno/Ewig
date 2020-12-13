@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
@@ -30,12 +31,15 @@
          </image>
       </ImageView>
       <Label layoutX="444.0" layoutY="57.0" text="Alterar" textFill="WHITE" />
-      <ImageView fx:id="botaoVoltar" fitHeight="48.0" fitWidth="81.0" layoutX="512.0" layoutY="14.0" onMouseClicked="#irVoltarBuscar" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoVoltar" fitHeight="48.0" fitWidth="81.0" layoutX="512.0" layoutY="14.0" onMouseClicked="#irBuscar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Voltar.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
-      <TextField fx:id="campo1" layoutX="215.0" layoutY="131.0" opacity="0.5" prefHeight="40.0" prefWidth="170.0" promptText="Título">
+      <TextField fx:id="campo1" layoutX="217.0" layoutY="130.0" opacity="0.5" prefHeight="40.0" prefWidth="170.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
@@ -43,7 +47,7 @@
             <InnerShadow />
          </effect>
       </TextField>
-      <TextField fx:id="campo2" layoutX="215.0" layoutY="174.0" opacity="0.5" prefHeight="40.0" prefWidth="170.0" promptText="Gênero">
+      <TextField fx:id="campo2" layoutX="217.0" layoutY="173.0" opacity="0.5" prefHeight="40.0" prefWidth="170.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
@@ -51,7 +55,7 @@
             <InnerShadow />
          </effect>
       </TextField>
-      <TextField fx:id="campo3" layoutX="215.0" layoutY="217.0" opacity="0.5" prefHeight="40.0" prefWidth="170.0" promptText="Ano">
+      <TextField fx:id="campo3" layoutX="217.0" layoutY="216.0" opacity="0.5" prefHeight="40.0" prefWidth="170.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
@@ -59,10 +63,16 @@
             <InnerShadow />
          </effect>
       </TextField>
-      <ImageView fx:id="botaoAlterar" fitHeight="40.0" fitWidth="96.0" layoutX="259.0" layoutY="306.0" onMouseClicked="#alterar" pickOnBounds="true" preserveRatio="true">
+      <ComboBox fx:id="escolherAutor" layoutX="217.0" layoutY="260.0" opacity="0.5" prefHeight="40.0" prefWidth="170.0" promptText="Autor" />
+      <ImageView fx:id="botaoAlterar" fitHeight="40.0" fitWidth="96.0" layoutX="259.0" layoutY="332.0" onMouseClicked="#alterar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Botão%20Alterar.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
+      <Label fx:id="labelUsuario" layoutX="282.0" layoutY="104.0" text="Dados:" textFill="WHITE" />
+      <Label fx:id="labelMensagem" layoutX="284.0" layoutY="315.0" textFill="WHITE" />
    </children>
 </Pane>

@@ -48,26 +48,20 @@ public class UsuarioDAO<VO extends UsuarioVO> extends BaseDAO<VO> implements Usu
 	@Override
 	public void atualizar(UsuarioVO usuario, String nomeTabela) throws SQLException {
 		String sqlUpdate = "update " + nomeTabela + " set "
-				+ "nome = ?, "
-				+ "telefone = ?, "
-				+ "endereco = ?, "
-				+ "permissaodeacesso = ?"
-				+ " where id = ?;";
+						 + "nome = ?, "
+						 + "telefone = ?, "
+						 + "endereco = ?, "
+						 + "permissaodeacesso = ?"
+						 + " where id = ?;";
 		PreparedStatement ptst;
 
-			ptst = getConnection().prepareStatement(sqlUpdate);
-			System.out.println(usuario.getNome());
-			System.out.println(usuario.getTelefone());
-			System.out.println(usuario.getEndereco());
-			System.out.println(usuario.getPermissaoAcesso());
-			System.out.println(usuario.getId());
-			
-			ptst.setString(1, usuario.getNome());
-			ptst.setString(2, usuario.getTelefone());
-			ptst.setString(3, usuario.getEndereco());
-			ptst.setBoolean(4, usuario.getPermissaoAcesso());
-			ptst.setLong(5, usuario.getId());
-			ptst.executeUpdate();
+		ptst = getConnection().prepareStatement(sqlUpdate);
+		ptst.setString(1, usuario.getNome());
+		ptst.setString(2, usuario.getTelefone());
+		ptst.setString(3, usuario.getEndereco());
+		ptst.setBoolean(4, usuario.getPermissaoAcesso());
+		ptst.setLong(5, usuario.getId());
+		ptst.executeUpdate();
 	}
 
 	@Override

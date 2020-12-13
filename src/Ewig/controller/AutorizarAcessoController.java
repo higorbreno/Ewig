@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 
 public class AutorizarAcessoController implements Initializable{
 	
@@ -52,17 +53,19 @@ public class AutorizarAcessoController implements Initializable{
 			usuarioEscolha.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 				@Override
 				public void changed(ObservableValue<? extends Number> ov, Number value, Number new_value) {
-					nome.setText("Nome: " + list.get(new_value.intValue()).getNome());
-					cpf.setText("CPF: " + list.get(new_value.intValue()).getCpf());
-					endereco.setText("Endereço: " + list.get(new_value.intValue()).getEndereco());
-					telefone.setText("Telefone: " + list.get(new_value.intValue()).getTelefone());
-					if(list.get(new_value.intValue()).getTipoUsuario() == 0) {
-						tipoAcesso.setText("Tipo de Acesso: Gerente");
-					} else if (list.get(new_value.intValue()).getTipoUsuario() == 1) {
-						tipoAcesso.setText("Tipo de Acesso: Avaliador");
-					  } else if (list.get(new_value.intValue()).getTipoUsuario() == 2) {
-						  tipoAcesso.setText("Tipo de Acesso: Autor");
-					    }
+					if (new_value.intValue() >= 0) {
+						nome.setText("Nome: " + list.get(new_value.intValue()).getNome());
+						cpf.setText("CPF: " + list.get(new_value.intValue()).getCpf());
+						endereco.setText("Endereço: " + list.get(new_value.intValue()).getEndereco());
+						telefone.setText("Telefone: " + list.get(new_value.intValue()).getTelefone());
+						if(list.get(new_value.intValue()).getTipoUsuario() == 0) {
+							tipoAcesso.setText("Tipo de Acesso: Gerente");
+						} else if (list.get(new_value.intValue()).getTipoUsuario() == 1) {
+							tipoAcesso.setText("Tipo de Acesso: Avaliador");
+						  } else if (list.get(new_value.intValue()).getTipoUsuario() == 2) {
+							  tipoAcesso.setText("Tipo de Acesso: Autor");
+						    }
+					}
 				}
 			});
 		}
@@ -77,14 +80,27 @@ public class AutorizarAcessoController implements Initializable{
 	}
 	
 	public void autorizarAcesso() {
-		int index = usuarioEscolha.getSelectionModel().getSelectedIndex();
-		UsuarioVO us;
-		us = list.get(index);
+		try {
+			int index = usuarioEscolha.getSelectionModel().getSelectedIndex();
+			UsuarioVO us;
+			us = list.get(index);
+			
+			us.setPermissaoAcesso(true);
+			usuBo.editar(us);
+			aviso.setTextFill(Color.GREEN);
+			aviso.setText("Usuário autorizado");
+			aviso.setVisible(true);
+			atualizarLista();
+		} catch (ArrayIndexOutOfBoundsException e) {
+			aviso.setTextFill(Color.RED);
+			aviso.setText("Selecione um usuário");
+			aviso.setVisible(true);
+		}
 		
-		us.setPermissaoAcesso(true);
-		usuBo.editar(us);
-		aviso.setText("Usuário autorizado");
-		aviso.setVisible(true);
-		atualizarLista();
+		nome.setText("Nome: ");
+		cpf.setText("CPF: ");
+		endereco.setText("Endereço: ");
+		telefone.setText("Telefone: ");
+		tipoAcesso.setText("Tipo de Acesso: ");
 	}
 }
