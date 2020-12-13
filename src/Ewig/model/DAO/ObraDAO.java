@@ -94,10 +94,10 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 						Date date = new Date(instant.toEpochMilli());
 						ptst.setDate(5, date);
 					} else {
-						ptst.setDate(5, r.getDate("dataavaliacao"));
+						ptst.setNull(5, Types.DATE);
 					}
 				} else {
-					ptst.setNull(5, Types.DATE);
+					ptst.setDate(5, r.getDate("dataavaliacao"));
 				}
 			} else {
 				ptst.setNull(5, Types.DATE);
