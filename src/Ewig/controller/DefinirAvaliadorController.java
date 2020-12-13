@@ -20,6 +20,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 
 public class DefinirAvaliadorController implements Initializable{
 	private ObraBO obBo = new ObraBO();
@@ -29,6 +30,7 @@ public class DefinirAvaliadorController implements Initializable{
 	@FXML private ComboBox<String> escolherAvaliador;
 	@FXML private Label labelAutorObra;
 	@FXML private Label labelAnoObra;
+	@FXML private Label labelGeneroObra;
 	@FXML private Label labelMensagem;
 	
 	private List<ObraVO> obrasList;
@@ -53,13 +55,15 @@ public class DefinirAvaliadorController implements Initializable{
 		
 		try {
 			obBo.editar(obra);
-			
+		
 			labelMensagem.setText("Avaliador definido.");
 			labelMensagem.setVisible(true);
+			labelMensagem.setTextFill(Color.GREEN);
 		} catch (Exception e) {
 			e.printStackTrace();
 			labelMensagem.setText("Erro em definir Avaliador.");
 			labelMensagem.setVisible(true);
+			labelMensagem.setTextFill(Color.RED);
 		}
 		atualizarObras();
 	}
@@ -83,8 +87,9 @@ public class DefinirAvaliadorController implements Initializable{
 				@Override
 				public void changed(ObservableValue<? extends Number> ov, Number value, Number new_value) {
 					if(new_value.intValue() >= 0) {
-						labelAutorObra.setText("Nome: " + obrasList.get(new_value.intValue()).getAutor().getNome());
-						labelAnoObra.setText("CPF: " + obrasList.get(new_value.intValue()).getAno());
+						labelAutorObra.setText("Autor: " + obrasList.get(new_value.intValue()).getAutor().getNome());
+						labelAnoObra.setText("Ano: " + obrasList.get(new_value.intValue()).getAno());
+						labelGeneroObra.setText("Genero: " + obrasList.get(new_value.intValue()).getGenero());
 					}
 				}
 			});
@@ -98,7 +103,8 @@ public class DefinirAvaliadorController implements Initializable{
 			Iterator<UsuarioVO> iter = avaliadorList.iterator();
 			while(iter.hasNext()) {
 				UsuarioVO us = iter.next();
-				stList.add(us.getNome());
+				if (us.getPermissaoAcesso())
+					stList.add(us.getNome());
 			}
 			avalStringList = FXCollections.observableArrayList(stList);
 			escolherAvaliador.setItems(avalStringList);

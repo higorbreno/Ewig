@@ -18,6 +18,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.fxml.LoadException;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -28,6 +29,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
 
 public class BuscarController implements Initializable{
 	
@@ -129,6 +131,7 @@ public class BuscarController implements Initializable{
 	}
 	
 	public void buscar() {
+		erro.setVisible(false);
 		RadioButton selectedButton = (RadioButton)toggle.getSelectedToggle();
 		String tipoPesquisa = selectedButton.getText();
 		boolean check1 = campo1.getText() == null || campo1.getText().trim().isEmpty();
@@ -197,7 +200,9 @@ public class BuscarController implements Initializable{
 				if(campo2.getText() != null && !campo2.getText().trim().isEmpty())
 					au.setCpf(campo2.getText());
 			} catch (AtributoInvalidoException e) {
-				e.printStackTrace();
+				erro.setText("Campo invalido");
+				erro.setTextFill(Color.RED);
+				erro.setVisible(true);
 			}
 			usuarios = usuBo.buscarPorNomeECpf(au, 2);
 			atualizarListViewComUsuarios();
@@ -261,7 +266,6 @@ public class BuscarController implements Initializable{
 		}
 	}
 	
-	//inutilizavel enquanto não houver objetos na lista de busca
 	public void irVisualizar() {
 		
 		if(estaTabelaUsuario) {
@@ -274,13 +278,14 @@ public class BuscarController implements Initializable{
 		
 		try {
 			Telas.telaVisualizar();
+		} catch (LoadException e) {
+			erro.setText("Selecione um Resultado");	
+			erro.setVisible(true);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	//inutilizavel enquanto não houver objetos na lista de busca
 	public void irAlterar() {
 		if(estaTabelaUsuario) {
 			AlterarController.usuario = lista1.getSelectionModel().getSelectedItem();
@@ -292,6 +297,9 @@ public class BuscarController implements Initializable{
 		
 		try {
 			Telas.telaAlterar();
+		} catch (LoadException e) {
+			erro.setText("Selecione um Resultado");
+			erro.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -2,6 +2,7 @@ package Ewig.controller;
 
 import java.util.List;
 
+
 import Ewig.exception.AtributoInvalidoException;
 import Ewig.exception.CampoVazioException;
 import Ewig.exception.UsuarioInexistenteException;
@@ -62,6 +63,8 @@ public class LoginController {
 			}
 		} catch (CampoVazioException | AtributoInvalidoException | UsuarioInexistenteException e){
 			mensagem(e.getMessage());
+		} catch (NullPointerException e) {
+			mensagem("Problema na conexão com BD");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
