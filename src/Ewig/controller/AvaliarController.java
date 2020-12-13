@@ -23,7 +23,6 @@ public class AvaliarController implements Initializable{
 	ObraBO obBo = new ObraBO();
 	
 	@FXML private ComboBox<String> escolherObra;
-//	@FXML private ToggleGroup toggleGroup;
 	@FXML private RadioButton checkAceitar;
 	@FXML private RadioButton checkRejeitar;
 	@FXML private Label labelMensagem;
