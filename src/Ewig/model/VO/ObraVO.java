@@ -84,7 +84,7 @@ public class ObraVO{
 		return dataAvaliacao;
 	}
 	public void setDataAvaliacao(Calendar dataAvaliacao) {
-		if (autor != null) {
+		if (dataAvaliacao != null) {
 			this.dataAvaliacao = dataAvaliacao;
 		}	
 	}
