@@ -255,14 +255,20 @@ public class BuscarController implements Initializable{
 	}
 	
 	public void deletar() {
-		if(estaTabelaUsuario) {
-			UsuarioVO us = lista1.getSelectionModel().getSelectedItem();
-			usuBo.excluir(us);
-			atualizarListViewComUsuarios();
-		} else {
-			ObraVO ob = lista2.getSelectionModel().getSelectedItem();
-			obBo.excluir(ob);
-			atualizarListViewComObras();
+		try {
+			if(estaTabelaUsuario) {
+				UsuarioVO us = lista1.getSelectionModel().getSelectedItem();
+				usuBo.excluir(us);
+				atualizarListViewComUsuarios();
+			} else {
+				ObraVO ob = lista2.getSelectionModel().getSelectedItem();
+				obBo.excluir(ob);
+				atualizarListViewComObras();
+			}
+		} catch (NullPointerException e) {
+			erro.setText("Selecione um Resultado");
+			erro.setTextFill(Color.RED);
+			erro.setVisible(true);
 		}
 	}
 	
@@ -279,7 +285,8 @@ public class BuscarController implements Initializable{
 		try {
 			Telas.telaVisualizar();
 		} catch (LoadException e) {
-			erro.setText("Selecione um Resultado");	
+			erro.setText("Selecione um Resultado");
+			erro.setTextFill(Color.RED);
 			erro.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -299,6 +306,7 @@ public class BuscarController implements Initializable{
 			Telas.telaAlterar();
 		} catch (LoadException e) {
 			erro.setText("Selecione um Resultado");
+			erro.setTextFill(Color.RED);
 			erro.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();

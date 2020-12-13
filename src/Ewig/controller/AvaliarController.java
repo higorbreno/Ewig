@@ -17,6 +17,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.paint.Color;
 
 public class AvaliarController implements Initializable{
 	ObraBO obBo = new ObraBO();
@@ -47,7 +48,7 @@ public class AvaliarController implements Initializable{
 			Iterator<ObraVO> iter = list.iterator();
 			while(iter.hasNext()) {
 				ObraVO ob = iter.next();
-				if(ob.getStatus() != "Em Avaliação" || ob.getAvaliador().getId() != Telas.Mestre.getId()) {
+				if(ob.getStatus() != "Em Avaliação" || ob.getAvaliador() == null || ob.getAvaliador().getId() != Telas.Mestre.getId()) {
 					iter.remove();
 				} else {
 					stList.add(ob.getTitulo());
@@ -63,7 +64,6 @@ public class AvaliarController implements Initializable{
 		try {
 			RadioButton selectedButton = (RadioButton)toggle.getSelectedToggle();
 			String toggleGroupValue = selectedButton.getText();
-			System.out.println(toggleGroupValue);
 			
 			int index = escolherObra.getSelectionModel().getSelectedIndex();
 			ObraVO obra = list.get(index);
@@ -79,16 +79,15 @@ public class AvaliarController implements Initializable{
 			atualizarLista();
 			
 			labelMensagem.setText("A obra foi avaliada.");
-			labelMensagem.setVisible(true);
+			labelMensagem.setTextFill(Color.GREEN);
+		} catch (ArrayIndexOutOfBoundsException e) {
+			labelMensagem.setText("Nenhuma obra selecionada");
+			labelMensagem.setTextFill(Color.RED);
 		} catch (Exception e) {
-			e.printStackTrace();
-			if(e instanceof ArrayIndexOutOfBoundsException) {
-				labelMensagem.setText("Nenhuma obra selecionada");
-			} else {
-				labelMensagem.setText("Ocorreu um erro na avaliação.");
-			}
-			labelMensagem.setVisible(true);
+			labelMensagem.setText("Ocorreu um erro na avaliação.");
+			labelMensagem.setTextFill(Color.RED);
 		}
+		labelMensagem.setVisible(true);
 	}
 	
 	public void irMenu() {
