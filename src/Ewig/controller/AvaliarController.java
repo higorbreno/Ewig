@@ -13,10 +13,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.paint.Color;
 
 public class AvaliarController implements Initializable{
@@ -25,7 +27,6 @@ public class AvaliarController implements Initializable{
 	@FXML private ComboBox<String> escolherObra;
 	@FXML private RadioButton checkAceitar;
 	@FXML private RadioButton checkRejeitar;
-	@FXML private Label labelMensagem;
 	
 	final ToggleGroup toggle = new ToggleGroup();
 	
@@ -39,7 +40,7 @@ public class AvaliarController implements Initializable{
 		
 		atualizarLista();
 	}
-	
+
 	private void atualizarLista() {
 		if(escolherObra != null) {
 			list = obBo.listar();
@@ -69,24 +70,19 @@ public class AvaliarController implements Initializable{
 			
 			if(toggleGroupValue.equals("Aceitar")) {
 				obra.setStatus("Aprovado");
-				obBo.editar(obra);
+				obBo.editar(obra);	
 			} else {
 				obra.setStatus("Rejeitado");
 				obBo.editar(obra);
 			}
 			
 			atualizarLista();
-			
-			labelMensagem.setText("A obra foi avaliada.");
-			labelMensagem.setTextFill(Color.GREEN);
+			Telas.mensagemInfo("A obra foi avaliada");
 		} catch (ArrayIndexOutOfBoundsException e) {
-			labelMensagem.setText("Nenhuma obra selecionada");
-			labelMensagem.setTextFill(Color.RED);
+			Telas.mensagemErro("Nenhuma obra selecionada");
 		} catch (Exception e) {
-			labelMensagem.setText("Ocorreu um erro na avaliação.");
-			labelMensagem.setTextFill(Color.RED);
+			Telas.mensagemErro("Ocorreu um erro na avaliação");
 		}
-		labelMensagem.setVisible(true);
 	}
 	
 	public void irMenu() {

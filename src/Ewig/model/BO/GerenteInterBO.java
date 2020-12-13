@@ -6,5 +6,6 @@ import java.util.List;
 import Ewig.model.VO.ObraVO;
 
 public interface GerenteInterBO {
-	public void gerarRelatorio(List<ObraVO> obras, String nomeArquivo, Calendar inicio, Calendar fim);
+	public void gerarRelatorio(List<ObraVO> obras, Calendar inicio, Calendar fim);
+	public void gerarRelatorio(List<ObraVO> obras);
 }

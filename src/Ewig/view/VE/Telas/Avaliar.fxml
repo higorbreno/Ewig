@@ -56,7 +56,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Label fx:id="labelMensagem" layoutX="234.0" layoutY="257.0" text="Mensagem" textFill="WHITE" visible="false" />
       <ComboBox fx:id="escolherObra" layoutX="210.0" layoutY="156.0" prefHeight="25.0" prefWidth="191.0" />
    </children>
 </Pane>

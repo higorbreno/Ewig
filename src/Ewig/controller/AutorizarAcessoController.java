@@ -2,13 +2,10 @@ package Ewig.controller;
 
 import Ewig.model.BO.UsuarioBO;
 import Ewig.model.VO.UsuarioVO;
-
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-
-
 import Ewig.view.Telas;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -18,7 +15,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
 
 public class AutorizarAcessoController implements Initializable{
 	
@@ -30,8 +26,6 @@ public class AutorizarAcessoController implements Initializable{
 	@FXML private Label endereco;
 	@FXML private Label telefone;
 	@FXML private Label tipoAcesso;
-	@FXML private Label aviso;
-	
 	
 	private List<UsuarioVO> list;
 	private ObservableList<String> stringList;
@@ -39,7 +33,7 @@ public class AutorizarAcessoController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		atualizarLista();
-	}
+	}	
 	
 	private void atualizarLista() {
 		if(usuarioEscolha != null) {
@@ -87,14 +81,10 @@ public class AutorizarAcessoController implements Initializable{
 			
 			us.setPermissaoAcesso(true);
 			usuBo.editar(us);
-			aviso.setTextFill(Color.GREEN);
-			aviso.setText("Usuário autorizado");
-			aviso.setVisible(true);
+			Telas.mensagemInfo("Usuário autorizado");
 			atualizarLista();
 		} catch (ArrayIndexOutOfBoundsException e) {
-			aviso.setTextFill(Color.RED);
-			aviso.setText("Selecione um usuário");
-			aviso.setVisible(true);
+			Telas.mensagemErro("Selecione um usuário");
 		}
 		
 		nome.setText("Nome: ");

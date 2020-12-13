@@ -16,10 +16,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
-
 
 public class CadastrarController implements Initializable {
 	
@@ -33,7 +30,6 @@ public class CadastrarController implements Initializable {
 	@FXML private TextField campoGenero;
 	@FXML private TextField campoAno;
 	@FXML private ComboBox<String> escolherAutor;
-	@FXML private Label labelMensagem;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -72,9 +68,7 @@ public class CadastrarController implements Initializable {
 		
 			obBO.cadastrar(o);
 			
-			labelMensagem.setText("O cadastro foi realizado com sucesso");
-			labelMensagem.setTextFill(Color.GREEN);
-			labelMensagem.setVisible(true);
+			Telas.mensagemInfo("O cadastro foi realizado com sucesso");
 			
 			campoTitulo.setText(null);
 			campoGenero.setText(null);
@@ -82,9 +76,7 @@ public class CadastrarController implements Initializable {
 			escolherAutor.setPromptText("Autor");
 			
 		} catch (Exception e) {
-			labelMensagem.setText("Não foi possivel realizar o cadastro");
-			labelMensagem.setTextFill(Color.RED);
-			labelMensagem.setVisible(true);
+			Telas.mensagemErro("Não foi possivel realizar o cadastro");
 		}
 	}
 	

@@ -1,6 +1,7 @@
 package Ewig.controller;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
 import Ewig.model.VO.ObraVO;
@@ -12,6 +13,7 @@ import javafx.scene.control.Label;
 
 public class VisualizarController implements Initializable{
 	
+	private final static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 	public static UsuarioVO usuario;
 	public static ObraVO obra;
 	
@@ -53,7 +55,7 @@ public class VisualizarController implements Initializable{
 		if(obra.getDataAvaliacao() == null)
 			label5.setText("Data de avaliação: Obra em avaliação");
 		else
-			label5.setText("Data de avaliação: " + obra.getDataAvaliacao());
+			label5.setText("Data de avaliação: " + formatter.format(obra.getDataAvaliacao().getTime()));
 		label6.setText("Autor: " + obra.getAutor().getNome());
 		if(obra.getAvaliador() == null)
 			label7.setText("Avaliador: Obra sem avaliador");

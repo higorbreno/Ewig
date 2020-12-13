@@ -52,6 +52,59 @@ public class ObraBO implements ObraInterBO{
 		List<ObraVO> obras = new ArrayList<ObraVO>();
 		try {
 			rs = obraDao.listar();
+//			while(rs.next()) {
+//				ObraVO obra = new ObraVO();
+//				obra.setId(rs.getLong("id"));
+//				obra.setTitulo(rs.getString("titulo"));
+//				obra.setAno(rs.getInt("ano"));
+//				obra.setGenero(rs.getString("genero"));
+//				switch(rs.getInt("status")) {
+//				case 0:
+//					obra.setStatus("Em Avaliação");
+//					break;
+//				case 1:
+//					obra.setStatus("Aprovado");
+//					break;
+//				case 2:
+//					obra.setStatus("Rejeitado");
+//					break;
+//				default:
+//					obra.setStatus("Em Avaliação");
+//					break;
+//				}
+//				Calendar cal = Calendar.getInstance();
+//				if(rs.getDate("dataavaliacao") != null)
+//					cal.setTime(rs.getDate("dataavaliacao"));
+//				else
+//					cal = null;
+//				obra.setDataAvaliacao(cal);
+//				
+//				if(rs.getLong("idavaliador") != 0){
+//					AvaliadorVO av = new AvaliadorVO();
+//					av.setId(rs.getLong("idavaliador"));
+//					AvaliadorDAO avDao = new AvaliadorDAO();
+//					ResultSet avRs = avDao.buscarPorId(av);
+//					if(avRs.next()) {
+//						av.setNome(avRs.getString("nome"));
+//						av.setCpf(avRs.getString("cpf"));
+//						av.setEndereco(avRs.getString("endereco"));
+//						av.setTelefone(avRs.getString("telefone"));
+//					}
+//					obra.setAvaliador(av);
+//				}
+//				
+//				AutorVO au = new AutorVO();
+//				au.setId(rs.getLong("idautor"));
+//				AutorDAO auDao = new AutorDAO();
+//				ResultSet auRs = auDao.buscarPorId(au);
+//				if(auRs.next()) {
+//					au.setNome(auRs.getString("nome"));
+//					au.setCpf(auRs.getString("cpf"));
+//					au.setEndereco(auRs.getString("endereco"));
+//					au.setTelefone(auRs.getString("telefone"));
+//				}
+//				obra.setAutor(au);
+//				obras.add(obra);
 			while(rs.next()) {
 				ObraVO obra = new ObraVO();
 				obra.setId(rs.getLong("id"));
@@ -104,18 +157,6 @@ public class ObraBO implements ObraInterBO{
 					au.setTelefone(auRs.getString("telefone"));
 				}
 				obra.setAutor(au);
-				
-//				GerenteVO ge = new GerenteVO();
-//				ge.setId(rs.getLong("idgerente"));
-//				GerenteDAO geDao = new GerenteDAO();
-//				ResultSet geRs = geDao.buscarPorId(ge);
-//				if(auRs.next()) {
-//					ge.setNome(geRs.getString("nome"));
-//					ge.setCpf(geRs.getString("cpf"));
-//					ge.setEndereco(geRs.getString("endereco"));
-//					ge.setTelefone(geRs.getString("telefone"));
-//				}
-//				obra.setGerente(ge);
 				
 				obras.add(obra);
 			}

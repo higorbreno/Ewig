@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-
 import Ewig.exception.AtributoInvalidoException;
 import Ewig.model.BO.ObraBO;
 import Ewig.model.BO.UsuarioBO;
@@ -21,7 +20,6 @@ import javafx.fxml.Initializable;
 import javafx.fxml.LoadException;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -29,7 +27,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.paint.Color;
 
 public class BuscarController implements Initializable{
 	
@@ -50,8 +47,6 @@ public class BuscarController implements Initializable{
 	@FXML private TableColumn<UsuarioVO, String> resultados1;
 	@FXML private TableView<ObraVO> lista2;
 	@FXML private TableColumn<ObraVO, String> resultados2;
-	
-	@FXML private Label erro;
 	
 	@FXML private Button botaoVisualizar;
 	@FXML private Button botaoEditar;
@@ -131,7 +126,6 @@ public class BuscarController implements Initializable{
 	}
 	
 	public void buscar() {
-		erro.setVisible(false);
 		RadioButton selectedButton = (RadioButton)toggle.getSelectedToggle();
 		String tipoPesquisa = selectedButton.getText();
 		boolean check1 = campo1.getText() == null || campo1.getText().trim().isEmpty();
@@ -153,8 +147,7 @@ public class BuscarController implements Initializable{
 				atualizarListViewComUsuarios();
 				return;
 			} else {
-				erro.setText("Tipo de Pesquisa não selecionado");
-				erro.setVisible(true);
+				Telas.mensagemErro("Tipo de Pesquisa não selecionado");
 				return;
 			}
 		}
@@ -200,16 +193,13 @@ public class BuscarController implements Initializable{
 				if(campo2.getText() != null && !campo2.getText().trim().isEmpty())
 					au.setCpf(campo2.getText());
 			} catch (AtributoInvalidoException e) {
-				erro.setText("Campo invalido");
-				erro.setTextFill(Color.RED);
-				erro.setVisible(true);
+				Telas.mensagemErro("Campo invalido");
 			}
 			usuarios = usuBo.buscarPorNomeECpf(au, 2);
 			atualizarListViewComUsuarios();
 			
 		} else {
-			erro.setText("Tipo de Pesquisa não selecionado");
-			erro.setVisible(true);
+			Telas.mensagemErro("Tipo de Pesquisa não selecionado");
 		}
 	}
 	
@@ -266,9 +256,7 @@ public class BuscarController implements Initializable{
 				atualizarListViewComObras();
 			}
 		} catch (NullPointerException e) {
-			erro.setText("Selecione um Resultado");
-			erro.setTextFill(Color.RED);
-			erro.setVisible(true);
+			Telas.mensagemInfo("Selecione um Resultado");
 		}
 	}
 	
@@ -285,9 +273,7 @@ public class BuscarController implements Initializable{
 		try {
 			Telas.telaVisualizar();
 		} catch (LoadException e) {
-			erro.setText("Selecione um Resultado");
-			erro.setTextFill(Color.RED);
-			erro.setVisible(true);
+			Telas.mensagemInfo("Selecione um Resultado");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -305,9 +291,7 @@ public class BuscarController implements Initializable{
 		try {
 			Telas.telaAlterar();
 		} catch (LoadException e) {
-			erro.setText("Selecione um Resultado");
-			erro.setTextFill(Color.RED);
-			erro.setVisible(true);
+			Telas.mensagemInfo("Selecione um Resultado");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

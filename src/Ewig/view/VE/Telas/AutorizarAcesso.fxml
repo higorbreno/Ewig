@@ -51,7 +51,6 @@
          </cursor>
       </ImageView>
       <ComboBox fx:id="usuarioEscolha" layoutX="200.0" layoutY="114.0" prefHeight="25.0" prefWidth="200.0" />
-      <Label fx:id="aviso" layoutX="251.0" layoutY="251.0" text="Label" textAlignment="CENTER" textFill="WHITE" visible="false" />
       <Label fx:id="tipoAcesso" layoutX="199.0" layoutY="216.0" text="Tipo de  Acesso:" textFill="WHITE" />
    </children>
 </Pane>

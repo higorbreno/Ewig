@@ -105,6 +105,9 @@ public class DefinirAvaliadorController implements Initializable{
 				UsuarioVO us = iter.next();
 				if (us.getPermissaoAcesso())
 					stList.add(us.getNome());
+				else {
+					iter.remove();
+				}
 			}
 			avalStringList = FXCollections.observableArrayList(stList);
 			escolherAvaliador.setItems(avalStringList);

@@ -9,8 +9,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
 import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Calendar;
 
 public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
@@ -85,7 +83,7 @@ public class ObraDAO extends BaseDAO<ObraVO> implements ObraInterDAO{
 				ptst.setInt(4, 0);
 			else if(obra.getStatus().contentEquals("Aprovado"))
 				ptst.setInt(4, 1);
-			else
+			else if(obra.getStatus().contentEquals("Rejeitado"))
 				ptst.setInt(4, 2);
 			
 			ResultSet r = buscarPorId(obra);
