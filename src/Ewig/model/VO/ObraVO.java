@@ -1,6 +1,8 @@
 package Ewig.model.VO;
 import java.util.Calendar;
 
+import Ewig.exception.AtributoInvalidoException;
+
 public class ObraVO{
 	//atributos
 	private Long id;
@@ -14,15 +16,6 @@ public class ObraVO{
 	
 	public ObraVO() {
 		
-	}
-	
-	public ObraVO(String titulo, String genero, int ano, String status, AutorVO autor, AvaliadorVO avaliador, GerenteVO gerente) {
-		setTitulo(titulo);
-		setGenero(genero);
-		setAno(ano);
-		setStatus(status);
-		setAutor(autor);
-		setAvaliador(avaliador);
 	}
 	
 	//metodos get e set
@@ -63,9 +56,17 @@ public class ObraVO{
 	public int getAno() {
 		return ano;
 	}
-	public void setAno(int ano) {
-			this.ano = ano;
+	public void setAno(int ano) throws AtributoInvalidoException{
+		if (ano > 0) {
+			if (ano <= Calendar.getInstance().get(Calendar.YEAR)) {
+				this.ano = ano;
+				return;
+			}
+			throw new AtributoInvalidoException("Ano invalido, insira um ano igual ou abaixo do atual");
+		}
+		throw new AtributoInvalidoException("Ano invalido, insira um valor maior que 0");
 	}
+	
 	public String getStatus() {
 		return status;
 	}
@@ -96,8 +97,8 @@ public class ObraVO{
 		if (autor != null) {
 			this.autor = autor;
 		}	
-		//falta adcionar regras de encapsulamento
 	}
+	
 	public AvaliadorVO getAvaliador() {
 		return avaliador;
 	}

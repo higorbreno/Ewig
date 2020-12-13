@@ -64,7 +64,7 @@
          </effect>
       </TextField>
       <ComboBox fx:id="escolherAutor" layoutX="217.0" layoutY="260.0" opacity="0.5" prefHeight="40.0" prefWidth="170.0" promptText="Autor" />
-      <ImageView fx:id="botaoAlterar" fitHeight="40.0" fitWidth="96.0" layoutX="259.0" layoutY="332.0" onMouseClicked="#alterar" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoAlterar" fitHeight="40.0" fitWidth="96.0" layoutX="259.0" layoutY="317.0" onMouseClicked="#alterar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Botão%20Alterar.png" />
          </image>
@@ -73,6 +73,5 @@
          </cursor>
       </ImageView>
       <Label fx:id="labelUsuario" layoutX="282.0" layoutY="104.0" text="Dados:" textFill="WHITE" />
-      <Label fx:id="labelMensagem" layoutX="284.0" layoutY="315.0" textFill="WHITE" />
    </children>
 </Pane>

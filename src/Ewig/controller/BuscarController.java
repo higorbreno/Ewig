@@ -160,7 +160,11 @@ public class BuscarController implements Initializable{
 			if(campo2.getText() != null && !campo2.getText().trim().isEmpty())
 				ob.setGenero(campo2.getText());
 			if(campo3.getText() != null && !campo3.getText().trim().isEmpty())
-				ob.setAno(Integer.parseInt(campo3.getText()));
+				try {
+					ob.setAno(Integer.parseInt(campo3.getText()));
+				} catch (AtributoInvalidoException e) {
+					Telas.mensagemErro(e.getMessage());
+				}
 			if(autorCombo.getSelectionModel().getSelectedItem() != null) {
 				int index = autorCombo.getSelectionModel().getSelectedIndex();
 				UsuarioVO u = autores.get(index);

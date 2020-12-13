@@ -18,7 +18,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class AlterarController implements Initializable {
@@ -36,14 +35,13 @@ public class AlterarController implements Initializable {
 	@FXML private TextField campo2;
 	@FXML private TextField campo3;
 	@FXML private ComboBox<String> escolherAutor;
-	@FXML private Label labelMensagem;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		if (alterarUsuario) { // Alterar USUARIO
 			campo1.setText(usuario.getNome());
 			campo2.setText(usuario.getEndereco());
-			campo2.setText(usuario.getTelefone());
+			campo3.setText(usuario.getTelefone());
 			escolherAutor.setVisible(false);
 		}
 		else { // Alterar OBRA
@@ -73,47 +71,30 @@ public class AlterarController implements Initializable {
 				
 				UsuarioBO<UsuarioVO> uBO = new UsuarioBO<UsuarioVO>();
 				uBO.editar(usuario);
+				Telas.mensagemInfo("As alterações foram realizadas com sucesso");
 			}
-			else { // Alterar OBRA
-				campo1.setText(obra.getTitulo());
-				campo2.setText(obra.getGenero());
-				campo3.setText("" + obra.getAno());
-				escolherAutor.setVisible(true);
-				escolherAutor.setPromptText(obra.getAutor().getNome());
-				atualizarLista();
-				
+			else { // Alterar OBRA			
 				obra.setTitulo(campo1.getText());
 				obra.setGenero(campo2.getText());
 				obra.setAno(Integer.parseInt(campo3.getText()));
 				
-				int index = escolherAutor.getSelectionModel().getSelectedIndex();
-				UsuarioVO us = new UsuarioVO();
-				us = listVO.get(index);
-				
-				obra.setAutor(new AutorVO(us));
+				if (escolherAutor.getSelectionModel().getSelectedIndex() >= 0) {
+					int index = escolherAutor.getSelectionModel().getSelectedIndex();
+					UsuarioVO us = new UsuarioVO();
+					us = listVO.get(index);	
+					obra.setAutor(new AutorVO(us));
+				}
 				
 				ObraBO oBO = new ObraBO();
 				oBO.editar(obra);
+				Telas.mensagemInfo("As alterações foram realizadas com sucesso");
+				atualizarLista();
 			}
-			try {
-				Telas.telaBuscar();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} catch (AtributoInvalidoException e) {
-			labelMensagem.setText(e.getMessage());
-		} catch (ArrayIndexOutOfBoundsException e) {
-			obra.setTitulo(campo1.getText());
-			obra.setGenero(campo2.getText());
-			obra.setAno(Integer.parseInt(campo3.getText()));
 			
-			ObraBO oBO = new ObraBO();
-			oBO.editar(obra);
-			try {
-				Telas.telaBuscar();
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
+		} catch (AtributoInvalidoException e) {
+			Telas.mensagemErro(e.getMessage());
+		} catch (NumberFormatException e) {
+			Telas.mensagemErro("Ano invalido, digite números");
 		}
 	}	
 	

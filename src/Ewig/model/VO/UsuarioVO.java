@@ -176,7 +176,6 @@ public class UsuarioVO{
 				return;
 			}
 		}
-		System.out.println("Telefone invalido");
 		throw new AtributoInvalidoException("Telefone invalido, formato correto: 00 0 0000 0000");
 	}
 	

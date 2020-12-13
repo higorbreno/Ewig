@@ -34,7 +34,7 @@
             <Image url="@../Imagens/Resultados%20da%20pesquisa.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="botaoDefinirAvaliador" fitHeight="150.0" fitWidth="200.0" layoutX="202.0" layoutY="344.0" onMouseClicked="#definirAvaliador" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoDefinirAvaliador" fitHeight="150.0" fitWidth="200.0" layoutX="202.0" layoutY="333.0" onMouseClicked="#definirAvaliador" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/DefinirAvaliador.png" />
          </image>
@@ -54,7 +54,6 @@
       <Label layoutX="172.0" layoutY="225.0" text="Escolha o avaliador:" textFill="#f8f8f8" />
       <Label fx:id="labelAutorObra" layoutX="171.0" layoutY="142.0" text="Autor:" textFill="#f8f8f8" />
       <Label fx:id="labelAnoObra" layoutX="172.0" layoutY="160.0" text="Ano:" textFill="#f8f8f8" />
-      <Label fx:id="labelMensagem" layoutX="260.0" layoutY="315.0" text="Mensagem" textFill="WHITE" visible="false" />
       <ComboBox fx:id="escolherObra" layoutX="171.0" layoutY="115.0" prefHeight="25.0" prefWidth="254.0" />
       <ComboBox fx:id="escolherAvaliador" layoutX="171.0" layoutY="245.0" prefHeight="25.0" prefWidth="254.0" />
       <Label fx:id="labelGeneroObra" layoutX="172.0" layoutY="178.0" text="Genero: " textFill="WHITE" />

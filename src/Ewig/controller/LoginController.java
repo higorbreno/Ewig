@@ -1,8 +1,6 @@
 package Ewig.controller;
 
 import java.util.List;
-
-
 import Ewig.exception.AtributoInvalidoException;
 import Ewig.exception.CampoVazioException;
 import Ewig.exception.UsuarioInexistenteException;
@@ -10,18 +8,11 @@ import Ewig.model.BO.UsuarioBO;
 import Ewig.model.VO.UsuarioVO;
 import Ewig.view.Telas;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class LoginController {
 	@FXML private TextField campoLogin;
 	@FXML private TextField campoSenha;
-	@FXML private Label labelMensagem;
-	
-	private void mensagem(String m) {
-		labelMensagem.setText(m);
-		labelMensagem.setVisible(true);
-	}
 	
 	public void autenticar() {
 		try {
@@ -29,7 +20,6 @@ public class LoginController {
 				throw new CampoVazioException("Campo login vazio");
 			}
 			if (campoSenha.getText().isEmpty()) {
-				mensagem("Digite a senha");
 				throw new CampoVazioException("Campo senha vazio");
 			}
 			
@@ -45,7 +35,7 @@ public class LoginController {
 			Telas.Mestre = usuario;
 			
 			if(usuario == null) {
-				mensagem("Login inexistente.");
+				Telas.mensagemErro("Login inexistente.");
 				throw new UsuarioInexistenteException("Login inexistente");
 			}
 			else {
@@ -56,15 +46,15 @@ public class LoginController {
 					}
 					else {
 						System.out.println("Usuario não tem permissão de acesso");
-						mensagem("Você ainda não tem permissão de acesso.");
+						Telas.mensagemInfo("Você ainda não tem permissão de acesso.");
 					}
 				}
-				else mensagem("Senha incorreta");
+				else Telas.mensagemErro("Senha incorreta");
 			}
 		} catch (CampoVazioException | AtributoInvalidoException | UsuarioInexistenteException e){
-			mensagem(e.getMessage());
+			Telas.mensagemErro(e.getMessage());
 		} catch (NullPointerException e) {
-			mensagem("Problema na conexão com BD");
+			Telas.mensagemErro("Problema na conexão com BD");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

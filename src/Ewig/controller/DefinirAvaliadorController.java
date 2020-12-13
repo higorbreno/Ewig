@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
-
 import Ewig.model.BO.AvaliadorBO;
 import Ewig.model.BO.ObraBO;
 import Ewig.model.VO.AvaliadorVO;
@@ -20,7 +19,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
 
 public class DefinirAvaliadorController implements Initializable{
 	private ObraBO obBo = new ObraBO();
@@ -31,7 +29,6 @@ public class DefinirAvaliadorController implements Initializable{
 	@FXML private Label labelAutorObra;
 	@FXML private Label labelAnoObra;
 	@FXML private Label labelGeneroObra;
-	@FXML private Label labelMensagem;
 	
 	private List<ObraVO> obrasList;
 	private List<UsuarioVO> avaliadorList;
@@ -55,15 +52,10 @@ public class DefinirAvaliadorController implements Initializable{
 		
 		try {
 			obBo.editar(obra);
-		
-			labelMensagem.setText("Avaliador definido.");
-			labelMensagem.setVisible(true);
-			labelMensagem.setTextFill(Color.GREEN);
+			Telas.mensagemInfo("Avaliador definido");
 		} catch (Exception e) {
 			e.printStackTrace();
-			labelMensagem.setText("Erro em definir Avaliador.");
-			labelMensagem.setVisible(true);
-			labelMensagem.setTextFill(Color.RED);
+			Telas.mensagemErro("Erro em definir Avaliador");
 		}
 		atualizarObras();
 	}

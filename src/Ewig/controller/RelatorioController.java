@@ -11,10 +11,8 @@ import Ewig.model.BO.ObraBO;
 import Ewig.model.VO.ObraVO;
 import Ewig.view.Telas;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Alert.AlertType;
 
 public class RelatorioController {
 	GerenteBO geBo = new GerenteBO();
@@ -22,15 +20,12 @@ public class RelatorioController {
 	
 	@FXML private DatePicker campoDataInicial;
 	@FXML private DatePicker campoDataFinal;
-	
 	@FXML private CheckBox checkAceito;
 	@FXML private CheckBox checkRejeitado;
 	
 	public void gerarRelatorio() {
 		if ((campoDataInicial.getValue() == null) != (campoDataFinal.getValue() == null)) {
-			Alert a = new Alert(AlertType.WARNING);
-			a.setHeaderText("Por favor, preencha o campo vazio do Filtro por data");
-			a.show();
+			Telas.mensagemInfo("Por favor, preencha o campo vazio do Filtro por data");
 			return;
 		}
 		else {

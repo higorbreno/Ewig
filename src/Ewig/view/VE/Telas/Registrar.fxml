@@ -59,7 +59,6 @@
          </cursor>
       </ImageView>
       <Label layoutX="78.0" layoutY="95.0" text="Dados Pessoais:" textFill="WHITE" />
-      <Label fx:id="labelMensagem" layoutX="249.0" layoutY="303.0" text="Mensagem" textAlignment="JUSTIFY" textFill="WHITE" visible="false" />
       <ImageView fx:id="botaoVoltar" fitHeight="48.0" fitWidth="81.0" layoutX="512.0" layoutY="14.0" onMouseClicked="#irSair" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Voltar.png" />
