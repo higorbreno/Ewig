@@ -42,7 +42,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </CheckBox>
-      <ImageView fx:id="botaoRelatorio" fitHeight="150.0" fitWidth="200.0" layoutX="210.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="botaoRelatorio" fitHeight="150.0" fitWidth="200.0" layoutX="210.0" layoutY="334.0" onMouseClicked="#gerarRelatorio" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Relatório.png" />
          </image>
