@@ -83,7 +83,7 @@
       <Button fx:id="botaoVisualizar" layoutX="323.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#irVisualizar" opacity="0.75" text="Visualizar" />
       <Button fx:id="botaoEditar" layoutX="392.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#irAlterar" opacity="0.75" text="Editar" />
       <Button fx:id="botaoDeletar" layoutX="441.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#deletar" opacity="0.75" text="Deletar" />
-      <Label fx:id="erro" layoutX="102.0" layoutY="318.0" text="Label" textFill="WHITE" visible="false" />
+      <Label fx:id="erro" layoutX="122.0" layoutY="318.0" text="Label" textAlignment="CENTER" textFill="WHITE" visible="false" />
       <ComboBox fx:id="autorCombo" layoutX="50.0" layoutY="252.0" opacity="0.5" prefHeight="38.0" prefWidth="200.0" promptText="Autor" />
       <TableView fx:id="lista1" layoutX="279.0" layoutY="92.0" prefHeight="244.0" prefWidth="260.0">
         <columns>
