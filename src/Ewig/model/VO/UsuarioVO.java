@@ -25,12 +25,12 @@ public class UsuarioVO{
 		return login;
 	}
 	public void setLogin(String login) throws AtributoInvalidoException{
-		if(login != null && (login.length() > 2) && (login.length() < 16)) {
+		if(login != null && (login.length() > 2) && (login.length() < 20)) {
 				this.login = login;
 				return;
 		} else {
 			System.out.println("Login invalido");
-			throw new AtributoInvalidoException("Login invalido, tamanho entre 3 a 15 caracteres");
+			throw new AtributoInvalidoException("Login invalido, tamanho entre 3 a 20 caracteres");
 		}
 	}
 	
@@ -38,7 +38,7 @@ public class UsuarioVO{
 		return senha;
 	}
 	public void setSenha(String senha) {
-		if(senha != null && !senha.isEmpty()) {
+		if(senha != null && !senha.isEmpty() && senha.length() < 20) {
 				this.senha = senha;
 				return;
 		} else {
@@ -71,7 +71,7 @@ public class UsuarioVO{
 		return nome;
 	}
 	public void setNome(String nome) throws AtributoInvalidoException{
-		if(nome != null && !nome.isEmpty()) {
+		if(nome != null && !nome.isEmpty() && nome.length() < 50) {
 			String nomeAux = new String("");
 			for(int i = 0; i < nome.length(); ++i) {
 				if(Character.isAlphabetic(nome.charAt(i)) || Character.isSpaceChar(nome.charAt(i)))
@@ -152,7 +152,7 @@ public class UsuarioVO{
 		return endereco;
 	}
 	public void setEndereco(String endereco) {
-		if(endereco != null && !endereco.isEmpty()) {
+		if(endereco != null && !endereco.isEmpty() && endereco.length() < 100) {
 			this.endereco = endereco;
 			return;
 		} else {
