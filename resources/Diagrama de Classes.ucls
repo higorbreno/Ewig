@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <interface id="1" language="java" name="Ewig.model.BO.GerenteInterBO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/BO/GerenteInterBO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="285" x="2041" y="1106"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="2" language="java" name="Ewig.controller.AlterarController" project="Ewig" 
+    file="/Ewig/src/Ewig/controller/AlterarController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="197" x="3354" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="Ewig.controller.CadastrarController" project="Ewig" 
+    file="/Ewig/src/Ewig/controller/CadastrarController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="197" x="2390" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="4" language="java" name="Ewig.model.DAO.ObraInterDAO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/DAO/ObraInterDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="280" x="2032" y="1600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="5" language="java" name="Ewig.model.BO.AutorBO" project="Ewig" file="/Ewig/src/Ewig/model/BO/AutorBO.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="87" x="3060" y="1106"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="Ewig.controller.AutorizarAcessoController" project="Ewig" 
+    file="/Ewig/src/Ewig/controller/AutorizarAcessoController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="198" x="3116" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="Ewig.controller.AvaliarController" project="Ewig" 
+    file="/Ewig/src/Ewig/controller/AvaliarController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="197" x="2879" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="Ewig.controller.RelatorioController" project="Ewig" 
+    file="/Ewig/src/Ewig/controller/RelatorioController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="163" x="2187" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="Ewig.model.BO.ObraBO" project="Ewig" file="/Ewig/src/Ewig/model/BO/ObraBO.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="280" x="2512" y="481"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="Ewig.model.DAO.UsuarioDAO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/DAO/UsuarioDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="244" x="2607" y="1106"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="Ewig.controller.RegistrarController" project="Ewig" 
+    file="/Ewig/src/Ewig/controller/RegistrarController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="224" x="228" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="12" language="java" name="Ewig.model.BO.UsuarioInterBO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/BO/UsuarioInterBO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="256" x="3187" y="1106"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="13" language="java" name="Ewig.model.BO.AvaliadorInterBO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/BO/AvaliadorInterBO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="129" x="3359" y="1353"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="14" language="java" name="Ewig.model.DAO.BaseDAO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/DAO/BaseDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="160" x="1987" y="481"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="Ewig.view.Telas" project="Ewig" file="/Ewig/src/Ewig/view/Telas.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="405" width="164" x="3591" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="Ewig.exception.LoginExistenteException" project="Ewig" 
+    file="/Ewig/src/Ewig/exception/LoginExistenteException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="179" x="492" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="Ewig.exception.AtributoInvalidoException" project="Ewig" 
+    file="/Ewig/src/Ewig/exception/AtributoInvalidoException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="183" x="711" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="Ewig.model.BO.GerenteBO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/BO/GerenteBO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="285" x="2187" y="481"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="Ewig.model.VO.AutorVO" project="Ewig" file="/Ewig/src/Ewig/model/VO/AutorVO.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="130" x="3665" y="1106"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="Ewig.controller.BuscarController" project="Ewig" 
+    file="/Ewig/src/Ewig/controller/BuscarController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="549" width="245" x="3795" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="Ewig.controller.DefinirAvaliadorController" project="Ewig" 
+    file="/Ewig/src/Ewig/controller/DefinirAvaliadorController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="212" x="2627" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="Ewig.model.VO.GerenteVO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/VO/GerenteVO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="142" x="3483" y="1106"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="Ewig.model.DAO.ObraDAO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/DAO/ObraDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="280" x="2032" y="1353"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="Ewig.model.BO.AvaliadorBO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/BO/AvaliadorBO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="129" x="2891" y="1106"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="Ewig.model.VO.AvaliadorVO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/VO/AvaliadorVO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="149" x="3835" y="1106"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="Ewig.controller.MenuController" project="Ewig" 
+    file="/Ewig/src/Ewig/controller/MenuController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="405" width="197" x="934" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="Ewig.model.DAO.GerenteDAO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/DAO/GerenteDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="215" x="2352" y="1353"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="Ewig.model.DAO.AvaliadorDAO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/DAO/AvaliadorDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="222" x="2607" y="1353"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="29" language="java" name="Ewig.model.BO.ObraInterBO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/BO/ObraInterBO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="180" x="2387" y="1106"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="30" language="java" name="Ewig.model.DAO.AutorDAO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/DAO/AutorDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="203" x="2869" y="1353"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="Ewig.controller.VisualizarController" project="Ewig" 
+    file="/Ewig/src/Ewig/controller/VisualizarController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="197" x="4080" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="Ewig.exception.RepitaSenhaException" project="Ewig" 
+    file="/Ewig/src/Ewig/exception/RepitaSenhaException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="170" x="1171" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="Ewig.model.BO.UsuarioBO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/BO/UsuarioBO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3065" y="585"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="34" language="java" name="Ewig.model.DAO.UsuarioInterDAO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/DAO/UsuarioInterDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="207" x="3112" y="1353"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="35" language="java" name="Ewig.model.VO.ObraVO" project="Ewig" file="/Ewig/src/Ewig/model/VO/ObraVO.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="477" width="185" x="3795" y="481"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="Ewig.controller.LoginController" project="Ewig" 
+    file="/Ewig/src/Ewig/controller/LoginController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="137" x="1381" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="37" language="java" name="Ewig.model.BO.AutorInterBO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/BO/AutorInterBO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="142" x="1558" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="38" language="java" name="Ewig.model.VO.UsuarioVO" project="Ewig" 
+    file="/Ewig/src/Ewig/model/VO/UsuarioVO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3442" y="772"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="Ewig.exception.CampoVazioException" project="Ewig" 
+    file="/Ewig/src/Ewig/exception/CampoVazioException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="169" x="1740" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="40" language="java" name="Ewig.exception.UsuarioInexistenteException" project="Ewig" 
+    file="/Ewig/src/Ewig/exception/UsuarioInexistenteException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="198" x="1949" y="-108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="41">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="42" name="dao"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="44">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="45" name="Mestre"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="48" name="autores"/>      
+      <multiplicity id="49" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="50">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <generalization id="51">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <association id="52">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="53" name="obrasList"/>      
+      <multiplicity id="54" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="55">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="56" name="avaliadorList"/>      
+      <multiplicity id="57" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="58">    
+    <bendpoint x="2822" y="481"/>    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="59" name="usBo"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="61">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="62" name="obBo"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="64">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="65" name="obBO"/>      
+      <multiplicity id="66" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="67">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="29"/>  
+  </realization>  
+  <association id="68">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="69" name="obBo"/>      
+      <multiplicity id="70" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="71">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="72" name="listVO"/>      
+      <multiplicity id="73" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="74">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="75" name="obras"/>      
+      <multiplicity id="76" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="77">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="78" name="obsObras"/>      
+      <multiplicity id="79" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="80">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <association id="81">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="82" name="obBo"/>      
+      <multiplicity id="83" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="84">    
+    <bendpoint x="2010" y="1106"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <association id="85">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="86" name="usuBO"/>      
+      <multiplicity id="87" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="88">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="89" name="usuarios"/>      
+      <multiplicity id="90" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="91">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <generalization id="92">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <generalization id="93">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="33"/>  
+  </generalization>  
+  <association id="94">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="95" name="list"/>      
+      <multiplicity id="96" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="97">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="98" name="usuBo"/>      
+      <multiplicity id="99" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="100">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <generalization id="101">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="33"/>  
+  </generalization>  
+  <realization id="102">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="12"/>  
+  </realization>  
+  <association id="103">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="104" name="obDao"/>      
+      <multiplicity id="105" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="106">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="107" name="obra"/>      
+      <multiplicity id="108" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="109">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="110" name="usuBo"/>      
+      <multiplicity id="111" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="112">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="113" name="usuario"/>      
+      <multiplicity id="114" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="115">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="116" name="autor"/>      
+      <multiplicity id="117" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="118">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="119" name="usuBO"/>      
+      <multiplicity id="120" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="121">    
+    <bendpoint x="2356" y="1106"/>    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="122" name="obraDao"/>      
+      <multiplicity id="123" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="124">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="125" name="usuario"/>      
+      <multiplicity id="126" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="127">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="128" name="obra"/>      
+      <multiplicity id="129" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="130">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="131" name="geBo"/>      
+      <multiplicity id="132" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="133">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="134" name="listVO"/>      
+      <multiplicity id="135" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="136">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="137" name="list"/>      
+      <multiplicity id="138" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="139">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <realization id="140">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="34"/>  
+  </realization>  
+  <realization id="141">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <generalization id="142">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <association id="143">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="144" name="obBo"/>      
+      <multiplicity id="145" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="146">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="147" name="obsUsuarios"/>      
+      <multiplicity id="148" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="149">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="150" name="avaliador"/>      
+      <multiplicity id="151" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="152">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

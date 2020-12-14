@@ -44,7 +44,7 @@ public class GerenteBO implements GerenteInterBO{
 					paragraph.add(obra.getTitulo() + "\nGênero: " + obra.getGenero() 
 					+ "\nAno: " +  obra.getAno() + "\nAutor: " + obra.getAutor().getNome() 
 					+ "\nData de Avaliação: " + formatter.format(obra.getDataAvaliacao().getTime())
-					+ "\nAvaliador: " +  obra.getAvaliador().getNome() + "\n\nAvaliação: " +  obra.getStatus() + "\n\n\n");
+					+ "\nAvaliador: " +  obra.getAvaliador().getNome() + "\nAvaliação: " +  obra.getStatus() + "\n\n");
 				}
 				document.add(paragraph);
 				
@@ -85,7 +85,7 @@ public class GerenteBO implements GerenteInterBO{
 					paragraph.add(obra.getTitulo() + "\nGênero: " + obra.getGenero() 
 					+ "\nAno: " +  obra.getAno() + "\nAutor: " + obra.getAutor().getNome() 
 					+ "\nData de Avaliação: " + formatter.format(obra.getDataAvaliacao().getTime())
-					+ "\nAvaliador: " +  obra.getAvaliador().getNome() + "\n\nAvaliação: " +  obra.getStatus() + "\n\n\n");
+					+ "\nAvaliador: " +  obra.getAvaliador().getNome() + "\nAvaliação: " +  obra.getStatus() + "\n\n");
 				}
 				document.add(paragraph);
 				
