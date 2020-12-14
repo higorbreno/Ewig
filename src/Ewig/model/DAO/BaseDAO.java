@@ -8,7 +8,7 @@ public abstract class BaseDAO<VO> {
 	private static Connection conn = null;
 	private static final String url = "jdbc:postgresql://localhost:5432/Ewig";
 	private static final String login = "postgres";
-	private static final String senha = "higorbreno157";	
+	private static final String senha = "";	
 	
 	public Connection getConnection() {
 		if(conn == null) {
